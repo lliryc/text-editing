@@ -1,0 +1,97 @@
+{
+  "os":  "Linux-4.18.0-513.5.1.el8_9.x86_64-x86_64-with-glibc2.28",
+  "python":  "CPython 3.10.13",
+  "startedAt":  "2025-01-09T14:23:25.211850Z",
+  "args":  [
+    "--file_path",
+    "/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data/pnx_sep_prune_20_mt/nopnx/qalb14/train_nopnx.bin.txt",
+    "--optim",
+    "adamw_torch",
+    "--labels",
+    "/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data/pnx_sep_prune_20_mt/nopnx/qalb14/labels.txt",
+    "--binary_labels",
+    "/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data/pnx_sep_prune_20_mt/nopnx/qalb14/labels.bin.txt",
+    "--model_name_or_path",
+    "/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa",
+    "--output_dir",
+    "/scratch/ba63/arabic-text-editing/gec_taggers/qalb14/pnx_taggers/nopnx_prune_20_mt/qalb14_a0.2_lbl_smthng",
+    "--num_train_epochs",
+    "10",
+    "--per_device_train_batch_size",
+    "32",
+    "--save_steps",
+    "500",
+    "--seed",
+    "42",
+    "--do_train",
+    "--overwrite_output_dir"
+  ],
+  "program":  "/home/ba63/arabic-text-editing/tagger-muti-task/tag_new.py",
+  "codePath":  "tag_new.py",
+  "email":  "ba63@nyu.edu",
+  "root":  "/home/ba63/arabic-text-editing/tagger-muti-task",
+  "host":  "dn011",
+  "executable":  "/home/ba63/.conda/envs/simplification/bin/python",
+  "codePathLocal":  "tag_new.py",
+  "cpu_count":  40,
+  "cpu_count_logical":  40,
+  "gpu":  "Tesla V100-PCIE-32GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "10737418240",
+      "used":  "5448232960"
+    }
+  },
+  "memory":  {
+    "total":  "404855103488"
+  },
+  "cpu":  {
+    "count":  40,
+    "countLogical":  40
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla V100-PCIE-32GB",
+      "memoryTotal":  "34359738368",
+      "cudaCores":  5120,
+      "architecture":  "Volta"
+    }
+  ],
+  "slurm":  {
+    "cluster_name":  "hpc",
+    "conf":  "/opt/slurm/etc/slurm.conf",
+    "cpus_on_node":  "1",
+    "gtids":  "0",
+    "job_account":  "scomputer",
+    "job_cpus_per_node":  "1",
+    "job_gid":  "100",
+    "job_gpus":  "1",
+    "job_id":  "9742752",
+    "job_name":  "run_tagger.sh",
+    "job_nodelist":  "dn011",
+    "job_num_nodes":  "1",
+    "job_partition":  "nvidia",
+    "job_qos":  "nvidia",
+    "job_reservation":  "nlp",
+    "job_uid":  "3380127",
+    "job_user":  "ba63",
+    "jobid":  "9742752",
+    "localid":  "0",
+    "mem_per_cpu":  "3750",
+    "nnodes":  "1",
+    "node_aliases":  "(null)",
+    "nodeid":  "0",
+    "nodelist":  "dn011",
+    "prio_process":  "0",
+    "procid":  "0",
+    "submit_dir":  "/home/ba63/arabic-text-editing/tagger-muti-task",
+    "submit_host":  "dn070",
+    "task_pid":  "1373419",
+    "tasks_per_node":  "1",
+    "topology_addr":  "dn-spine.dn21.dn011",
+    "topology_addr_pattern":  "switch.switch.node",
+    "working_cluster":  "hpc:slurm:6816:9216:109"
+  },
+  "cudaVersion":  "12.2"
+}
