@@ -1,7 +1,7 @@
 import json
 from tokenizer import Tokenizer
 from alignment.aligner import word_level_alignment, char_level_alignment
-from edit import Edit, SubwordEdits, SubwordEdit, Edits
+from edit import Edit, SubwordEdits
 from utils import (apply_edits, insert_to_append, compress_edits, write_json,
                    load_data, write_tsv, get_stats, prune_edits, prune_edits_corr)
 import re
@@ -59,8 +59,7 @@ def create_edits(char_level_alignment, word_level_alignment, tokenizer):
         assert len(src_word_chars) == len(tgt_word_chars)
         word_edit = Edit.create(src_word_chars, tgt_word_chars)
 
-
-        _word_edits = Edits.create(src_words, word_edit.edit)
+        _word_edits = SubwordEdits.create(src_words, word_edit.edit)
         word_edits.append(_word_edits)
 
         _subword_edits = SubwordEdits.create(src_words, word_edit.edit, tokenizer)
@@ -108,9 +107,9 @@ def create_dataset_edits(dataset, tokenizer, direction='raw-cor'):
         subword_edits = example_edits['subword-edits']
         subword_edits_append = example_edits['subword-edits-append']
 
-        tokenized_src = tokenizer.tokenize(src_sent, flatten=True)
+        tokenized_src_raw, tokenized_src_internal = tokenizer.tokenize(src_sent, flatten=True)
 
-        rewritten_src_subword_edits = apply_edits(tokenized_src, subword_edits_append)
+        rewritten_src_subword_edits = apply_edits(tokenized_src_raw, subword_edits_append)
 
         if ' '.join(rewritten_src_subword_edits) != tgt_sent:
             import pdb; pdb.set_trace()
@@ -145,8 +144,9 @@ def process_example(example, tokenizer, direction):
     subword_edits = example_edits['subword-edits']
     subword_edits_append = example_edits['subword-edits-append']
 
-    tokenized_src = tokenizer.tokenize(src_sent, flatten=True)
-    rewritten_src_subword_edits = apply_edits(tokenized_src, subword_edits_append)
+    tokenized_src_raw, tokenized_src_internal = tokenizer.tokenize(src_sent, flatten=True)
+
+    rewritten_src_subword_edits = apply_edits(tokenized_src_raw, subword_edits_append)
 
     if ' '.join(rewritten_src_subword_edits) != tgt_sent:
         import pdb; pdb.set_trace()
@@ -197,6 +197,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--split', default='train')
     parser.add_argument('--dataset', default='qalb14')
+    parser.add_argument('--tokenizer', default=None, required=True)
     parser.add_argument('--create_edits', action='store_true')
     parser.add_argument('--edits_granularity', default='subword')
     parser.add_argument('--src_file_path', default=None)
@@ -216,16 +217,19 @@ if __name__ == '__main__':
 
     print(split, flush=True)
 
-    if args.token == '5':
-        tokenizer = Tokenizer('tokenizer-5')
-    elif args.token == '4':
-        tokenizer = Tokenizer('tokenizer-4')
-    elif args.token == '3':
-        tokenizer = Tokenizer('tokenizer-3')
-    else:
+    # if args.token == '5':
+    #     tokenizer = Tokenizer('tokenizer-5')
+    # elif args.token == '4':
+    #     tokenizer = Tokenizer('tokenizer-4')
+    # elif args.token == '3':
+    #     tokenizer = Tokenizer('tokenizer-3')
+    # else:
         # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabertv02')
-        tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa')
+        # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/ARBERTv2')
+        # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa')
         # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-mix')
+
+    tokenizer = Tokenizer(args.tokenizer)
 
     output_dir = f'{args.dataset}_{args.token}' if args.token else args.dataset
     output_dir += ('/subword-level' if args.edits_granularity == 'subword'
@@ -234,13 +238,16 @@ if __name__ == '__main__':
     if args.create_edits:
         # data = read_data(os.path.join(args.input_data_dir, f'{split}.json'))
         data = read_data_txt(src_path=args.src_file_path, tgt_path=args.tgt_file_path)
+
         # edits_data = create_dataset_edits(data, tokenizer, direction='raw-cor')
         edits_data = create_dataset_edits_parallel(data, tokenizer, direction='raw-cor', num_workers=100)
         print(f'Done creating edits!', flush=True)
         write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'), data=edits_data, 
                    edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits'), data=edits_data,
+
+        write_tsv(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}'), data=edits_data,
                   edits_granularity=args.edits_granularity)
+        
         get_stats(data=edits_data, path=os.path.join(args.output_data_dir, f'{output_dir}/{split}'),
                   edits_granularity=args.edits_granularity)
 
@@ -252,7 +259,7 @@ if __name__ == '__main__':
         compressed_data = compress_edits(data, edits_granularity=args.edits_granularity)
         write_json(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}_edits.json'), data=compressed_data, 
                    edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}_edits'), data=compressed_data,
+        write_tsv(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}'), data=compressed_data,
                   edits_granularity=args.edits_granularity)
         get_stats(data=compressed_data, path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}'),
                   edits_granularity=args.edits_granularity)
@@ -266,8 +273,11 @@ if __name__ == '__main__':
         if args.prune_cor:
             pruned_data = prune_edits_corr(data, k=args.k)
         else:
-            pruned_data = prune_edits(data, k=args.k)
+            pruned_data = prune_edits(data, k=args.k, edits_granularity=args.edits_granularity)
 
-        write_json(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits.json'), data=pruned_data)
-        write_tsv(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits'), data=pruned_data)
-        get_stats(pruned_data, os.path.join(prune_output_dir, f'{output_dir}/{split}'))
+        write_json(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits.json'), data=pruned_data, 
+                   edits_granularity=args.edits_granularity)
+        write_tsv(path=os.path.join(prune_output_dir, f'{output_dir}/{split}'), data=pruned_data,
+                  edits_granularity=args.edits_granularity)
+        get_stats(data=pruned_data, path=os.path.join(prune_output_dir, f'{output_dir}/{split}'),
+                  edits_granularity=args.edits_granularity)
