@@ -115,8 +115,9 @@ class Edit:
 
 
 class SubwordEdit:
-    def __init__(self, subword, edit):
+    def __init__(self, subword, raw_subword, edit):
         self.subword = subword
+        self.raw_subword = raw_subword
         self.edit = edit
 
     def apply(self, subword):
@@ -208,7 +209,6 @@ class SubwordEdit:
             
         else: # if not, then delete up to the first K edit
             return len(subword[: -(len(remaining_edits) - len(inserts_replaces))])
-        
 
 
     def __repr__(self):
@@ -218,131 +218,12 @@ class SubwordEdit:
         return json.dumps(self.to_dict(), ensure_ascii=False)
 
     def to_dict(self):
-        return {'subword': self.subword, 'edit': self.edit}
+        return {'subword': self.subword, 'raw_subword': self.raw_subword, 'edit': self.edit}
 
     @classmethod
     def from_json(cls, contents):
         return cls(**contents)
 
-
-class Edits:
-    """
-    A wrapper class to create words edits given an aligned_src_word and its word-level edit
-    """
-    def __init__(self, words, edits):
-        self.words = words
-        self.edits = edits
-
-    @classmethod
-    def create(cls, aligned_src_word, edit):
-        """
-        Creates word edits using the word-level src alignment
-        and project the char-level edit on the words
-
-        Args:
-            aligned_src_word (str): aligned src
-            edit (str): char-level edit
-        """
-        # flatten subwords
-        words = [word for word in aligned_src_word.split()]
-
-        if len(words) == 0 and edit.startswith('I'):
-            # return cls(subwords, [SubwordEdit('', compress_edit(edit))])
-            return cls(words, [SubwordEdit('', compress_edit_new(edit))])
-            # return cls(subwords, [SubwordEdit('', edit)])
-
-        if edit == 'K':
-            # return cls(subwords, [SubwordEdit(subword, 'K*') for subword in subwords])
-            return cls(words, [SubwordEdit(word, 'K') for word in words])
-
-        word_edits = SubwordEdits._project_edit(words, edit)
-
-        # removing extra spaces from the subwords
-        words = [word for word in words if word != ' ']
-
-        assert len(words) == len(word_edits)
-        return cls(words, word_edits)
-
-    @staticmethod
-    def _project_edit(words, edit):
-        idx = 0
-        word_edits = []
-        edit_ops = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|D+|K+|.', edit)
-        inserts = [op for op in edit_ops if op.startswith('I_[')]
-        replaces = [op for op in edit_ops if op.startswith('R_[')]
-
-        # projecting the edit onto the subwords
-        for word in words:
-            word_len = len(word)
-            word_edit = ''
-
-            while word_len > 0:
-                if idx >= len(edit):
-                    import pdb; pdb.set_trace()
-
-                if edit[idx] == 'S': # Assign current edit to previous subword in case of S
-                    word_edits[-1] += word_edit
-                    word_edit = ''
-                    idx += 1
-                    continue
-
-                if edit[idx] == 'I': # inserts
-                    op = inserts.pop(0)
-                    word_edit += op
-                    idx += len(op)
-    
-                elif edit[idx] == 'R':
-                    op = replaces.pop(0)
-                    word_edit += op
-                    idx += len(op)
-                    word_len -= 1
-
-                elif edit[idx] == 'M': # merges
-                    # ensure merges happen first
-                    if len(word_edit) != 0:
-                        word_edits[-1] = word_edits[-1] + word_edit
-                    word_edit = edit[idx]
-                    idx += 1
-
-                else: # keeps/deletes
-                    if edit[idx] not in ['K', 'D']:
-                        import pdb; pdb.set_trace()
-                    word_edit += edit[idx]
-                    idx += 1
-                    word_len -= 1
-
-            word_edits.append(word_edit)
-
-        if idx < len(edit):
-            word_edits[-1] = word_edits[-1] + edit[idx:]
-
-
-        assert ''.join(word_edits) == re.sub(r"(?<!\[)S(?!\])", '', edit)
-
-        assert len(word_edits) == len(words)
-
-        # compressing edits
-        # subword_edits = [SubwordEdit(subword, compress_edit(edit))
-        #                  for subword, edit in zip(subwords, subword_edits)]
-
-        word_edits = [SubwordEdit(word, compress_edit_new(edit))
-                         for word, edit in zip(words, word_edits)]
-
-        # subword_edits = [SubwordEdit(subword, edit) for subword, edit in zip(subwords, subword_edits)]
-
-        return word_edits
-
-    def __repr__(self):
-        return json.dumps(self.to_dict(), indent=2, ensure_ascii=False)
-
-    def to_json_str(self):
-        return json.dumps(self.to_dict(), ensure_ascii=False)
-
-    def to_dict(self):
-        output = {'words': self.words,
-                  'word_edits': [word_edit.edit for word_edit in self.edits]}
-        return output
-    
 
 class SubwordEdits:
     """
@@ -353,7 +234,7 @@ class SubwordEdits:
         self.edits = edits
 
     @classmethod
-    def create(cls, aligned_src_word, edit, tokenizer):
+    def create(cls, aligned_src_word, edit, tokenizer=None):
         """
         Creates subword edits by tokenizing the word-level src alignment
         and project the char-level edit on the subwords
@@ -363,21 +244,28 @@ class SubwordEdits:
             edit (str): char-level edit
             tokenizer (Tokenizer): extended tokenizer
         """
-        subwords = tokenizer.tokenize(aligned_src_word)
+        if tokenizer:
+            raw_subwords, subwords = tokenizer.tokenize(aligned_src_word)
+            # Flatten subword lists
+            subwords = [wp for sublist in subwords for wp in sublist]
+            raw_subwords = [wp for sublist in raw_subwords for wp in sublist]
+        else:
+            subwords = aligned_src_word.split()
+            raw_subwords = subwords
 
-        # flatten subwords
-        subwords = [wp for _wp in subwords for wp in _wp]
+        assert len(subwords) == len(raw_subwords)
 
         if len(subwords) == 0 and edit.startswith('I'):
             # return cls(subwords, [SubwordEdit('', compress_edit(edit))])
-            return cls(subwords, [SubwordEdit('', compress_edit_new(edit))])
+            return cls(subwords, [SubwordEdit('', '', compress_edit_new(edit))])
             # return cls(subwords, [SubwordEdit('', edit)])
 
         if edit == 'K':
             # return cls(subwords, [SubwordEdit(subword, 'K*') for subword in subwords])
-            return cls(subwords, [SubwordEdit(subword, 'K') for subword in subwords])
+            return cls(subwords, [SubwordEdit(subword, raw_subword, 'K')
+                                  for subword, raw_subword in zip(subwords, raw_subwords)])
 
-        subword_edits = SubwordEdits._project_edit(subwords, edit)
+        subword_edits = SubwordEdits._project_edit(subwords, raw_subwords, edit)
 
         # removing extra spaces from the subwords
         subwords = [wp for wp in subwords if wp != ' ']
@@ -386,7 +274,7 @@ class SubwordEdits:
         return cls(subwords, subword_edits)
 
     @staticmethod
-    def _project_edit(subwords, edit):
+    def _project_edit(subwords, raw_subwords, edit):
         idx = 0
         subword_edits = []
         edit_ops = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|D+|K+|.', edit)
@@ -441,14 +329,14 @@ class SubwordEdits:
 
         assert ''.join(subword_edits) == re.sub(r"(?<!\[)S(?!\])", '', edit)
 
-        assert len(subword_edits) == len(subwords)
+        assert len(subword_edits) == len(subwords) == len(raw_subwords)
 
         # compressing edits
         # subword_edits = [SubwordEdit(subword, compress_edit(edit))
         #                  for subword, edit in zip(subwords, subword_edits)]
 
-        subword_edits = [SubwordEdit(subword, compress_edit_new(edit))
-                         for subword, edit in zip(subwords, subword_edits)]
+        subword_edits = [SubwordEdit(subword, raw_subword, compress_edit_new(edit))
+                         for subword, raw_subword, edit in zip(subwords, raw_subwords, subword_edits)]
 
         # subword_edits = [SubwordEdit(subword, edit) for subword, edit in zip(subwords, subword_edits)]
 
