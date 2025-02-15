@@ -211,6 +211,40 @@ class SubwordEdit:
             return len(subword[: -(len(remaining_edits) - len(inserts_replaces))])
 
 
+    def is_applicable(self, subword):
+        _subword = subword.replace('##', '')
+        char_edits = re.findall(r'I_\[.*?\]+|A_\[.*?\]+|R_\[.*?\]+|K\*|D\*|.', self.edit)
+        char_edits_wo_append_merge = [e for e in char_edits if(not e.startswith('A') and
+                                      not e.startswith('M') and not e.startswith('I'))]
+
+        if self.edit == 'K' or self.edit.startswith('KA'):
+            return True
+    
+
+        # if the number of subwords is less than the edits (without A or M), the edit isn't applicable
+        if len(_subword) < len(char_edits_wo_append_merge):
+            return False
+
+        idx = 0
+
+        for i, edit in enumerate(char_edits_wo_append_merge):
+            if edit.startswith('R') or edit in ['K', 'D']:
+                idx += 1
+
+            elif edit in ['K*', 'D*']: # we need to advance idx until we reach the edit
+                if i == len(char_edits_wo_append_merge) - 1:
+                    idx += len(_subword[idx:])
+                    break
+
+                idx = len(_subword[: -len(char_edits_wo_append_merge[i + 1:])])
+            
+
+        # if we haven't passed over all subwords, the edit isn't applicable
+        if idx < len(_subword):
+            return False
+
+        return True
+
     def __repr__(self):
         return json.dumps(self.to_dict(), indent=2, ensure_ascii=False)
 
