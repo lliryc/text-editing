@@ -19,69 +19,78 @@ def get_edits(data, edits_granularity):
     return dict(Counter(edits))
 
 
-def compress_edits(data, edits_granularity='subword', verify=True):
-    if edits_granularity == 'subword':
-        edits_key = 'subword-edits-append'
-    else:
-        edits_key = 'word-edits-append'
+def compress_edits(train_data=None, test_data=None, edits_granularity='subword', verify=True, compress_map_output_path=None):
+    edits_key = 'subword-edits-append' if edits_granularity == 'subword' else 'word-edits-append'
 
-    edits_freqs = get_edits(data, edits_key)
-    compressed_edits = []
-    compressed_edits_map = dict()
-
-    # get the compressed edits and their frequency over edit types
-    for edit in edits_freqs:
-        compressed_edit = compress_edit(edit)
-        compressed_edits.extend(compressed_edit)
-        compressed_edits_map[edit] = {e: edits_freqs[edit] for e in compressed_edit}
-
-
-    compressed_edits_freqs = Counter(compressed_edits)
-
-    # choose the compression for each edit based on a freq score
-    final_compressed_edits_map = dict()
-
-    for edit in compressed_edits_map:
-        compressed_edits = compressed_edits_map[edit]
-        # most_comm = max(compressed_edits, key=lambda x: x[1])[0]
-        compressed_edit_freq = [(comp_edit, compressed_edits_freqs[comp_edit])
-                                for comp_edit in compressed_edits]
-
-        most_comm = max(compressed_edit_freq, key=lambda x: x[1])[0]
-        final_compressed_edits_map[edit] = most_comm
-    
-
-    print(f'Uncompressed Edits', flush=True)
-    print(len(edits_freqs))
-    final_compressed_edits_freqs = Counter(final_compressed_edits_map.values())
-    print(f'Compressed edits', flush=True)
-    print(len(final_compressed_edits_freqs))
-
-
-    # compressing the edits over the entire dataset
-    compressed_data = []
-    for example in data:
-        example_compressed_edits = []
-        example_edits = example[edits_key]
-        for subword_edit in example_edits:
-            edit = SubwordEdit(subword_edit.subword,
-                               subword_edit.raw_subword,
-                               final_compressed_edits_map[subword_edit.edit])
-            example_compressed_edits.append(edit)
+    def generate_compressed_map(edits_freqs):
+        compressed_edits = []
+        compressed_edits_map = {}
+        # get the compressed edits and their frequency over edit types
+        for edit, freq in edits_freqs.items():
+            compressed_edit = compress_edit(edit)
+            compressed_edits.extend(compressed_edit)
+            compressed_edits_map[edit] = {e: freq for e in compressed_edit}
         
-        # verifying the compression
-        if verify:
-            tokenized_src = [ex.raw_subword for ex in example_edits]
-            rewritten_src = apply_edits(tokenized_src, example_compressed_edits)
-
-            if ' '.join(rewritten_src) != example['tgt']:
-                import pdb; pdb.set_trace()
-
-        _example = copy.deepcopy(example)
-        _example[edits_key] = example_compressed_edits
-        compressed_data.append(_example)
+        compressed_edits_freqs = Counter(compressed_edits)
+        # choose the compression that appears the most for each edit
+        return {
+            edit: max(compressed_edits_map[edit], key=lambda e: compressed_edits_freqs[e])
+            for edit in compressed_edits_map
+        }
     
-    return compressed_data
+    # if we are compressing over train, generate the map of comrpession and save it!
+    if train_data is not None:
+        final_compressed_edits_map = generate_compressed_map(get_edits(train_data, edits_key))
+        with open(compress_map_output_path, mode='w') as f:
+            json.dump(final_compressed_edits_map, f, ensure_ascii=False)
+
+    # if we are compressing over test/dev, load the compression map
+    else:
+        with open(compress_map_output_path) as f:
+            final_compressed_edits_map = json.load(f)
+
+    
+    def compress_dataset(dataset, compressed_map):
+         # compressing the edits over the entire dataset
+        compressed_data = []
+        
+        for example in dataset:
+            example_compressed_edits = [
+                SubwordEdit(edit.subword, edit.raw_subword, compressed_map.get(edit.edit, edit.edit))
+                for edit in example[edits_key]
+            ]
+            
+            if verify:
+                tokenized_src = [edit.raw_subword for edit in example[edits_key]]
+                rewritten_src = apply_edits(tokenized_src, example_compressed_edits)
+                if ' '.join(rewritten_src) != example['tgt']:
+                    import pdb; pdb.set_trace()
+            
+            _example = copy.deepcopy(example)
+            _example[edits_key] = example_compressed_edits
+            compressed_data.append(_example)
+        
+        return compressed_data
+    
+    if test_data:
+        test_edits_freqs = get_edits(test_data, edits_key)
+        # for each edit in test, choose its compression based on train!
+        # if doesnt appear in train, this means that the edit is not compressable
+        test_final_compressed_edits_map = {
+            edit: final_compressed_edits_map.get(edit, edit) for edit in test_edits_freqs
+        }
+        uncompressable_edits = sum(1 for edit in test_edits_freqs if edit not in final_compressed_edits_map)
+        
+        print(f'Uncompressed Edits: {len(test_edits_freqs)}', flush=True)
+        print(f'Compressed Edits: {len(set(test_final_compressed_edits_map.values()))}', flush=True)
+        print(f'Uncompressable Edits: {uncompressable_edits}', flush=True)
+        
+        return compress_dataset(test_data, test_final_compressed_edits_map)
+    
+    print(f'Uncompressed Edits: {len(get_edits(train_data, edits_key))}', flush=True)
+    print(f'Compressed Edits: {len(set(final_compressed_edits_map.values()))}', flush=True)
+    
+    return compress_dataset(train_data, final_compressed_edits_map)
 
 
 

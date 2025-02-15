@@ -217,23 +217,12 @@ if __name__ == '__main__':
 
     print(split, flush=True)
 
-    # if args.token == '5':
-    #     tokenizer = Tokenizer('tokenizer-5')
-    # elif args.token == '4':
-    #     tokenizer = Tokenizer('tokenizer-4')
-    # elif args.token == '3':
-    #     tokenizer = Tokenizer('tokenizer-3')
-    # else:
-        # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabertv02')
-        # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/ARBERTv2')
-        # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa')
-        # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-mix')
 
     tokenizer = Tokenizer(args.tokenizer)
 
     output_dir = f'{args.dataset}_{args.token}' if args.token else args.dataset
-    output_dir += ('/subword-level' if args.edits_granularity == 'subword'
-                   else  f'/word-level')
+    output_dir += ('/subword-level-check' if args.edits_granularity == 'subword'
+                   else  f'/word-level-check')
 
     if args.create_edits:
         # data = read_data(os.path.join(args.input_data_dir, f'{split}.json'))
@@ -254,9 +243,19 @@ if __name__ == '__main__':
 
     # compressing the data
     if args.compress:
-        data = load_data(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'),
-                         edits_granularity=args.edits_granularity)
-        compressed_data = compress_edits(data, edits_granularity=args.edits_granularity)
+        if split != 'train':
+            test_data = load_data(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'),
+                            edits_granularity=args.edits_granularity)
+            compressed_data = compress_edits(test_data=test_data, edits_granularity=args.edits_granularity,
+                                             compress_map_output_path=os.path.join(args.compress_output_dir, f'{output_dir}/compress_map.json'))
+        else:
+            train_data = load_data(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'),
+                            edits_granularity=args.edits_granularity)
+
+            compressed_data = compress_edits(train_data=train_data, edits_granularity=args.edits_granularity,
+                                             compress_map_output_path=os.path.join(args.compress_output_dir, f'{output_dir}/compress_map.json'))
+
+
         write_json(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}_edits.json'), data=compressed_data, 
                    edits_granularity=args.edits_granularity)
         write_tsv(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}'), data=compressed_data,

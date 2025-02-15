@@ -222,7 +222,7 @@ if __name__ == '__main__':
     tokenizer = Tokenizer(args.tokenizer)
 
     output_dir = f'{args.dataset}_{args.token}' if args.token else args.dataset
-    output_dir += ('/subword-level' if args.edits_granularity == 'subword'
+    output_dir += ('/subword-level-check' if args.edits_granularity == 'subword'
                    else  f'/word-level')
 
     if args.create_edits:
@@ -232,11 +232,19 @@ if __name__ == '__main__':
         # data without pnx edits
         print('Taking out the pnx from the edits...', flush=True)
         no_pnx_edits_data, pnx_edits_data = separate_pnx_edits(data)
+
         # compress no pnx edits
         print('Compressing no pnx edits...', flush=True)
 
-        compressed_no_pnx_data = compress_edits(no_pnx_edits_data, edits_granularity=args.edits_granularity,
-                                                verify=False)
+        if split != 'train':
+            compressed_no_pnx_data = compress_edits(test_data=no_pnx_edits_data, verify=False,
+                                                    edits_granularity=args.edits_granularity,
+                                                    compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_nopnx.json'))
+        else:
+            compressed_no_pnx_data = compress_edits(train_data=no_pnx_edits_data, edits_granularity=args.edits_granularity,
+                                                    verify=False,
+                                                    compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_nopnx.json'))
+            
 
         write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_nopnx.json'),
                    data=compressed_no_pnx_data, edits_granularity=args.edits_granularity)
@@ -252,8 +260,18 @@ if __name__ == '__main__':
 
         # compress pnx edits
         print('Compressing pnx edits...', flush=True)
-        compressed_pnx_data = compress_edits(pnx_edits_data, verify=True if args.create_pnx_edits else False,
-                                             edits_granularity=args.edits_granularity)
+        if split != 'train':
+            compressed_pnx_data = compress_edits(test_data=pnx_edits_data, verify=True,
+                                                 edits_granularity=args.edits_granularity,
+                                                 compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_pnx.json'))
+        else:
+            compressed_pnx_data = compress_edits(train_data=pnx_edits_data, edits_granularity=args.edits_granularity,
+                                                 verify=True,
+                                                 compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_pnx.json'))
+        
+        # the compression 
+        # compressed_pnx_data = compress_edits(data=pnx_edits_data, verify=True if args.create_pnx_edits else False,
+                                            #  edits_granularity=args.edits_granularity)
 
         write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_pnx.json'),
                    data=compressed_pnx_data, edits_granularity=args.edits_granularity)
