@@ -1,0 +1,4 @@
+torch==1.12.1
+transformers==4.30.0
+camel-tools==1.5.2
+datasets==3.2.0
