@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH -p nvidia
-#SBATCH --reservation=nlp
+#SBATCH -q nlp
 # use gpus
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:a100:1
 # Walltime format hh:mm:ss
 #SBATCH --time=47:59:00
 # Output and error files
@@ -18,17 +18,27 @@ module purge
 
 BATCH_SIZE=64
 SEED=42
-pred_mode=train_nopnx
+pred_mode=test
 
 
-checkpoint=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14+zaebuc_x10/pnx_taggers_20_iters/nopnx/checkpoint-500
+# checkpoint=/scratch/ba63/arabic-text-editing/coda_taggers/madar/taggers_arabertv02/madar-prune-10-a100/checkpoint-1500
 
-labels=/scratch/ba63/arabic-text-editing/gec_data/qalb14+zaebuc_x10/pnx_sep/nopnx/qalb14+zaebuc_x10/labels.txt
-test_file=/scratch/ba63/arabic-text-editing/gec_data/qalb14+zaebuc_x10/pnx_sep/nopnx/qalb14+zaebuc_x10/train_nopnx.txt
+# test_file=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data_arabertv02/madar/compressed/test.txt
+# test_file_raw=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data_arabertv02/madar/compressed/test.raw.txt
+# labels=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data_arabertv02/madar-prune-10/compressed/labels.txt
+
+
+checkpoint=/scratch/ba63/arabic-text-editing/coda_taggers/madar/taggers/madar-prune-10-a100/checkpoint-1500
+
+
+test_file=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data/madar/compressed/test.txt
+test_file_raw=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data/madar/compressed/test.raw.txt
+labels=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data/madar-prune-10/compressed/labels.txt
 
 
 python /home/ba63/arabic-text-editing/tagger/tag.py \
-    --file_path $test_file \
+    --tokenized_data_path $test_file \
+    --tokenized_raw_data_path $test_file_raw \
     --labels $labels \
     --model_name_or_path $checkpoint \
     --output_dir $checkpoint \
@@ -37,11 +47,5 @@ python /home/ba63/arabic-text-editing/tagger/tag.py \
     --do_pred \
     --label_pred_output_file ${pred_mode}.preds.txt \
     --rewrite_pred_output_file ${pred_mode}.txt
-
-python tokenize_data.py \
-    --input $checkpoint/${pred_mode}.txt  \
-    --output $checkpoint/${pred_mode}.txt.tokens \
-    --tokenizer_path $checkpoint
-
 
 

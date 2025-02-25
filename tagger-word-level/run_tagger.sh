@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -p nvidia
-#SBATCH -q nlp
+# SBATCH -q nlp
 # use gpus
 #SBATCH --gres=gpu:a100:1
 # Walltime format hh:mm:ss
@@ -18,13 +18,15 @@ module purge
 # SEQ LABELING FINE-TUNING SCRIPT
 ####################################
 
-
-export DATA_DIR=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data_word_level/qalb14/no-compressed
-export BERT_MODEL=/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa
-export OUTPUT_DIR=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14/taggers/qalb14-word-level-no-compressed
+export DATA_DIR=/scratch/ba63/arabic-text-editing/gec_data/qalb14+zaebuc_x10/tagger_data_word_level_arabertv02/compressed
+# export BERT_MODEL=/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa
+# export BERT_MODEL=/scratch/ba63/BERT_models/ARBERTv2
+export BERT_MODEL=/scratch/ba63/BERT_models/bert-base-arabertv02
+export OUTPUT_DIR=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14+zaebuc_x10/taggers_arabertv02_15_iter/qalb14+zaebuc_x10-word-level-a100
 
 export BATCH_SIZE=32
-export NUM_EPOCHS=10
+# export NUM_EPOCHS=10
+export NUM_EPOCHS=15
 export SAVE_STEPS=500
 export SEED=42
 
@@ -42,10 +44,3 @@ python tag.py \
     --do_train \
     --report_to "none" \
     --overwrite_output_dir
-
-
-    # --add_class_weights \
-    # --report_to "wandb" \
-    # --run_name "camelbert-msa-10-cw" \
-        # --continue_train \
-    # --learning_rate 1e-5 \

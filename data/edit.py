@@ -61,7 +61,6 @@ class Edit:
     
             elif src_chars == '' and tgt_chars != '': # Insert
                 edit.append(f'I_[{tgt_chars}]')
-                # edit.extend([f'I_[{tgt_c}]' for tgt_c in tgt_chars])
 
             elif len(src_chars) > len(tgt_chars): # Handle len(src_chars) > len(tgt_chars)
                 edit.append(get_edits(src_chars, tgt_chars))
@@ -290,12 +289,9 @@ class SubwordEdits:
         assert len(subwords) == len(raw_subwords)
 
         if len(subwords) == 0 and edit.startswith('I'):
-            # return cls(subwords, [SubwordEdit('', compress_edit(edit))])
-            return cls(subwords, [SubwordEdit('', '', compress_edit_new(edit))])
-            # return cls(subwords, [SubwordEdit('', edit)])
+            return cls(subwords, [SubwordEdit('', '', compress_edit(edit))])
 
         if edit == 'K':
-            # return cls(subwords, [SubwordEdit(subword, 'K*') for subword in subwords])
             return cls(subwords, [SubwordEdit(subword, raw_subword, 'K')
                                   for subword, raw_subword in zip(subwords, raw_subwords)])
 
@@ -366,13 +362,8 @@ class SubwordEdits:
         assert len(subword_edits) == len(subwords) == len(raw_subwords)
 
         # compressing edits
-        # subword_edits = [SubwordEdit(subword, compress_edit(edit))
-        #                  for subword, edit in zip(subwords, subword_edits)]
-
-        subword_edits = [SubwordEdit(subword, raw_subword, compress_edit_new(edit))
+        subword_edits = [SubwordEdit(subword, raw_subword, compress_edit(edit))
                          for subword, raw_subword, edit in zip(subwords, raw_subwords, subword_edits)]
-
-        # subword_edits = [SubwordEdit(subword, edit) for subword, edit in zip(subwords, subword_edits)]
 
         return subword_edits
 
@@ -418,102 +409,16 @@ def get_edits(src_chars, tgt_chars):
         if i < len(src_chars): # delete the rest of the src chars
             return  edit +  ''.join(['D' * len(src_chars[i:])])
         return edit
-        # return ''.join(['D' if c != ' ' else 'S' for c in src_chars] + [f'I_[{c}]' for c in tgt_chars])
 
 
 def is_merge(aligned_src_chars, aligned_tgt_chars):
     return ''.join([c for c in aligned_src_chars if c != ' ']) == ''.join(aligned_tgt_chars)
 
 
-# def compress_edit(edit):
-#     """Compresses edit string by reducing repeated operations"""
-#     grouped_edits = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|D+|K+|.', edit)
-#     grouped_edits = compress_insertions(grouped_edits) # reducing multiple insertions into one
-
-#     if len(grouped_edits) == 1 and len(set(grouped_edits[0])) == 1: #e.g., KKK -> K, DDDD -> D
-#         return grouped_edits[0][0]
-    
-#     elif grouped_edits[0] == 'K' * len(grouped_edits[0]):
-#         if len(grouped_edits) == 2: #e.g., KKKR_[X] -> K*R_[x]
-#             return 'K*' + grouped_edits[1]
-        
-#         elif grouped_edits[1].startswith('R_') or grouped_edits[1] == 'D': #e.g., KKKR_[x]I -> K*R_[x]I, KKKR_[x]DI -> K*R_[x]DI
-#             if all(l.startswith('I_') for l in grouped_edits[2:]):
-#                 return 'K*' + grouped_edits[1] + ''.join(grouped_edits[2:])
-
-#     return re.sub('K+$', 'K*', ''.join(grouped_edits))
-
-
-
-# def compress_edit(edit):
-#     """Compresses edit string by reducing repeated operations"""
-#     grouped_edits = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|D+|K+|.', edit)
-#     grouped_edits = compress_insertions(grouped_edits) # reducing multiple insertions into one
-
-
-#     if len(grouped_edits) == 1 and len(set(grouped_edits[0])) == 1: #e.g., KKK -> K, DDDD -> D
-#         return grouped_edits[0][0]
-    
-#     elif grouped_edits[0] == 'K' * len(grouped_edits[0]):
-#         if len(grouped_edits) == 2: #e.g., KKKR_[X] -> K*R_[x]
-#             return 'K*' + grouped_edits[1]
-        
-#         elif grouped_edits[1].startswith('R_') or grouped_edits[1] == 'D': #e.g., KKKR_[x]I -> K*R_[x]I, KKKR_[x]DI -> K*R_[x]DI
-#             if all(l.startswith('I_') for l in grouped_edits[2:]):
-#                 return 'K*' + grouped_edits[1] + ''.join(grouped_edits[2:])
-
-#     compressed_edit = compress_keeps_deletes(grouped_edits, compress_k=True)
-#     return compressed_edit
-    # return re.sub('K+$', 'K*', ''.join(grouped_edits))
-
-
-
-def compress_edit_new(edit):
+def compress_edit(edit):
     grouped_edits = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|A_\[.*?\]+|D+|K+|.', edit)
     grouped_edits = compress_insertions(grouped_edits) # reducing multiple insertions into one
     return ''.join(grouped_edits)
-
-
-
-
-    # if len(grouped_edits) == 1 and len(set(grouped_edits[0])) == 1: # KKKK -> K*, DDDD -> D*
-    #     return grouped_edits[0][0] + '*'
-
-    # # Handle cases where there are two groups with 'K' and 'D'
-    # # compress the longer sequence
-    # if len(grouped_edits) == 2:
-    #     first, second = list(set(grouped_edits[0]))[0], list(set(grouped_edits[1]))[0]
-    #     if (first == 'K' and second == 'D') or (first == 'D' and second == 'K'):
-    #         if len(grouped_edits[0]) > len(grouped_edits[1]):
-    #             return f'{first}*' + grouped_edits[1]
-    #         else:
-    #             return grouped_edits[0] + f'{second}*'
-
-    # seen_edits = []
-    # compressed_edit = []
-
-    # # compress Ks and Ds greedily from the end of the edit
-    # for i in range(len(grouped_edits) - 1, -1, -1):
-    #     _edit = grouped_edits[i]
-    #     comp_edit = ''
-
-    #     if _edit != 'M' and len(set(_edit)) == 1:
-    #         comp_edit = _edit[0]
-    #         assert comp_edit in ['K', 'D']
-        
-    #     if len(seen_edits) <= 1 and comp_edit:
-    #         compressed_edit = [f'{comp_edit}*'] + compressed_edit
-    #         return ''.join([grouped_edits[x] for x in range(0, i)] + compressed_edit)
-        
-    #     else:
-    #         compressed_edit = [_edit] + compressed_edit
-        
-    #     if not _edit.startswith('I') and not _edit.startswith('A'):
-    #         seen_edits.append(_edit)
-
-    # return ''.join(compressed_edit)
-
-
 
 
 def compress_insertions(edits):

@@ -4,7 +4,6 @@ from alignment.aligner import word_level_alignment, char_level_alignment
 from edit import Edit, SubwordEdits, SubwordEdit
 from utils import (apply_edits, insert_to_append, compress_edits, write_json,
                    load_data, separate_pnx_edits, write_tsv, get_stats, prune_edits, prune_edits_corr)
-import re
 import argparse
 import os
 from concurrent.futures import ProcessPoolExecutor, as_completed

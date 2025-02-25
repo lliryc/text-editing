@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 def read_examples_from_file(file_path):
     guid_index = 1
-    examples = {'words': [], 'labels': []}
+    examples = {'words': [], 'edits': []}
 
     with open(file_path, encoding="utf-8") as f:
         words = []
@@ -22,23 +22,23 @@ def read_examples_from_file(file_path):
             if line.startswith("-DOCSTART-") or line == "" or line == "\n":
                 if words:
                     examples['words'].append(words)
-                    examples['labels'].append(labels)
+                    examples['edits'].append(labels)
                     guid_index += 1
                     words = []
                     labels = []
             else:
                 splits = line.split("\t")
-                words.append(splits[0])
+                words.append(splits[0].replace("\n", ""))
                 if len(splits) > 1:
                     labels.append(splits[-1].replace("\n", ""))
                 else:
                     # Examples could have no label for mode = "test"
                     # This is needed to get around the Trainer evaluation
-                    # labels.append("K") # No Compress Exp
-                    labels.append("K*") # place holder
+                    labels.append("K") # No Compress Exp
+                    # labels.append("K*") # place holder 
         if words:
             examples['words'].append(words)
-            examples['labels'].append(labels)
+            examples['edits'].append(labels)
 
     dataset = Dataset.from_dict(examples)
     return dataset
@@ -53,7 +53,7 @@ def process(examples, label_list: List[str], tokenizer: PreTrainedTokenizer):
     tokenized_inputs = tokenizer(examples_tokens, is_split_into_words=True)
 
     labels = []
-    examples_labels = [labels for labels in examples['labels']]
+    examples_labels = [labels for labels in examples['edits']]
 
     for i, ex_labels in enumerate(examples_labels):
 
@@ -67,7 +67,11 @@ def process(examples, label_list: List[str], tokenizer: PreTrainedTokenizer):
 
             elif word_idx != previous_word_idx:  # Only label the first token of a given word.
                 label = ex_labels[word_idx]
-                label_ids.append(label_map[label])
+                if label not in label_map:
+                    label_ids.append(label_map['K']) # No Compress Exp
+                    # label_ids.append(label_map['K*'])
+                else:
+                    label_ids.append(label_map[label])
 
             else:
                 label_ids.append(-100)
@@ -102,7 +106,7 @@ class TokenClassificationDataset(torch.utils.data.Dataset):
 
         examples_tokens = [words for words in examples['words']]
 
-        examples_labels = [labels for labels in examples['labels']]
+        examples_labels = [labels for labels in examples['edits']]
 
         featurized_inputs = []
 
@@ -144,7 +148,7 @@ class TokenClassificationDataset(torch.utils.data.Dataset):
                     features = {'input_ids': input_ids,
                                 'attention_mask': [1] * len(input_ids),
                                 'token_type_ids': [0] * len(input_ids),
-                                'labels': label_ids_segment,
+                                'edits': label_ids_segment,
                                 'sent_id': ex_id
                                 }
 
@@ -170,7 +174,7 @@ class TokenClassificationDataset(torch.utils.data.Dataset):
                 features = {'input_ids': input_ids,
                             'attention_mask': [1] * len(input_ids),
                             'token_type_ids': [0] * len(input_ids),
-                            'labels': label_ids_segment,
+                            'edits': label_ids_segment,
                             'sent_id': ex_id
                             }
 
@@ -201,7 +205,7 @@ def load_ged_labels(path):
             else:
                 labels.append(sent_labels)
                 sent_labels = []
-        
+
         if sent_labels:
             labels.append(sent_labels)
     return labels

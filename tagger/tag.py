@@ -27,12 +27,12 @@ import json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from edits.edit import SubwordEdit
 from m2scorer import m2scorer
-from util.postprocess import remove_pnx, pnx_tokenize
+from util.postprocess import remove_pnx, pnx_tokenize, space_clean
+
 from camel_tools.disambig.bert import BERTUnfactoredDisambiguator
 from camel_tools.utils.dediac import dediac_ar
 
 # os.environ["WANDB_PROJECT"]="universal_gec_qalb14"
-
 
 logger = logging.getLogger(__name__)
 
@@ -113,8 +113,11 @@ class DataTrainingArguments:
     training and eval.
     """
 
-    file_path: str = field(
+    tokenized_data_path: str = field(
         metadata={"help": "The input file path."}
+    )
+    tokenized_raw_data_path: str = field(
+        default=None, metadata={"help": "The input file path."}
     )
     labels: Optional[str] = field(
         default=None,
@@ -207,7 +210,7 @@ def main():
     class_weights = None
 
     if training_args.do_train:
-        train_dataset = read_examples_from_file(file_path=data_args.file_path)
+        train_dataset = read_examples_from_file(file_path=data_args.tokenized_data_path)
         if model_args.add_class_weights:
             class_weights = compute_class_weights(training_data=train_dataset, weight_threshold=500,
                                                   labels_map={label: i for i, label in enumerate(labels)})
@@ -258,11 +261,12 @@ def main():
 
     # Predict
     if training_args.do_predict:
-        test_dataset =  read_examples_from_file(file_path=data_args.file_path)
+        test_dataset =  read_examples_from_file(file_path=data_args.tokenized_data_path)
+        raw_test_dataset =  read_examples_from_file(file_path=data_args.tokenized_raw_data_path)
         test_dataset = test_dataset.map(process,
                                         fn_kwargs={"label_list": labels, "tokenizer": tokenizer},
                                         batched=True,
-                                        desc=f"Running tokenizer on {data_args.file_path}")
+                                        desc=f"Running tokenizer on {data_args.tokenized_data_path}")
 
         pred_edits, preds_probs = predict(model=model, test_dataset=test_dataset,
                                           collate_fn=data_collator,
@@ -315,10 +319,12 @@ def main():
                     writer.write('\n')
 
         else:
-            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=test_dataset['subwords'], edits=pred_edits)
+            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=raw_test_dataset['subwords'], edits=pred_edits)
 
             # Clean generated output by separating pnx and extra white space
             detok_pred_rewrites = pnx_tokenize(detok_pred_rewrites)
+            # detok_pred_rewrites = space_clean(detok_pred_rewrites)
+            
 
             if model_args.morph_gec:
                 model = BERTUnfactoredDisambiguator.pretrained(pretrained_cache=False)
@@ -463,7 +469,7 @@ def _align_predictions(predictions, label_ids, label_map, keep_confidence_bias=N
         for j in range(seq_len):
             if label_ids[i, j] != nn.CrossEntropyLoss().ignore_index:
                 if pred_threshold:
-                    if probs[i][j] <= pred_threshold:
+                    if probs[i][j] < pred_threshold:
                         preds_list[i].append('K*')
                         # preds_list[i].append(label_map[topk_preds[i][j][1]])
                     else:

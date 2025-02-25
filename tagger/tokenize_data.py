@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from edits.tokenizer import Tokenizer
+from data.tokenizer import Tokenizer
 
 def read_data(path):
     with open(path) as f:
@@ -21,15 +21,16 @@ def write_data(data, path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--input')
-    parser.add_argument('--output')
     parser.add_argument('--tokenizer_path')
     args = parser.parse_args()
 
 
     tokenizer = Tokenizer(args.tokenizer_path)
     data = read_data(args.input)
-    tokenized_data = [tokenizer.tokenize(example, flatten=True) for example in data]
-    write_data(tokenized_data, args.output)
+    tokenized_data_raw = [tokenizer.tokenize(example, flatten=True)[0] for example in data]
+    tokenized_data = [tokenizer.tokenize(example, flatten=True)[1] for example in data]
+    write_data(tokenized_data, f'{args.input}.tokens')
+    write_data(tokenized_data_raw, f'{args.input}.raw.tokens')
 
 
 

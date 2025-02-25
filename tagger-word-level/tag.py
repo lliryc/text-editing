@@ -27,7 +27,7 @@ import json
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from edits.edit import SubwordEdit
 from m2scorer import m2scorer
-from util.postprocess import remove_pnx, pnx_tokenize
+from util.postprocess import remove_pnx, pnx_tokenize, space_clean
 from camel_tools.disambig.bert import BERTUnfactoredDisambiguator
 from camel_tools.utils.dediac import dediac_ar
 
@@ -295,11 +295,11 @@ def main():
 
         if model_args.ged_path:
             ged_labels = load_ged_labels(model_args.ged_path)
-            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite_w_ged(subwords=test_dataset['subwords'],
+            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite_w_ged(subwords=test_dataset['words'],
                                                                               edits=pred_edits,
                                                                               ged_labels=ged_labels)
         elif model_args.topk_pred and model_args.debug_mode:
-            pred_rewrites = rewrite_topk(subwords=test_dataset['subwords'], edits=pred_edits)
+            pred_rewrites = rewrite_topk(subwords=test_dataset['words'], edits=pred_edits)
             rewrite_pred_output_file = os.path.join(training_args.output_dir,
                                                     data_args.rewrite_pred_output_file)
             with open(rewrite_pred_output_file, "w", encoding="utf-8") as writer:
@@ -315,10 +315,12 @@ def main():
                     writer.write('\n')
 
         else:
-            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=test_dataset['subwords'], edits=pred_edits)
+            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=test_dataset['words'], edits=pred_edits)
 
             # Clean generated output by separating pnx and extra white space
             detok_pred_rewrites = pnx_tokenize(detok_pred_rewrites)
+            # detok_pred_rewrites= space_clean(detok_pred_rewrites)
+
 
             if model_args.morph_gec:
                 model = BERTUnfactoredDisambiguator.pretrained(pretrained_cache=False)
@@ -369,7 +371,7 @@ def predict(model, test_dataset, collate_fn, label_map, topk_pred=True, keep_con
     logger.info(f"  Num examples = {len(test_dataset)}")
     logger.info(f"  Batch size = {batch_size}")
 
-    data_loader = DataLoader(test_dataset.remove_columns(['subwords', 'edits']),
+    data_loader = DataLoader(test_dataset.remove_columns(['words', 'edits']),
                              batch_size=batch_size,
                              shuffle=False, drop_last=False, collate_fn=collate_fn)
 

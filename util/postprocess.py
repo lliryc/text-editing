@@ -73,6 +73,20 @@ def pnx_tokenize(data):
 
     return pnx_tokenized
 
+
+def space_clean(data):
+    space_re = re.compile(' +')
+
+    space_cleaned = []
+    for line in data:
+        line = line.strip()
+        line = space_re.sub(' ', line)
+        line = line.strip()
+        space_cleaned.append(line)
+
+    return space_cleaned
+
+
 def remove_pnx(data):
     pnx_re = re.compile(r'([' + re.escape(puncs) + '])')
     space_re = re.compile(' +')

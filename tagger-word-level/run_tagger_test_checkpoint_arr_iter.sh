@@ -10,7 +10,7 @@
 # Output and error files
 #SBATCH -o job.%J.%A.out
 #SBATCH -e job.%J.%A.err
-#SBATCH --array=0-12
+#SBATCH --array=0-19
 
 nvidia-smi
 module purge
@@ -22,83 +22,58 @@ module purge
 BATCH_SIZE=64
 SEED=42
 pred_mode=dev
-var=qalb14_3
+
+# test_file=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data_word_level_arbertv2/qalb14/no-compressed/dev.txt
+test_file=/scratch/ba63/arabic-text-editing/gec_data/zaebuc/tagger_data_word_level_arbertv2/zaebuc/dev.txt
+
+sys=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14+zaebuc_x10/taggers_arbertv2_15_iter/qalb14+zaebuc_x10-word-level-no-compressed-a100
+labels=/scratch/ba63/arabic-text-editing/gec_data/qalb14+zaebuc_x10/tagger_data_word_level_arbertv2/no-compressed/labels.txt
 
 
-test_file=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data_word_level/qalb14/no-compressed/dev.txt
+# sys=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14+zaebuc_x10/taggers/qalb14+zaebuc_x10-word-level-a100
+# labels=/scratch/ba63/arabic-text-editing/gec_data/qalb14+zaebuc_x10/tagger_data_word_level/compressed/labels.txt
 
 
-# test_file=/scratch/ba63/arabic-text-editing/tagger_data/pnx_sep/pnx/${var}/dev_pnx.txt
-# test_file=/scratch/ba63/arabic-text-editing/tagger_data/pnx_sep/nopnx/${var}/dev_nopnx.txt
+# test_file=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data_word_level/madar/compressed/dev.txt
 
-# test_file=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14+zaebuc_x10/pnx_taggers_20_iters/nopnx/checkpoint-7500/dev.txt.3.tokens
-# test_file=/scratch/ba63/arabic-text-editing/gec_data/zaebuc/pnx_sep/pnx/zaebuc/dev_pnx.txt
-# test_file=/scratch/ba63/arabic-text-editing/coda_data/madar-arabertv02-large/madar/dev.txt
-
-# test_file=/scratch/ba63/arabic-text-editing/gec_data/zaebuc/zaebuc/dev.txt
-
-sys=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14/taggers/qalb14-word-level-no-compressed
-labels=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data_word_level/qalb14/no-compressed/labels.txt
-
-
-# test_file=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data+morph/qalb14/dev.txt
-
-# sys=/scratch/ba63/arabic-text-editing/gec_taggers/qalb14/taggers+morph/pnx_sep_prune_30_cor/nopnx/${var}
-# labels=/scratch/ba63/arabic-text-editing/gec_data/qalb14/tagger_data+morph/pnx_sep_prune_30_cor/nopnx/${var}/labels.txt
-
-# test_file=/scratch/ba63/arabic-text-editing/coda_data/madar/madar/dev.txt
-# sys=/scratch/ba63/arabic-text-editing/coda_taggers/taggers/madar-mix
-# labels=/scratch/ba63/arabic-text-editing/coda_data/madar/madar/labels.txt
+# sys=/scratch/ba63/arabic-text-editing/coda_taggers/madar/taggers/madar-word-level-a100
+# labels=/scratch/ba63/arabic-text-editing/coda_data/madar/tagger_data_word_level/madar/compressed/labels.txt
 
 
 
 # Array of checkpoints
-checkpoints=(
-  "${sys}"
-  "${sys}/checkpoint-500"
-  "${sys}/checkpoint-1000"
-  "${sys}/checkpoint-1500"
-  "${sys}/checkpoint-2000"
-  "${sys}/checkpoint-2500"
-  "${sys}/checkpoint-3000"
-  "${sys}/checkpoint-3500"
-  "${sys}/checkpoint-4000"
-  "${sys}/checkpoint-4500"
-  "${sys}/checkpoint-5000"
-  "${sys}/checkpoint-5500"
-  "${sys}/checkpoint-6000"
-)
-
 # checkpoints=(
-#     "${sys}"
-#     "${sys}/checkpoint-1000"
-#     "${sys}/checkpoint-10000"
-#     "${sys}/checkpoint-10500"
-#     "${sys}/checkpoint-11000"
-#     "${sys}/checkpoint-11500"
-#     "${sys}/checkpoint-12000"
-#     "${sys}/checkpoint-12500"
-#     "${sys}/checkpoint-13000"
-#     "${sys}/checkpoint-1500"
-#     "${sys}/checkpoint-2000"
-#     "${sys}/checkpoint-2500"
-#     "${sys}/checkpoint-3000"
-#     "${sys}/checkpoint-3500"
-#     "${sys}/checkpoint-4000"
-#     "${sys}/checkpoint-4500"
-#     "${sys}/checkpoint-500"
-#     "${sys}/checkpoint-5000"
-#     "${sys}/checkpoint-5500"
-#     "${sys}/checkpoint-6000"
-#     "${sys}/checkpoint-6500"
-#     "${sys}/checkpoint-7000"
-#     "${sys}/checkpoint-7500"
-#     "${sys}/checkpoint-8000"
-#     "${sys}/checkpoint-8500"
-#     "${sys}/checkpoint-9000"
-#     "${sys}/checkpoint-9500"
+#   "${sys}"
+#   "${sys}/checkpoint-500"
+#   "${sys}/checkpoint-1000"
+#   "${sys}/checkpoint-1500"
+#   "${sys}/checkpoint-2000"
 # )
 
+
+# Array of checkpoints
+checkpoints=(
+    "${sys}" 
+    "${sys}/checkpoint-500" 
+    "${sys}/checkpoint-1000" 
+    "${sys}/checkpoint-1500" 
+    "${sys}/checkpoint-2000" 
+    "${sys}/checkpoint-2500" 
+    "${sys}/checkpoint-3000" 
+    "${sys}/checkpoint-3500" 
+    "${sys}/checkpoint-4000"
+    "${sys}/checkpoint-4500"
+    "${sys}/checkpoint-5000"
+    "${sys}/checkpoint-5500" 
+    "${sys}/checkpoint-6000" 
+    "${sys}/checkpoint-6500" 
+    "${sys}/checkpoint-7000"  
+    "${sys}/checkpoint-7500" 
+    "${sys}/checkpoint-8000" 
+    "${sys}/checkpoint-8500"  
+    "${sys}/checkpoint-9000" 
+    "${sys}/checkpoint-9500"
+)
 
 checkpoint=${checkpoints[$SLURM_ARRAY_TASK_ID]}
 
@@ -116,7 +91,7 @@ do
         echo $test_file
     fi
 
-    python /home/ba63/arabic-text-editing/tagger/tag.py \
+    python tag.py \
         --file_path $test_file \
         --labels $labels \
         --model_name_or_path $checkpoint \
@@ -127,22 +102,6 @@ do
         --label_pred_output_file ${pred_mode}.preds.txt.${i} \
         --rewrite_pred_output_file ${pred_mode}.txt.${i}
 
-        python tokenize_data.py \
-            --input $checkpoint/${pred_mode}.txt.${i}  \
-            --output $checkpoint/${pred_mode}.txt.${i}.tokens \
-            --tokenizer_path $checkpoint
+        awk '{for (i=1; i<=NF; i++) print $i; print ""}' $checkpoint/${pred_mode}.txt.${i} > $checkpoint/${pred_mode}.txt.${i}.tokens
+
 done
-
-
-
-
-# # Evaluation
-# paste $DATA_DIR/${pred_mode}.txt $checkpoint/${pred_mode}.preds.txt${topk_pred} \
-#     > $checkpoint/eval_data_${pred_mode}.txt
-
-# python /home/ba63/arabic-text-editing/tagger/evaluate.py \
-#     --data $checkpoint/eval_data_${pred_mode}.txt \
-#     --labels $LABELS \
-#     --output $checkpoint/${pred_mode}.results${topk_pred}
-
-# rm $checkpoint/eval_data_${pred_mode}.txt
