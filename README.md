@@ -14,7 +14,7 @@ cd text-editing
 conda create -n text-editing python=3.10
 conda activate text-editing
 
-pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Experiments and Reproducibility:
