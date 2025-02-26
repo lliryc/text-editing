@@ -5,6 +5,8 @@ INSTALL_REQUIRES = [
     "datasets==3.2.0",
     "torch==1.12.1",
     "transformers==4.30.0",
+    "numpy==1.26.4",
+    "accelerate==0.26.1",
     "editdistance",
     "camel-tools==1.5.2",
     "pydantic==1.7.4",
