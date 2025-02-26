@@ -7,6 +7,8 @@ INSTALL_REQUIRES = [
     "transformers==4.30.0",
     "editdistance",
     "camel-tools==1.5.2",
+    "pydantic==1.7.4",
+    "jinja2"
 ]
 
 setup(
