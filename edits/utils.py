@@ -1,5 +1,5 @@
 import re
-from edit import SubwordEdit, Edit
+from edit import SubwordEdit
 from collections import defaultdict, Counter
 import json
 import copy
@@ -7,75 +7,90 @@ from string import punctuation
 from camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
 
 
-def get_edits(data):
+def get_edits(data, edits_granularity):
     """
     Gets all of the edits in data and their frequencies
     """
     edits = []
     for example in data:
-        for edit in example['subword-edits-append']:
+        for edit in example[edits_granularity]:
             edits.append(edit.edit)
 
     return dict(Counter(edits))
 
 
-def compress_edits(data, verify=True):
-    edits_freqs = get_edits(data)
-    compressed_edits = []
-    compressed_edits_map = dict()
+def compress_edits(train_data=None, test_data=None, edits_granularity='subword', verify=True, compress_map_output_path=None):
+    edits_key = 'subword-edits-append' if edits_granularity == 'subword' else 'word-edits-append'
 
-    # get the compressed edits and their frequency over edit types
-    for edit in edits_freqs:
-        compressed_edit = compress_edit(edit)
-        compressed_edits.extend(compressed_edit)
-        compressed_edits_map[edit] = {e: edits_freqs[edit] for e in compressed_edit}
-
-
-    compressed_edits_freqs = Counter(compressed_edits)
-
-    # choose the compression for each edit based on a freq score
-    final_compressed_edits_map = dict()
-
-    for edit in compressed_edits_map:
-        compressed_edits = compressed_edits_map[edit]
-        # most_comm = max(compressed_edits, key=lambda x: x[1])[0]
-        compressed_edit_freq = [(comp_edit, compressed_edits_freqs[comp_edit])
-                                for comp_edit in compressed_edits]
-
-        most_comm = max(compressed_edit_freq, key=lambda x: x[1])[0]
-        final_compressed_edits_map[edit] = most_comm
-    
-
-    print(f'Uncompressed Edits', flush=True)
-    print(len(edits_freqs))
-    final_compressed_edits_freqs = Counter(final_compressed_edits_map.values())
-    print(f'Compressed edits', flush=True)
-    print(len(final_compressed_edits_freqs))
-
-
-    # compressing the edits over the entire dataset
-    compressed_data = []
-    for example in data:
-        example_compressed_edits = []
-        example_edits = example['subword-edits-append']
-        for subword_edit in example_edits:
-            edit = SubwordEdit(subword_edit.subword,
-                               final_compressed_edits_map[subword_edit.edit])
-            example_compressed_edits.append(edit)
+    def generate_compressed_map(edits_freqs):
+        compressed_edits = []
+        compressed_edits_map = {}
+        # get the compressed edits and their frequency over edit types
+        for edit, freq in edits_freqs.items():
+            compressed_edit = compress_edit(edit)
+            compressed_edits.extend(compressed_edit)
+            compressed_edits_map[edit] = {e: freq for e in compressed_edit}
         
-        # verifying the compression
-        if verify:
-            tokenized_src = [ex.subword for ex in example_edits]
-
-            rewritten_src = apply_edits(tokenized_src, example_compressed_edits)
-            if ' '.join(rewritten_src) != example['tgt']:
-                import pdb; pdb.set_trace()
-
-        _example = copy.deepcopy(example)
-        _example['subword-edits-append'] = example_compressed_edits
-        compressed_data.append(_example)
+        compressed_edits_freqs = Counter(compressed_edits)
+        # choose the compression that appears the most for each edit
+        return {
+            edit: max(compressed_edits_map[edit], key=lambda e: compressed_edits_freqs[e])
+            for edit in compressed_edits_map
+        }
     
-    return compressed_data
+    # if we are compressing over train, generate the map of comrpession and save it!
+    if train_data is not None:
+        final_compressed_edits_map = generate_compressed_map(get_edits(train_data, edits_key))
+        with open(compress_map_output_path, mode='w') as f:
+            json.dump(final_compressed_edits_map, f, ensure_ascii=False)
+
+    # if we are compressing over test/dev, load the compression map
+    else:
+        with open(compress_map_output_path) as f:
+            final_compressed_edits_map = json.load(f)
+
+    
+    def compress_dataset(dataset, compressed_map):
+         # compressing the edits over the entire dataset
+        compressed_data = []
+        
+        for example in dataset:
+            example_compressed_edits = [
+                SubwordEdit(edit.subword, edit.raw_subword, compressed_map.get(edit.edit, edit.edit))
+                for edit in example[edits_key]
+            ]
+            
+            if verify:
+                tokenized_src = [edit.raw_subword for edit in example[edits_key]]
+                rewritten_src = apply_edits(tokenized_src, example_compressed_edits)
+                if ' '.join(rewritten_src) != example['tgt']:
+                    import pdb; pdb.set_trace()
+            
+            _example = copy.deepcopy(example)
+            _example[edits_key] = example_compressed_edits
+            compressed_data.append(_example)
+        
+        return compressed_data
+    
+    if test_data:
+        test_edits_freqs = get_edits(test_data, edits_key)
+        # for each edit in test, choose its compression based on train!
+        # if doesnt appear in train, this means that the edit is not compressable
+        test_final_compressed_edits_map = {
+            edit: final_compressed_edits_map.get(edit, edit) for edit in test_edits_freqs
+        }
+        uncompressable_edits = sum(1 for edit in test_edits_freqs if edit not in final_compressed_edits_map)
+        
+        print(f'Uncompressed Edits: {len(test_edits_freqs)}', flush=True)
+        print(f'Compressed Edits: {len(set(test_final_compressed_edits_map.values()))}', flush=True)
+        print(f'Uncompressable Edits: {uncompressable_edits}', flush=True)
+        
+        return compress_dataset(test_data, test_final_compressed_edits_map)
+    
+    print(f'Uncompressed Edits: {len(get_edits(train_data, edits_key))}', flush=True)
+    print(f'Compressed Edits: {len(set(final_compressed_edits_map.values()))}', flush=True)
+    
+    return compress_dataset(train_data, final_compressed_edits_map)
 
 
 
@@ -99,30 +114,31 @@ def compress_edit(edit):
 
 
 
-def insert_to_append(subword_edits):
+def insert_to_append(edits):
     """
     Converts insert edits to append edits when possible and compresses them.
     
     Args:
-        subword_edits (list of SubwordEdit): List of subword edits.
+        edits (list of SubwordEdit or list of Edit): List of edits.
     
     Returns:
-        list of SubwordEdit: Updated subword edits with insertions transformed into appends.
+        list of edits: Updated subword (or word) edits with insertions transformed into appends.
     """
     processed_edits = []
     start_inserts = []
 
-    subwords = [edit.subword for edit in subword_edits] # getting the subwords for book keeping
+    subwords = [edit.subword for edit in edits] # getting the subwords for book keeping
+    raw_subwords = [edit.raw_subword for edit in edits]
 
-    for subword_edit in subword_edits:
-        # Extract individual edits from subword edit
-        subword_edit_parts = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|K\*|.', subword_edit.edit)
-        all_inserts = all(edit.startswith('I_[') for edit in subword_edit_parts)
+    for edit in edits:
+        # Extract individual edits from the edit
+        edit_parts = re.findall(r'I_\[.*?\]+|R_\[.*?\]+|K\*|.', edit.edit)
+        all_inserts = all(edit.startswith('I_[') for edit in edit_parts)
 
-        if all_inserts:  # If entire subword edit consists of insertions, convert to append
-            assert subword_edit.subword == ''
+        if all_inserts:  # If entire subword of the edit consists of insertions, convert to append
+            assert edit.subword == ''
 
-            append_edit = ''.join(re.sub(r'^I', r'A', edit) for edit in subword_edit_parts)
+            append_edit = ''.join(re.sub(r'^I', r'A', edit) for edit in edit_parts)
 
             if processed_edits:
                 # Append to the last processed edit
@@ -133,21 +149,23 @@ def insert_to_append(subword_edits):
         else:
             if start_inserts:
                 # Add append edits before current edit
-                processed_edits.append(compress_appends(''.join(start_inserts) + ''.join(subword_edit_parts)))
+                processed_edits.append(compress_appends(''.join(start_inserts) + ''.join(edit_parts)))
                 start_inserts = []
             else:
-                processed_edits.append(''.join(subword_edit_parts))
+                processed_edits.append(''.join(edit_parts))
 
     # coverting the edits to objects
     subwords = [subword for subword in subwords if subword != '']
+    raw_subwords = [subword for subword in raw_subwords if subword != '']
 
-    assert len(processed_edits) == len(subwords)
+    assert len(processed_edits) == len(subwords) == len(raw_subwords)
 
     # Special case for appends at the beginning of the sequence
     if processed_edits[0].startswith('A') and re.sub(r'A_\[.*?\]', '', processed_edits[0]) == 'K':
         processed_edits[0] = processed_edits[0].replace('K', 'K' * len(subwords[0].replace('##', '')))
 
-    processed_edits = [SubwordEdit(subword, edit) for subword, edit in zip(subwords, processed_edits)]
+    processed_edits = [SubwordEdit(subword, raw_subword, edit)
+                       for subword, raw_subword, edit in zip(subwords, raw_subwords, processed_edits)]
 
     return processed_edits
 
@@ -252,12 +270,17 @@ def apply_edits_subwords(tokenized_text, edits, pruned_edits):
     return rewritten_txt, _pruned_edits
 
 
-def prune_edits(data, k):
+def prune_edits(data, k, edits_granularity='subword'):
+    if edits_granularity == 'subword':
+        edits_key = 'subword-edits-append'
+    else:
+        edits_key = 'word-edits-append'
+
     all_edits = []
     for example in data:
-        example_edits = example['subword-edits-append']
+        example_edits = example[edits_key]
         for subword_edit in example_edits:
-            subword, edit = subword_edit.subword, subword_edit.edit
+            subword, raw_subword, edit = subword_edit.subword, subword_edit.raw_subword, subword_edit.edit
             all_edits.append(edit)
     
     edits_cnt = Counter(all_edits)
@@ -265,27 +288,32 @@ def prune_edits(data, k):
 
     for example in data:
         _example = copy.deepcopy(example)
-        example_edits = _example['subword-edits-append']
+        example_edits = _example[edits_key]
         pruned_edits = []
 
         for subword_edit in example_edits:
-            subword, edit = subword_edit.subword, subword_edit.edit
+            subword, raw_subword, edit = subword_edit.subword, subword_edit.raw_subword, subword_edit.edit
             if edits_cnt[edit] > k:
                 pruned_edits.append(subword_edit)
             else:
-                pruned_edits.append(SubwordEdit(subword, 'K*'))
+                pruned_edits.append(SubwordEdit(subword, raw_subword, 'K*'))
         
-        _example['subword-edits-append'] = pruned_edits
+        _example[edits_key] = pruned_edits
         _pruned_data.append(_example)
     
     return _pruned_data
 
 
 
-def prune_edits_corr(data, k):
+def prune_edits_corr(data, k, edits_granularity):
+    if edits_granularity == 'subword':
+        edits_key = 'subword-edits-append'
+    else:
+        edits_key = 'word-edits-append'
+
     all_edits = []
     for example in data:
-        example_edits = example['subword-edits-append']
+        example_edits = example[edits_key]
         for subword_edit in example_edits:
             subword, edit = subword_edit.subword, subword_edit.edit
             all_edits.append(edit)
@@ -297,7 +325,7 @@ def prune_edits_corr(data, k):
 
     for example in data:
         _example = copy.deepcopy(example)
-        example_edits = _example['subword-edits-append']
+        example_edits = _example[edits_key]
         pruned_edits = []
         edits_to_apply = []
         pruned = False
@@ -316,10 +344,10 @@ def prune_edits_corr(data, k):
             # we will apply the edits that got removed and replace them by K*
             # this has to be done carefully so that the new subwords match the number of pruned edits
             new_tokenized_src, pruned_edits = apply_edits_subwords(tokenized_src, edits_to_apply, pruned_edits)
-            _example['subword-edits-append'] = [SubwordEdit(subword, edit.edit) for
+            _example[edits_key] = [SubwordEdit(subword, edit.edit) for
                                                 subword, edit in zip(new_tokenized_src, pruned_edits)]
         else:
-            _example['subword-edits-append'] = pruned_edits
+            _example[edits_key] = pruned_edits
 
         _pruned_data.append(_example)
     
@@ -327,98 +355,91 @@ def prune_edits_corr(data, k):
     
 
 
-def write_json(path, data):
+def write_json(path, data, edits_granularity):
     with open(path, mode='w') as f:
         for example in data:
             src = example['src']
             tgt = example['tgt']
-            word_level_align = example['word-level-align']
-            char_level_align = example['char-level-align']
-            word_edits = [edit.to_json_str() for edit in example['word-edits']]
-            subword_edits = [edit.to_json_str() for edit in example['subword-edits']]
-            subword_edits_append =  [edit.to_json_str() for edit in example['subword-edits-append']]
-
-
+            # word_level_align = example['word-level-align']
+            # char_level_align = example['char-level-align']
+            # word_edits = [edit.to_json_str() for edit in example['word-edits']]
+            # subword_edits = [edit.to_json_str() for edit in example['subword-edits']]
+            if edits_granularity == 'subword':
+                edits_key = 'subword-edits-append'
+            else:
+                edits_key = 'word-edits-append'
+            
+            edits = [edit.to_json_str() for edit in example[edits_key]]
             f.write(json.dumps({'src': src, 'tgt': tgt,
-                                'word-level-align': word_level_align, 'char-level-align': char_level_align,
-                                'word-edits': word_edits, 'subword-edits': subword_edits,
-                                'subword-edits-append': subword_edits_append}, ensure_ascii=False))
+                                # 'word-level-align': word_level_align, 'char-level-align': char_level_align,
+                                # 'word-edits': word_edits, 'subword-edits': subword_edits,
+                                edits_key: edits}, ensure_ascii=False))
             f.write('\n')
 
 
-def write_tsv(path, data):
-    with open(f'{path}.tsv', mode='w') as f1, open(f'{path}.append.tsv', mode='w') as f2:
+def write_tsv(path, data, edits_granularity):
+    if edits_granularity == 'subword':
+        edits_key = 'subword-edits-append'
+    else:
+        edits_key = 'word-edits-append'
 
+    # modeling subwords with internal subwords
+    with open(f'{path}_edits.modeling.tsv', mode='w') as f:
         for example in data:
-            subword_edits = example['subword-edits']
-            subword_edits_append = example['subword-edits-append']
-
-            for subword_edit in subword_edits:
-                f1.write(f'<s>{subword_edit.subword}<s>\t<s>{subword_edit.edit}<s>')
-                f1.write('\n')
-
-            for subword_edit in subword_edits_append:
-                f2.write(f'<s>{subword_edit.subword}<s>\t<s>{subword_edit.edit}<s>')
-                f2.write('\n')
-
-            f1.write('\n')
-            f2.write('\n')
-
-
-def write_tsv_word_edits(path, data):
-    with open(f'{path}.tsv', mode='w') as f1, open(f'{path}.append.tsv', mode='w') as f2:
-
+            edits = example[edits_key]
+            for subword_edit in edits:
+                f.write(f'<s>{subword_edit.subword}<s>\t<s>{subword_edit.edit}<s>')
+                f.write('\n')
+            f.write('\n')
+    
+    # raw subwords without labels!
+    with open(f'{path}.raw.txt', mode='w') as f:
         for example in data:
-            word_edits = example['word-edits']
-
-            for edit in word_edits:
-                f1.write(f'<s>{edit.aligned_word}<s>\t<s>{edit.edit}<s>')
-                f1.write('\n')
-
-            f1.write('\n')
-            f2.write('\n')
+            edits = example[edits_key]
+            for subword_edit in edits:
+                f.write(f'<s>{subword_edit.raw_subword}<s>')
+                f.write('\n')
+            f.write('\n')
 
 
-def load_data(path):
+def load_data(path, edits_granularity):
     data = []
+    if edits_granularity == 'subword':
+        edits_key = 'subword-edits-append'
+    else:
+        edits_key = 'word-edits-append'
+
     with open(path) as f:
-        for line in f.readlines():
+        for line in f:
             example = json.loads(line)
-            word_edits = [Edit.from_json(json.loads(edit)) for edit in example['word-edits']]
-            subword_edits = [SubwordEdit.from_json(json.loads(edit)) for edit in example['subword-edits']]
-            subword_edits_append = [SubwordEdit.from_json(json.loads(edit)) for edit in example['subword-edits-append']]
+            # word_edits = [Edit.from_json(json.loads(edit)) for edit in example['word-edits']]
+            # subword_edits = [SubwordEdit.from_json(json.loads(edit)) for edit in example['subword-edits']]
+            edits = [SubwordEdit.from_json(json.loads(edit)) for edit in example[edits_key]]
         
             data.append({'src': example['src'], 'tgt': example['tgt'],
-                         'word-level-align': example['word-level-align'],
-                         'char-level-align': example['char-level-align'],
-                         'word-edits': word_edits, 'subword-edits': subword_edits,
-                         'subword-edits-append': subword_edits_append})
+                        #  'word-level-align': example['word-level-align'],
+                        #  'char-level-align': example['char-level-align'],
+                        #  'word-edits': word_edits, 'subword-edits': subword_edits,
+                        edits_key: edits})
     return data
 
 
-def get_stats(data, path):
-    subword_edits = defaultdict(list)
+def get_stats(data, path, edits_granularity):
     subword_edits_append = defaultdict(list)
+    
+    if edits_granularity == 'subword':
+        edits_key = 'subword-edits-append'
+    else:
+        edits_key = 'word-edits-append'
 
     for example in data:
-        ex_subword_edits = example['subword-edits']
-        ex_subword_edits_append = example['subword-edits-append']
+        edits = example[edits_key]
 
-        for edit in ex_subword_edits:
-            subword_edits[edit.edit].append(edit)
-        
-        for edit in ex_subword_edits_append:
+        for edit in edits:
             subword_edits_append[edit.edit].append(edit)
-
-    get_subwords_len(data)
-
-
-    with open(f'{path}_stats.tsv', mode='w') as f1, open(f'{path}_stats.append.tsv', mode='w') as f2:
-        f1.write('Edit\t#Edits\tFreq\n')
-        for edit in subword_edits:
-            edits = re.findall(r'I_\[.*?\]+|A_\[.*?\]+|R_\[.*?\]+|K\*|D\*|.', edit)
-            f1.write(f'<s>{edit}<s>\t<s>{len(edits)}<s>\t<s>{len(subword_edits[edit])}<s>\n')
-
+        
+    # get_subwords_len(data)
+    with open(f'{path}_stats.tsv', mode='w') as f2:
         f2.write('Edit\t#Edits\tFreq\n')
         for edit in subword_edits_append:
             edits = re.findall(r'I_\[.*?\]+|A_\[.*?\]+|R_\[.*?\]+|K\*|.', edit)
@@ -451,23 +472,28 @@ PNX = punctuation + ''.join(list(UNICODE_PUNCT_SYMBOL_CHARSET)) + '&amp;'
 pnx_patt = re.compile(r'(['+re.escape(PNX)+'])')
 
 
-
 def separate_pnx_edits(data):
     no_pnx_edits_data = []
+    pnx_edits_data = []
     pnx_error_subwords = []
 
     for example in data:
         example_no_pnx_edits = []
+        example_pnx_edits = []
+    
         example_edits = example['subword-edits-append']
         for i, subword_edit in enumerate(example_edits):
             sep_pnx = separate_pnx_edit(subword_edit.edit)
             pnx_edit, no_pnx_edit = sep_pnx['pnx_edit'], sep_pnx['no_pnx_edit']
 
-            edit = SubwordEdit(subword_edit.subword, no_pnx_edit)
-            example_no_pnx_edits.append(edit)
+            nopnx_edit = SubwordEdit(subword_edit.subword, subword_edit.raw_subword, no_pnx_edit)
+            _pnx_edit = SubwordEdit(subword_edit.subword, subword_edit.raw_subword, pnx_edit)
+
+            example_no_pnx_edits.append(nopnx_edit)
+            example_pnx_edits.append(_pnx_edit)
 
    
-        tokenized_src = [ex.subword for ex in example_edits]
+        tokenized_src = [ex.raw_subword for ex in example_edits]
 
         rewritten_src = apply_edits(tokenized_src, example_no_pnx_edits)
         # no_pnx_tgt = pnx_patt.sub('', example['tgt'])
@@ -479,12 +505,17 @@ def separate_pnx_edits(data):
         # if no_pnx_rewritten_src != no_pnx_tgt:
         #     import pdb; pdb.set_trace()
 
-        _example = copy.deepcopy(example)
-        _example['cor-no-pnx'] = ' '.join(rewritten_src)
-        _example['subword-edits-append'] = example_no_pnx_edits
-        no_pnx_edits_data.append(_example)
-    
-    return no_pnx_edits_data
+        _example_nopnx_edits = copy.deepcopy(example)
+        _example_pnx_edits = copy.deepcopy(example)
+
+        _example_nopnx_edits['cor-no-pnx'] = ' '.join(rewritten_src)
+        _example_nopnx_edits['subword-edits-append'] = example_no_pnx_edits
+        no_pnx_edits_data.append(_example_nopnx_edits)
+
+        _example_pnx_edits['subword-edits-append'] = example_pnx_edits
+        pnx_edits_data.append(_example_pnx_edits)
+
+    return no_pnx_edits_data, pnx_edits_data
 
 
 def separate_pnx_edit(edit):
@@ -523,7 +554,7 @@ def separate_pnx_edit(edit):
 
     re_edit = reconstruct_edit(pnx_edit=pnx_edit, no_pnx_edit=no_pnx_edit)
     assert  re_edit == edit
-    return {'no_pnx_edit': no_pnx_edit, 'pnx_edit': pnx_edit}
+    return {'no_pnx_edit': no_pnx_edit, 'pnx_edit': pnx_edit if pnx_edit != '' else 'K'}
 
 
 def reconstruct_edit(pnx_edit, no_pnx_edit):
