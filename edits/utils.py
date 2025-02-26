@@ -7,6 +7,10 @@ from string import punctuation
 from camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
 
 
+PNX = punctuation + ''.join(list(UNICODE_PUNCT_SYMBOL_CHARSET)) + '&amp;'
+pnx_patt = re.compile(r'(['+re.escape(PNX)+'])')
+
+
 def get_edits(data, edits_granularity):
     """
     Gets all of the edits in data and their frequencies
@@ -19,8 +23,10 @@ def get_edits(data, edits_granularity):
     return dict(Counter(edits))
 
 
-def compress_edits(train_data=None, test_data=None, edits_granularity='subword', verify=True, compress_map_output_path=None):
-    edits_key = 'subword-edits-append' if edits_granularity == 'subword' else 'word-edits-append'
+def compress_edits(train_data=None, test_data=None, edits_granularity='subword', verify=True,
+                   compress_map_output_path=None):
+    edits_key = ('subword-edits-append' if edits_granularity == 'subword'
+                 else 'word-edits-append')
 
     def generate_compressed_map(edits_freqs):
         compressed_edits = []
@@ -93,7 +99,6 @@ def compress_edits(train_data=None, test_data=None, edits_granularity='subword',
     return compress_dataset(train_data, final_compressed_edits_map)
 
 
-
 def compress_edit(edit):
     """
     Generates all possible compressions of an edit string by compressing sequences of Ks and Ds.
@@ -111,7 +116,6 @@ def compress_edit(edit):
     ]
 
     return compressed_candidates if compressed_candidates else [edit]
-
 
 
 def insert_to_append(edits):
@@ -168,7 +172,6 @@ def insert_to_append(edits):
                        for subword, raw_subword, edit in zip(subwords, raw_subwords, processed_edits)]
 
     return processed_edits
-
 
 
 def compress_appends(subword_edit):
@@ -437,8 +440,7 @@ def get_stats(data, path, edits_granularity):
 
         for edit in edits:
             subword_edits_append[edit.edit].append(edit)
-        
-    # get_subwords_len(data)
+
     with open(f'{path}_stats.tsv', mode='w') as f2:
         f2.write('Edit\t#Edits\tFreq\n')
         for edit in subword_edits_append:
@@ -446,36 +448,9 @@ def get_stats(data, path, edits_granularity):
             f2.write(f'<s>{edit}<s>\t<s>{len(edits)}<s>\t<s>{len(subword_edits_append[edit])}<s>\n')
 
 
-
-def get_subwords_len(data):
-    subwords_len = []
-
-    for example in data:
-        ex_subword_edits = example['subword-edits-append']
-        for edit in ex_subword_edits:
-            subword = edit.subword.replace('##', '')
-    
-            if subword:
-                subwords_len.append(len(subword))
-    
-    len_cnts = Counter(subwords_len)
-    sorted_cnts = sorted(len_cnts.items(), key=lambda x: x[1], reverse=True)
-    sorted_cnts = {x[0]: x[1] for x in sorted_cnts}
-
-    for _len, freq in sorted_cnts.items():
-        print(f'{_len}\t{freq}')
-    print()
-
-
-
-PNX = punctuation + ''.join(list(UNICODE_PUNCT_SYMBOL_CHARSET)) + '&amp;'
-pnx_patt = re.compile(r'(['+re.escape(PNX)+'])')
-
-
 def separate_pnx_edits(data):
     no_pnx_edits_data = []
     pnx_edits_data = []
-    pnx_error_subwords = []
 
     for example in data:
         example_no_pnx_edits = []
@@ -496,14 +471,6 @@ def separate_pnx_edits(data):
         tokenized_src = [ex.raw_subword for ex in example_edits]
 
         rewritten_src = apply_edits(tokenized_src, example_no_pnx_edits)
-        # no_pnx_tgt = pnx_patt.sub('', example['tgt'])
-        # no_pnx_tgt = re.sub(' +', ' ', no_pnx_tgt).strip()
-
-        # no_pnx_rewritten_src = pnx_patt.sub('', ' '.join(rewritten_src))
-        # no_pnx_rewritten_src = re.sub(' +', ' ', no_pnx_rewritten_src).strip()
-
-        # if no_pnx_rewritten_src != no_pnx_tgt:
-        #     import pdb; pdb.set_trace()
 
         _example_nopnx_edits = copy.deepcopy(example)
         _example_pnx_edits = copy.deepcopy(example)
