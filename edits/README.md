@@ -15,6 +15,8 @@ Our edit extraction algorithm is described in the paper. Running `bash scripts/c
 Specifically, it creates non-compressed and compressed edits at both the word and subword levels along with the pruned edits.
 Note that pruning is only applied to the training data.
 
+
+
 Once the edits have been extracted, you can segregate punctuation from non-punctuation edits by running `bash scripts/create_edits_pnx_sep.sh`. This will also create the the pruned punctuation and non-punctuation edits for the training data.
 
 In the edit extraction scripts we provide, we use the tokenizer of AraBERTv02. Replacing this tokenizer with the tokenizer from CAMeLBERT-MSA or ARBERTv2 will get you the data you need to replicate the rest of the experiments we report on in the paper.
