@@ -4,7 +4,7 @@ We used the [QALB-2014](https://camel.abudhabi.nyu.edu/qalb-shared-task-2015/), 
 For the QALB-2014, we use the publicly available train, dev, and test splits. For QALB-2015, we only use the L1 test data.
 For ZAEBUC and Madar Coda, we use the splits made available by [Alhafni et al. 2023](https://github.com/CAMeL-Lab/arabic-gec/tree/master/data) and [Alhafni et al. 2024](https://github.com/CAMeL-Lab/codafication/tree/master/data), respectively.
 
-**Note**: We provide all the datasets used for creating the edits at this [link](). Additionally, we share the extracted edits along with their various representations from our best setup (using AraBERTv02).
+**Note**: We provide all the datasets used for creating the edits at this [link](). Additionally, we share the extracted edits along with their various representations from our best setup (using AraBERTv02). To make sure that everything runs smoothly, download the data and place it at the root directory of this repo.
 
 We describe below how to extract the edits from parallel GEC datasets along with creating their different representations.
 
