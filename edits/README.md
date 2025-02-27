@@ -84,6 +84,20 @@ In the edit extraction scripts we provide ([create_edits.sh](scripts/create_edit
 
 
 ## Data:
+Once the edits have been extracted, we create data files that we use to fine-tune and test BERT. Running `bash scripts/create_modeling_data.sh` would create all of the files necessary for fine-tuning and inference.
 
-
-## Tokenizer:
+As mentioned earlier, we provide the edits extract and the data files we use to train and test our models in this [link](). The `data` directory has the following structure:
+```
+data
+├── msa-gec
+│ ├── raw
+│ ├── modeling
+│ └── edits
+└── da-gec
+    ├── raw
+    ├── modeling
+    └── edits
+```
+1. `raw`: includes the parallel GEC files we use to extract the edits
+2. `edits`: includes the extracted edits. `msa-gec/edits` has the edits of `qalb14`, `qalb15`, `zaebuc`, and `qalb14+zaebuc_x10`. `da-gec/edits` has the edits of `madar`
+3. `modeling`: includes the data we use to fine-tune and test BERT models. `*-prune*` indicates pruning. `pnx_sep` indicates punctuation separation
