@@ -183,7 +183,7 @@ def create_dataset_edits_parallel(dataset, tokenizer, direction='raw-cor', num_w
                 dataset_w_edits[idx] = future.result()
                 processed_examples += 1
 
-                if processed_examples % 100 == 0:
+                if processed_examples % 1000 == 0:
                     print(f"Processed {processed_examples} examples...", flush=True)
 
             except Exception as e:
@@ -202,7 +202,6 @@ if __name__ == '__main__':
     parser.add_argument('--src_file_path', default=None)
     parser.add_argument('--tgt_file_path', default=None)
     parser.add_argument('--output_data_dir', default=None)
-    parser.add_argument('--token', default=None)
     parser.add_argument('--compress', action='store_true')
     parser.add_argument('--compress_output_dir', default=None)
     parser.add_argument('--prune', action='store_true')
@@ -219,52 +218,73 @@ if __name__ == '__main__':
 
     tokenizer = Tokenizer(args.tokenizer)
 
-    output_dir = f'{args.dataset}_{args.token}' if args.token else args.dataset
-    output_dir += ('/subword-level-check' if args.edits_granularity == 'subword'
-                   else  f'/word-level-check')
+    output_dir = args.dataset
+    output_dir += ('/subword-level' if args.edits_granularity == 'subword'
+                    else  f'/word-level')
 
     if args.create_edits:
-        # data = read_data(os.path.join(args.input_data_dir, f'{split}.json'))
+        output_data_dir = os.path.join(args.output_data_dir, output_dir)
+
+        if not os.path.exists(output_data_dir):
+            os.makedirs(output_data_dir)
+
         data = read_data_txt(src_path=args.src_file_path, tgt_path=args.tgt_file_path)
 
         # edits_data = create_dataset_edits(data, tokenizer, direction='raw-cor')
         edits_data = create_dataset_edits_parallel(data, tokenizer, direction='raw-cor', num_workers=100)
         print(f'Done creating edits!', flush=True)
-        write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'), data=edits_data, 
+        write_json(path=f'{output_data_dir}/{split}_edits.json', data=edits_data,
                    edits_granularity=args.edits_granularity)
 
-        write_tsv(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}'), data=edits_data,
+        write_tsv(path=f'{output_data_dir}/{split}', data=edits_data,
                   edits_granularity=args.edits_granularity)
-        
-        get_stats(data=edits_data, path=os.path.join(args.output_data_dir, f'{output_dir}/{split}'),
+
+        get_stats(data=edits_data, path=f'{output_data_dir}/{split}',
                   edits_granularity=args.edits_granularity)
 
 
     # compressing the data
     if args.compress:
+        compress_output_dir = os.path.join(args.compress_output_dir, output_dir)
+
+        if not os.path.exists(compress_output_dir):
+            os.makedirs(compress_output_dir)
+
         if split != 'train':
-            test_data = load_data(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'),
+            test_data = load_data(path=f'{output_data_dir}/{split}_edits.json',
                             edits_granularity=args.edits_granularity)
+
+            # use the compress map of qalb14 when compressing qalb15 L1 test
+            if 'qalb15' in args.dataset:
+                assert split == 'test'
+                compress_map_output = f'{compress_output_dir.replace("qalb15", "qalb14")}/compress_map.json'
+            else:
+                compress_map_output = f'{compress_output_dir}/compress_map.json'
+
             compressed_data = compress_edits(test_data=test_data, edits_granularity=args.edits_granularity,
-                                             compress_map_output_path=os.path.join(args.compress_output_dir, f'{output_dir}/compress_map.json'))
+                                             compress_map_output_path=compress_map_output)
         else:
-            train_data = load_data(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits.json'),
-                            edits_granularity=args.edits_granularity)
+            train_data = load_data(path=f'{output_data_dir}/{split}_edits.json',
+                                   edits_granularity=args.edits_granularity)
 
             compressed_data = compress_edits(train_data=train_data, edits_granularity=args.edits_granularity,
-                                             compress_map_output_path=os.path.join(args.compress_output_dir, f'{output_dir}/compress_map.json'))
+                                             compress_map_output_path=f'{compress_output_dir}/compress_map.json')
 
 
-        write_json(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}_edits.json'), data=compressed_data, 
+        write_json(path=f'{compress_output_dir}/{split}_edits.json', data=compressed_data,
                    edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}'), data=compressed_data,
+        write_tsv(path=f'{compress_output_dir}/{split}', data=compressed_data,
                   edits_granularity=args.edits_granularity)
-        get_stats(data=compressed_data, path=os.path.join(args.compress_output_dir, f'{output_dir}/{split}'),
+
+        get_stats(data=compressed_data, path=f'{compress_output_dir}/{split}',
                   edits_granularity=args.edits_granularity)
 
 
     if args.prune:
-        prune_output_dir = args.pruned_output_dir
+        prune_output_dir = os.path.join(args.pruned_output_dir, output_dir)
+        if not os.path.exists(prune_output_dir):
+            os.makedirs(prune_output_dir)
+
         data = load_data(os.path.join(args.compress_output_dir, f'{output_dir}/{split}_edits.json'),
                          edits_granularity=args.edits_granularity)
 
@@ -273,9 +293,9 @@ if __name__ == '__main__':
         else:
             pruned_data = prune_edits(data, k=args.k, edits_granularity=args.edits_granularity)
 
-        write_json(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits.json'), data=pruned_data, 
+        write_json(path=f'{prune_output_dir}/{split}_edits.json', data=pruned_data,
                    edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(prune_output_dir, f'{output_dir}/{split}'), data=pruned_data,
+        write_tsv(path=f'{prune_output_dir}/{split}', data=pruned_data,
                   edits_granularity=args.edits_granularity)
-        get_stats(data=pruned_data, path=os.path.join(prune_output_dir, f'{output_dir}/{split}'),
-                  edits_granularity=args.edits_granularity)
+
+        get_stats(data=pruned_data, path=f'{prune_output_dir}/{split}', edits_granularity=args.edits_granularity)

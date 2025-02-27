@@ -1,7 +1,7 @@
 import json
 from tokenizer import Tokenizer
 from alignment.aligner import word_level_alignment, char_level_alignment
-from edit import Edit, SubwordEdits, SubwordEdit
+from edit import Edit, SubwordEdits
 from utils import (apply_edits, insert_to_append, compress_edits, write_json,
                    load_data, separate_pnx_edits, write_tsv, get_stats, prune_edits, prune_edits_corr)
 import argparse
@@ -174,7 +174,7 @@ def create_dataset_edits_parallel(dataset, tokenizer, num_workers=4):
                 dataset_w_edits[idx] = future.result()
                 processed_examples += 1
 
-                if processed_examples % 100 == 0:
+                if processed_examples % 1000 == 0:
                     print(f"Processed {processed_examples} examples...", flush=True)
 
             except Exception as e:
@@ -194,7 +194,6 @@ if __name__ == '__main__':
     parser.add_argument('--create_pnx_edits', action='store_true')
     parser.add_argument('--input_data_dir', default=None)
     parser.add_argument('--output_data_dir', default=None)
-    parser.add_argument('--token', default=None)
     parser.add_argument('--prune', action='store_true')
     parser.add_argument('--prune_cor', action='store_true')
     parser.add_argument('--pruned_output_dir', default=None)
@@ -206,28 +205,20 @@ if __name__ == '__main__':
 
     print(split)
 
-    # if args.token == '5':
-    #     tokenizer = Tokenizer('tokenizer-5')
-    # elif args.token == '4':
-    #     tokenizer = Tokenizer('tokenizer-4')
-    # elif args.token == '3':
-    #     tokenizer = Tokenizer('tokenizer-3')
-    # else:
-        # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabertv02')
-        # tokenizer = tokenizer = Tokenizer('/scratch/ba63/BERT_models/ARBERTv2')
-        # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-msa')
-        # tokenizer = Tokenizer('/scratch/ba63/BERT_models/bert-base-arabic-camelbert-mix')
-
     tokenizer = Tokenizer(args.tokenizer)
 
-    output_dir = f'{args.dataset}_{args.token}' if args.token else args.dataset
-    output_dir += ('/subword-level-check' if args.edits_granularity == 'subword'
-                   else  f'/word-level')
+    output_dir = args.dataset
+    output_dir += ('/subword-level' if args.edits_granularity == 'subword'
+                    else  f'/word-level')
 
     if args.create_edits:
+        output_data_dir = os.path.join(args.output_data_dir, output_dir)
+
+        if not os.path.exists(output_data_dir):
+            os.makedirs(output_data_dir)
+
         # loading the data
         data = load_data(os.path.join(args.input_data_dir, f'{output_dir}/{split}_edits.json'), args.edits_granularity)
-
         # data without pnx edits
         print('Taking out the pnx from the edits...', flush=True)
         no_pnx_edits_data, pnx_edits_data = separate_pnx_edits(data)
@@ -236,21 +227,28 @@ if __name__ == '__main__':
         print('Compressing no pnx edits...', flush=True)
 
         if split != 'train':
+            if 'qalb15' in args.dataset:
+                assert split == 'test'
+                compress_map_output = f'{output_data_dir.replace("qalb15", "qalb14")}/compress_map_nopnx.json'
+            else:
+                compress_map_output = f'{output_data_dir}/compress_map_nopnx.json'
+
             compressed_no_pnx_data = compress_edits(test_data=no_pnx_edits_data, verify=False,
                                                     edits_granularity=args.edits_granularity,
-                                                    compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_nopnx.json'))
+                                                    compress_map_output_path=compress_map_output)
         else:
             compressed_no_pnx_data = compress_edits(train_data=no_pnx_edits_data, edits_granularity=args.edits_granularity,
                                                     verify=False,
-                                                    compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_nopnx.json'))
-            
+                                                    compress_map_output_path=f'{output_data_dir}/compress_map_nopnx.json')
 
-        write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_nopnx.json'),
+
+        write_json(path=f'{output_data_dir}/{split}_edits_nopnx.json',
                    data=compressed_no_pnx_data, edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_nopnx'),
+        write_tsv(path=f'{output_data_dir}/{split}_edits_nopnx',
                   data=compressed_no_pnx_data, edits_granularity=args.edits_granularity)
-        get_stats(compressed_no_pnx_data, os.path.join(args.output_data_dir, f'{output_dir}/{split}_nopnx'),
+        get_stats(compressed_no_pnx_data, f'{output_data_dir}/{split}_nopnx',
                   edits_granularity=args.edits_granularity)
+
 
         # create pnx edits
         if args.create_pnx_edits:
@@ -260,29 +258,36 @@ if __name__ == '__main__':
         # compress pnx edits
         print('Compressing pnx edits...', flush=True)
         if split != 'train':
+
+            if 'qalb15' in args.dataset:
+                assert split == 'test'
+                compress_map_output = f'{output_data_dir.replace("qalb15", "qalb14")}/compress_map_pnx.json'
+            else:
+                compress_map_output = f'{output_data_dir}/compress_map_pnx.json'
+
             compressed_pnx_data = compress_edits(test_data=pnx_edits_data, verify=True,
                                                  edits_granularity=args.edits_granularity,
-                                                 compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_pnx.json'))
+                                                 compress_map_output_path=compress_map_output)
         else:
             compressed_pnx_data = compress_edits(train_data=pnx_edits_data, edits_granularity=args.edits_granularity,
                                                  verify=True,
-                                                 compress_map_output_path=os.path.join(args.output_data_dir, f'{output_dir}/compress_map_pnx.json'))
-        
-        # the compression 
-        # compressed_pnx_data = compress_edits(data=pnx_edits_data, verify=True if args.create_pnx_edits else False,
-                                            #  edits_granularity=args.edits_granularity)
+                                                 compress_map_output_path=f'{output_data_dir}/compress_map_pnx.json')
 
-        write_json(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_pnx.json'),
+
+        write_json(path=f'{output_data_dir}/{split}_edits_pnx.json',
                    data=compressed_pnx_data, edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_pnx'),
+        write_tsv(path=f'{output_data_dir}/{split}_edits_pnx',
                   data=compressed_pnx_data, edits_granularity=args.edits_granularity)
-        get_stats(compressed_pnx_data, os.path.join(args.output_data_dir, f'{output_dir}/{split}_pnx'),
+        get_stats(compressed_pnx_data, f'{output_data_dir}/{split}_pnx',
                   edits_granularity=args.edits_granularity)
 
 
 
     if args.prune:
-        prune_output_dir = args.pruned_output_dir
+        prune_output_dir = os.path.join(args.pruned_output_dir, output_dir)
+        if not os.path.exists(prune_output_dir):
+            os.makedirs(prune_output_dir)
+
         nopnx_data = load_data(os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_nopnx.json'),
                                args.edits_granularity)
         pnx_data = load_data(os.path.join(args.output_data_dir, f'{output_dir}/{split}_edits_pnx.json'),
@@ -296,19 +301,19 @@ if __name__ == '__main__':
             pnx_pruned_data = prune_edits(pnx_data, edits_granularity=args.edits_granularity, k=args.k)
 
 
-        write_json(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits_nopnx.json'),
+        write_json(path=f'{prune_output_dir}/{split}_edits_nopnx.json',
                    data=nopnx_pruned_data, edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits_nopnx'),
+        write_tsv(path=f'{prune_output_dir}/{split}_edits_nopnx',
                   data=nopnx_pruned_data, edits_granularity=args.edits_granularity)
-        get_stats(nopnx_pruned_data, os.path.join(prune_output_dir, f'{output_dir}/{split}_nopnx'),
+        get_stats(nopnx_pruned_data, f'{prune_output_dir}//{split}_nopnx',
                   edits_granularity=args.edits_granularity)
 
 
-        write_json(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits_pnx.json'),
+        write_json(path=f'{prune_output_dir}/{split}_edits_pnx.json',
                    data=pnx_pruned_data, edits_granularity=args.edits_granularity)
-        write_tsv(path=os.path.join(prune_output_dir, f'{output_dir}/{split}_edits_pnx'),
+        write_tsv(path=f'{prune_output_dir}/{split}_edits_pnx',
                   data=pnx_pruned_data, edits_granularity=args.edits_granularity)
-        get_stats(pnx_pruned_data, os.path.join(prune_output_dir, f'{output_dir}/{split}_pnx'),
+        get_stats(pnx_pruned_data, f'{prune_output_dir}/{split}_pnx',
                   edits_granularity=args.edits_granularity)
 
 
