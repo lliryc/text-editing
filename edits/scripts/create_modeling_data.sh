@@ -84,8 +84,10 @@ process_dev_test_data() {
 
         if [[ "$level" == "word-level" && "$split" == "dev" ]]; then
             sed 's/<s>//g' "${data_dir}/${split}.raw.txt" > "${modeling_out}/${split}.raw.word_level.txt"
+            cat "${data_dir}/${split}_edits.modeling.tsv" | cut -f1 | sed 's/<s>//g'  > "${modeling_out}/${split}.word_level.txt"
         else
             sed 's/<s>//g' "${data_dir}/${split}.raw.txt" > "${modeling_out}/${split}.raw.txt"
+            cat "${data_dir}/${split}_edits.modeling.tsv" | cut -f1 | sed 's/<s>//g'  > "${modeling_out}/${split}.txt"
         fi
     done
 }
@@ -104,7 +106,10 @@ process_pnx_sep_dev() {
     mkdir -p "${pnx_modeling_out}" "${nopnx_modeling_out}"
 
     sed 's/<s>//g' "${data_dir}/${split}_edits_pnx.raw.txt" > "${pnx_modeling_out}/${split}.raw.txt"
+    cat  "${data_dir}/${split}_edits_pnx_edits.modeling.tsv" | cut -f1 | sed 's/<s>//g' > "${pnx_modeling_out}/${split}.txt"
+
     sed 's/<s>//g' "${data_dir}/${split}_edits_nopnx.raw.txt" > "${nopnx_modeling_out}/${split}.raw.txt"
+    cat  "${data_dir}/${split}_edits_nopnx_edits.modeling.tsv" | cut -f1 | sed 's/<s>//g' > "${nopnx_modeling_out}/${split}.txt"
 }
 
 # Datasets
