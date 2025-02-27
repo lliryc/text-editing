@@ -7,7 +7,7 @@ from transformers import (
 from transformers.modeling_outputs import TokenClassifierOutput
 from typing import Optional, Tuple, Union
 
-class BertForTokenClassificationSingleLabel(BertPreTrainedModel):
+class BertForTokenClassification(BertPreTrainedModel):
 
     _keys_to_ignore_on_load_unexpected = [r"pooler"]
 
