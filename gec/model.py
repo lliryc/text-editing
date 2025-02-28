@@ -74,7 +74,7 @@ class BertForTokenClassification(BertPreTrainedModel):
             loss_fct = nn.CrossEntropyLoss(ignore_index=-100, weight=self.class_weights)
 
             loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
-            
+
 
         if not return_dict:
             output = (logits,) + outputs[2:]
