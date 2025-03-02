@@ -1,5 +1,5 @@
 import re
-from edit import SubwordEdit
+from edits.edit import SubwordEdit
 from collections import defaultdict, Counter
 import json
 import copy

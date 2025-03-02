@@ -1,7 +1,7 @@
 from collections import deque
 import re
 import editdistance
-from alignment.utils import norm_pnx_nums
+from edits.alignment.utils import norm_pnx_nums
 
 
 def _edit_distance(tokens1, tokens2, weight_fns):
