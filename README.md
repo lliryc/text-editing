@@ -21,8 +21,6 @@ pip install -e .
 
 This repo is organized as follows:
 
-## Hugging Face Integration:
-
 
 ## License:
 This repo is available under the MIT license. See the [LICENSE](LICENSE) for more info.
