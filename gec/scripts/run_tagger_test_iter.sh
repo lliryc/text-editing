@@ -42,7 +42,7 @@ do
         echo $test_file
     fi
 
-    python /home/ba63/arabic-text-editing/tagger/tag.py \
+    python tag.py \
         --tokenized_data_path $test_file \
         --tokenized_raw_data_path $test_file_raw \
         --labels $labels \
