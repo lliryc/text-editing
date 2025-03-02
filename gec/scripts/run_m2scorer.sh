@@ -13,11 +13,11 @@
 
 
 
-# m2_edits=/scratch/ba63/gec/data/gec/QALB-0.9.1-Dec03-2021-SharedTasks/data/2014/dev/QALB-2014-L1-Dev.m2
-# m2_edits_nopnx=/home/ba63/gec-release/data/m2edits/qalb14/qalb14_dev.nopnx.m2
+# m2_edits=/home/ba63/text-editing/data/msa-gec/raw/QALB-0.9.1-Dec03-2021-SharedTasks/data/2014/dev/QALB-2014-L1-Dev.m2
+# m2_edits_nopnx=/home/ba63/text-editing/data/msa-gec/m2edits/qalb14/qalb14_dev.nopnx.m2
 
-# m2_edits=/home/ba63/gec-release/data/m2edits/zaebuc/zaebuc_test.m2
-# m2_edits_nopnx=/home/ba63/gec-release/data/m2edits/zaebuc/zaebuc_test.nopnx.m2
+# m2_edits=/home/ba63/text-editing/data/msa-gec/m2edits/zaebuc/zaebuc_test.m2
+# m2_edits_nopnx=/home/ba63/text-editing/data/msa-gec/m2edits/zaebuc/zaebuc_test.nopnx.m2
 
 m2_edits=/home/ba63/codafication/data/m2-files/dev.m2
 
