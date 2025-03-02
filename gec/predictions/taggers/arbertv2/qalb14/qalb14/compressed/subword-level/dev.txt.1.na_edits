@@ -1,0 +1,25 @@
+{"subword": "##ات", "edit": "{\"subword\": \"##ات\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##وذ", "edit": "{\"subword\": \"##وذ\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##ما", "edit": "{\"subword\": \"##ما\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##لر", "edit": "{\"subword\": \"##لر\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##با", "edit": "{\"subword\": \"##با\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##نت", "edit": "{\"subword\": \"##نت\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##مم", "edit": "{\"subword\": \"##مم\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##لم", "edit": "{\"subword\": \"##لم\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##بم", "edit": "{\"subword\": \"##بم\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##له", "edit": "{\"subword\": \"##له\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "دا", "edit": "{\"subword\": \"دا\", \"edit\": \"K*R_[ذ]K\"}"}
+{"subword": "دا", "edit": "{\"subword\": \"دا\", \"edit\": \"K*R_[ذ]K\"}"}
+{"subword": "##تع", "edit": "{\"subword\": \"##تع\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##ف", "edit": "{\"subword\": \"##ف\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##هن", "edit": "{\"subword\": \"##هن\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##ول", "edit": "{\"subword\": \"##ول\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##له", "edit": "{\"subword\": \"##له\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##ع", "edit": "{\"subword\": \"##ع\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##اع", "edit": "{\"subword\": \"##اع\", \"edit\": \"I_[ ]K*I_[ ]KI_[ ]K\"}"}
+{"subword": "##ض", "edit": "{\"subword\": \"##ض\", \"edit\": \"R_[ظ]K*\"}"}
+{"subword": "دي", "edit": "{\"subword\": \"دي\", \"edit\": \"K*R_[ذ]K\"}"}
+{"subword": "##ى", "edit": "{\"subword\": \"##ى\", \"edit\": \"K*R_[ي]A_[.]\"}"}
+{"subword": "وامس", "edit": "{\"subword\": \"وامس\", \"edit\": \"KKKR_[أ]K*\"}"}
+{"subword": "ض", "edit": "{\"subword\": \"ض\", \"edit\": \"K*R_[ظ]\"}"}
+{"subword": "يو", "edit": "{\"subword\": \"يو\", \"edit\": \"K*DK\"}"}

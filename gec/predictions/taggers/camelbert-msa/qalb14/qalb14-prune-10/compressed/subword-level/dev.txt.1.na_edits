@@ -1,0 +1,12 @@
+{"subword": "الا", "edit": "{\"subword\": \"الا\", \"edit\": \"KKR_[أ]K*\"}"}
+{"subword": "##ا", "edit": "{\"subword\": \"##ا\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##إ", "edit": "{\"subword\": \"##إ\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##ف", "edit": "{\"subword\": \"##ف\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##إ", "edit": "{\"subword\": \"##إ\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##ن", "edit": "{\"subword\": \"##ن\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##أ", "edit": "{\"subword\": \"##أ\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##ب", "edit": "{\"subword\": \"##ب\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##أ", "edit": "{\"subword\": \"##أ\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##ه", "edit": "{\"subword\": \"##ه\", \"edit\": \"I_[ ]K*I_[ ]K\"}"}
+{"subword": "##000", "edit": "{\"subword\": \"##000\", \"edit\": \"R_[ ]I_[.]\"}"}
+{"subword": "ض", "edit": "{\"subword\": \"ض\", \"edit\": \"K*R_[ظ]\"}"}
