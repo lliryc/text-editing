@@ -122,7 +122,7 @@ def write_data(path, data):
             f.write('\n')
 
 
-def process_data(dataset, edits_dir, prune_levels=None, pnx_seg=False):
+def process_data(dataset, edits_dir, prune_levels=None, pnx_seg=False, clean_space=False, pnx_preproc=False):
     """
     Processes a dataset for different granularity, compression, and pruning levels.
     """
@@ -140,7 +140,8 @@ def process_data(dataset, edits_dir, prune_levels=None, pnx_seg=False):
             train_data = read_data(train_path)
             dev_data = read_data(dev_path)
             
-            rewritten_dev = lookup_edits(train_edits=train_data, test_edits=dev_data, comp=comp_flag, pnx_prepoc=True)
+            rewritten_dev = lookup_edits(train_edits=train_data, test_edits=dev_data, comp=comp_flag,
+                                         clean_space=clean_space, pnx_prepoc=pnx_preproc)
             write_data(f'predictions/oracle/{dataset}/{dataset}_dev_{gran}_{comp}.txt', rewritten_dev)
             print()
     
@@ -153,7 +154,8 @@ def process_data(dataset, edits_dir, prune_levels=None, pnx_seg=False):
             train_path = f'{edits_dir}/edits_compressed_prune_{k}/{dataset}-arabertv02/subword-level/train_edits.modeling.tsv'
             train_data = read_data(train_path)
             
-            rewritten_dev = lookup_edits(train_edits=train_data, test_edits=dev_comp, comp=True, pnx_prepoc=True)
+            rewritten_dev = lookup_edits(train_edits=train_data, test_edits=dev_comp, comp=True,
+                                         clean_space=clean_space, pnx_prepoc=pnx_preproc)
             write_data(f'predictions/oracle/{dataset}/prune/{dataset}_dev_subword_compressed_prune_{k}.txt', rewritten_dev)
             print()
     
@@ -175,14 +177,21 @@ def process_data(dataset, edits_dir, prune_levels=None, pnx_seg=False):
             
             train_nopnx = read_data(train_nopnx_path)
             rewritten_nopnx = lookup_edits(train_edits=train_nopnx, test_edits=dev_nopnx, comp=True, pnx_prepoc=True, delete_pnx=True)
-            write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_prune_{k}_nopnx.txt', rewritten_nopnx)
             
             train_pnx = read_data(train_pnx_path)
             rewritten_pnx = lookup_edits(train_edits=train_pnx, test_edits=dev_pnx, comp=True, pnx_prepoc=True)
-            write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_prune_{k}_pnx.txt', rewritten_pnx)
+            if k == 0:
+                write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_nopnx.txt', rewritten_nopnx)
+                write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_pnx.txt', rewritten_pnx)
+            else:
+                write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_prune_{k}_nopnx.txt', rewritten_nopnx)
+                write_data(f'predictions/oracle/{dataset}/pnx_seg/{dataset}_dev_subword_compressed_prune_{k}_pnx.txt', rewritten_pnx)
 
 
 if __name__ == '__main__':
-    process_data('qalb14', '../data/msa-gec/edits/qalb14', prune_levels=[10, 20, 30], pnx_seg=True)
-    process_data('zaebuc', '../data/msa-gec/edits/zaebuc', prune_levels=[10, 20, 30], pnx_seg=True)
-    process_data('madar', '../data/da-gec/edits/madar')
+    process_data('qalb14', '../data/msa-gec/edits/qalb14', prune_levels=[10, 20, 30], pnx_seg=True,
+                 clean_space=False, pnx_preproc=True)
+    process_data('zaebuc', '../data/msa-gec/edits/zaebuc', prune_levels=[10, 20, 30], pnx_seg=True,
+                 clean_space=False, pnx_preproc=True)
+    process_data('madar', '../data/da-gec/edits/madar', prune_levels=[10, 20, 30], clean_space=True,
+                 pnx_preproc=False)
