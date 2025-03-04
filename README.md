@@ -1,6 +1,6 @@
 # Enhancing Text Editing for Grammatical Error Correction
 
-This repo contains code and pretrained models to reproduce the results in our paper [Enhancing Text Editing for Grammatical Error Correction: Arabic as a Case Study]().
+This repo contains code and pretrained models to reproduce the results in our paper [Enhancing Text Editing for Grammatical Error Correction: Arabic as a Case Study](https://arxiv.org/abs/2503.00985).
 
 ## Requirements:
 
@@ -27,4 +27,16 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 ## Citation:
-If you find the code or data in this repo helpful, please cite our [paper]():
+If you find the code or data in this repo helpful, please cite our [paper](https://arxiv.org/abs/2503.00985):
+
+```bibtex
+@misc{alhafni-habash-2025-enhancing,
+      title={Enhancing Text Editing for Grammatical Error Correction: Arabic as a Case Study}, 
+      author={Bashar Alhafni and Nizar Habash},
+      year={2025},
+      eprint={2503.00985},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.00985}, 
+}
+```
