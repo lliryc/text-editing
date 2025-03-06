@@ -19,4 +19,4 @@ This extension is modular and allows us to import and use M<sup>2</sup> scorer t
 
 During the evaluation, we use the manually created m2edits for QALB-2014 and QALB-2015-L1 which are publicly available as part of the shared task. For ZAEBUC and MADAR CODA, we rely on the m2edits created by [Alhafni et al., 2023]() and [Alhafni et al., 2024](), respectively. 
 
-Running the development sets evaluation over all checkpoints can be done using the [run_m2scorer.sh](run_m2scorer.sh) script. Evaluating a single prediction file can be done using [run_m2scorer_file.sh](run_m2scorer_file.sh). The edits coverage oracle experiments are evaluated using [run_m2scorer_oracle.sh](run_m2scorer_oracle.sh).
+Running the development sets evaluation over all checkpoints can be done using the [scripts/run_m2scorer.sh](scripts/run_m2scorer.sh) script. Evaluating a single prediction file can be done using [scripts/run_m2scorer_file.sh](scripts/run_m2scorer_file.sh). The edits coverage oracle experiments are evaluated using [scripts/run_m2scorer_oracle.sh](scripts/run_m2scorer_oracle.sh).
