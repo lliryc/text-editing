@@ -21,9 +21,9 @@ pip install -e .
 
 This repo is organized as follows:
 
-1. [data](data):
-2. [edits](edits):
-3. [gec](gec):
+1. [data](data): includes all the data we used throughout our paper to train and test various systems.
+2. [edits](edits): includes the scripts needed to extract edits from parallel GEC corpora and to create different edit representation.
+3. [gec](gec): includes the scripts needed to train and evaluate our text editing GEC systems.
 
 
 ## License:
