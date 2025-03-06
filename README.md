@@ -18,12 +18,11 @@ pip install -e .
 ```
 
 ## Experiments and Reproducibility:
+All the datasets we used throughout the paper to train and test various systems can be downloded from [here]().
 
 This repo is organized as follows:
-
-1. [data](data): includes all the data we used throughout our paper to train and test various systems. TODO: make the data downloadable and indicate this here.
-2. [edits](edits): includes the scripts needed to extract edits from parallel GEC corpora and to create different edit representation.
-3. [gec](gec): includes the scripts needed to train and evaluate our text editing GEC systems.
+1. [edits](edits): includes the scripts needed to extract edits from parallel GEC corpora and to create different edit representation.
+2. [gec](gec): includes the scripts needed to train and evaluate our text editing GEC systems.
 
 
 ## License:
