@@ -21,6 +21,10 @@ pip install -e .
 
 This repo is organized as follows:
 
+1. [data](data):
+2. [edits](edits):
+3. [gec](gec):
+
 
 ## License:
 This repo is available under the MIT license. See the [LICENSE](LICENSE) for more info.
