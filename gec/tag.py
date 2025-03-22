@@ -312,7 +312,10 @@ def main():
                     writer.write('\n')
 
         else:
-            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=raw_test_dataset['subwords'], edits=pred_edits)
+            detok_pred_rewrites, pred_rewrites, non_app_edits = rewrite(subwords=(raw_test_dataset['subwords']
+                                                                                 if model_args.input_unit == 'subword-level'
+                                                                                 else  raw_test_dataset['words']),
+                                                                        edits=pred_edits)
 
             # Clean generated output by separating pnx and extra white space
             if model_args.task == 'msa-gec':
@@ -354,7 +357,12 @@ def predict(model, test_dataset, collate_fn, label_map, topk_pred=True,
     logger.info(f"  Num examples = {len(test_dataset)}")
     logger.info(f"  Batch size = {batch_size}")
 
-    data_loader = DataLoader(test_dataset.remove_columns(['subwords', 'edits']),
+    if 'subwords' in test_dataset.column_names:
+        _test_dataset = test_dataset.remove_columns(['subwords', 'edits'])
+    elif 'words' in test_dataset.column_names:
+         _test_dataset = test_dataset.remove_columns(['words', 'edits'])
+
+    data_loader = DataLoader(_test_dataset,
                              batch_size=batch_size,
                              shuffle=False, drop_last=False, collate_fn=collate_fn)
 
