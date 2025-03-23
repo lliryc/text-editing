@@ -59,6 +59,9 @@ def prompt_template_gec_n_shot(n, sent, lang, examples_train):
             prompt_instruct += examples
 
         prompt_instruct += 'Remember to format the corrected output with the tag <output> Your Corrected Version </output>.'
+        messages = [{'role': 'system', 'content': prompt_prelim}]
+        messages.append({'role': 'user', 'content': f'{prompt_instruct} Please start: <input> {sent} </input>'})
+        return messages
     
     elif lang == 'ar':
         prompt_prelim = ('أنت أداة لتصحيح الأخطاء النحوية والإملائية في اللغة العربية، حيث يمكنك تحديد'
@@ -81,9 +84,9 @@ def prompt_template_gec_n_shot(n, sent, lang, examples_train):
 
         prompt_instruct += 'تذكر تنسيق النص المصحح باستخدام الوسم <output> النص المصحح </output>'
 
-    messages = [{'role': 'system', 'content': prompt_prelim}]
-    messages.append({'role': 'user', 'content': f'{prompt_instruct} الرجاء البدء: <input> {sent} </input>'})
-    return messages
+        messages = [{'role': 'system', 'content': prompt_prelim}]
+        messages.append({'role': 'user', 'content': f'{prompt_instruct} الرجاء البدء: <input> {sent} </input>'})
+        return messages
 
 
 
@@ -114,6 +117,10 @@ def prompt_template_coda_n_shot(n, sent, lang, examples_train):
             prompt_instruct += examples
 
         prompt_instruct += 'Remember to format the CODA standardized output with the tag <output> Your CODA Version </output>.'
+
+        messages = [{'role': 'system', 'content': prompt_prelim}]
+        messages.append({'role': 'user', 'content': f'{prompt_instruct} Please start: <input> {sent} </input>'})
+        return messages
     
     elif lang == 'ar':
         prompt_prelim = ('أنت أداة لتصحيح النصوص العربية العامية، حيث يمكنك تصحيح النصوص العامية إلى الإملاء القياسي للعامية العربية (CODA). '
@@ -136,9 +143,9 @@ def prompt_template_coda_n_shot(n, sent, lang, examples_train):
 
         prompt_instruct += 'تذكر تنسيق النص المصحح باستخدام الوسم <output> النص المصحح </output>'
 
-    messages = [{'role': 'system', 'content': prompt_prelim}]
-    messages.append({'role': 'user', 'content': f'{prompt_instruct} الرجاء البدء: <input> {sent} </input>'})
-    return messages
+        messages = [{'role': 'system', 'content': prompt_prelim}]
+        messages.append({'role': 'user', 'content': f'{prompt_instruct} الرجاء البدء: <input> {sent} </input>'})
+        return messages
 
 
 def gpt_predict(arguments, model):
