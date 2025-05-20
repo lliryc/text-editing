@@ -24,6 +24,7 @@ This repo is organized as follows:
 1. [edits](edits): includes the scripts needed to extract edits from parallel GEC corpora and to create different edit representation.
 2. [gec](gec): includes the scripts needed to train and evaluate our text editing GEC systems.
 
+## Hugging Face Integration:
 
 ## License:
 This repo is available under the MIT license. See the [LICENSE](LICENSE) for more info.
