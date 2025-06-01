@@ -510,7 +510,13 @@ def rewrite(subwords, edits):
     non_app_edits = []
 
     for i, (sent_subwords, sent_edits) in enumerate(zip(subwords, edits)):
-        assert len(sent_subwords) == len(sent_edits)
+        if len(sent_subwords) != len(sent_edits):
+            # In case the predicted edits are less then the subwords 
+            # because of truncation, add keeps
+            assert len(sent_subwords) > len(sent_edits)
+            sent_edits += ['K*'] * (len(sent_subwords) - len(sent_edits))
+
+        # assert len(sent_subwords) == len(sent_edits)
         rewritten_sent = []
 
         for subword, edit in zip(sent_subwords, sent_edits):
