@@ -54,7 +54,7 @@ do
         --label_pred_output_file ${pred_mode}.preds.txt.${i} \
         --rewrite_pred_output_file ${pred_mode}.txt.${i}
 
-        python tokenize_data.py \
+        python utils/tokenize_data.py \
             --input $checkpoint/${pred_mode}.txt.${i}  \
             --tokenizer_path $checkpoint
 done
