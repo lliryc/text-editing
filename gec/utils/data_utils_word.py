@@ -48,7 +48,7 @@ def process_words(examples, label_list: List[str], tokenizer: PreTrainedTokenize
 
     examples_tokens = [words for words in examples['words']]
 
-    tokenized_inputs = tokenizer(examples_tokens, is_split_into_words=True)
+    tokenized_inputs = tokenizer(examples_tokens, max_length=512, truncation=True, is_split_into_words=True)
 
     labels = []
     examples_labels = [labels for labels in examples['edits']]
@@ -76,111 +76,16 @@ def process_words(examples, label_list: List[str], tokenizer: PreTrainedTokenize
 
             previous_word_idx = word_idx
 
+        if len(label_ids) != len(word_ids):
+            label_ids = label_ids[1:-1] # taking out the padding for the special tokens
+            label_ids = label_ids[:len(word_ids) - 2] # truncating up to len(word_ids) without special tokens
+            label_ids = [-100] + label_ids + [-100] # putting the padding for special tokens back
 
-        assert len(label_ids) == len(word_ids)
+        # assert len(label_ids) == len(word_ids)
         labels.append(label_ids)
 
 
     tokenized_inputs['labels'] = labels
 
     return tokenized_inputs
-
-
-class TokenClassificationDatasetWords(torch.utils.data.Dataset):
-    """A wrapper class for prediction dataset."""
-    def __init__(self, examples, labels, tokenizer):
-        self.tokenizer = tokenizer
-        self.features = self.process_examples(examples, labels,
-                                             pad_token_label_id=-100)
-
-    def process_examples(self, examples, labels, pad_token_label_id=-100):
-        label_map = {label: i for i, label in enumerate(labels)}
-
-        examples_tokens = [words for words in examples['words']]
-
-        examples_labels = [labels for labels in examples['edits']]
-
-        featurized_inputs = []
-
-        for ex_id, (example_tokens, example_labels) in enumerate(zip(examples_tokens, examples_labels)):
-            tokens = []
-            label_ids = []
-
-            for word, label in zip(example_tokens, example_labels):
-                word_tokens = self.tokenizer.tokenize(word)
-
-                if len(word_tokens) > 0:
-                    tokens.append(word_tokens)
-                    if label == 'UNK':
-                        label_ids.append([-200] +
-                                        [pad_token_label_id] *
-                                        (len(word_tokens) - 1))
-                    else:
-                        label_ids.append([label_map[label]] +
-                                        [pad_token_label_id] *
-                                        (len(word_tokens) - 1))
-
-            token_segments = []
-            token_segment = []
-            label_ids_segments = []
-            label_ids_segment = []
-            num_word_pieces = 0
-            seg_seq_length = self.tokenizer.model_max_length - 2
-
-            for idx, word_pieces in enumerate(tokens):
-                if num_word_pieces + len(word_pieces) > seg_seq_length:
-                    # convert to ids and add special tokens
-
-                    input_ids = self.tokenizer.convert_tokens_to_ids(token_segment)
-                    input_ids = [self.tokenizer.cls_token_id] + input_ids + [self.tokenizer.sep_token_id]
-
-                    label_ids_segment = [pad_token_label_id] + label_ids_segment + [pad_token_label_id]
-
-
-                    features = {'input_ids': input_ids,
-                                'attention_mask': [1] * len(input_ids),
-                                'token_type_ids': [0] * len(input_ids),
-                                'edits': label_ids_segment,
-                                'sent_id': ex_id
-                                }
-
-                    featurized_inputs.append(features)
-
-                    token_segments.append(token_segment)
-                    label_ids_segments.append(label_ids_segment)
-                    token_segment = list(word_pieces)
-                    label_ids_segment = list(label_ids[idx])
-                    num_word_pieces = len(word_pieces)
-                else:
-                    token_segment.extend(word_pieces)
-                    label_ids_segment.extend(label_ids[idx])
-                    num_word_pieces += len(word_pieces)
-
-            if len(token_segment) > 0:
-                input_ids = self.tokenizer.convert_tokens_to_ids(token_segment)
-                input_ids = [self.tokenizer.cls_token_id] + input_ids + [self.tokenizer.sep_token_id]
-
-
-                label_ids_segment = [pad_token_label_id] + label_ids_segment + [pad_token_label_id]
-
-                features = {'input_ids': input_ids,
-                            'attention_mask': [1] * len(input_ids),
-                            'token_type_ids': [0] * len(input_ids),
-                            'edits': label_ids_segment,
-                            'sent_id': ex_id
-                            }
-
-                featurized_inputs.append(features)
-
-                token_segments.append(token_segment)
-                label_ids_segments.append(label_ids_segment)
-
-        return featurized_inputs
-
-    def __len__(self):
-        return len(self.features)
-
-    def __getitem__(self, idx):
-        return self.features[idx]
-
 
