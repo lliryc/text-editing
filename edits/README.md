@@ -83,6 +83,8 @@ Running `bash scripts/create_edits_pnx_sep.sh` will segregate the punctuation ed
 In the edit extraction scripts we provide ([create_edits.sh](scripts/create_edits.sh) and [create_edits_pnx_sep.sh](scripts/create_edits_pnx_sep.sh)), we use the tokenizer of AraBERTv02. Replacing this tokenizer with the tokenizer from CAMeLBERT-MSA or ARBERTv2 will get you the data you need to replicate the rest of the experiments we report on in the paper.
 
 
+The edit coverage analysis we present in the paper (Table 1 and Table 9 in Appendix B) can be obtained from the [edits_coverage.ipynb](edits_coverage.ipynb) notebook.
+
 ## Data:
 Once the edits have been extracted, we create data files that we use to fine-tune and test BERT. Running `bash scripts/create_modeling_data.sh` would create all of the files necessary for fine-tuning and inference.
 
