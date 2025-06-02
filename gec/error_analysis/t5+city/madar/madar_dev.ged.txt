@@ -1,0 +1,10300 @@
+صار	UC
+هونيك،	UC
+بالظبط	UC
+قدام	UC
+مكتب	UC
+استعلامات	UC
+السياح.	UC
+
+بعمري	UC
+ما	UC
+سمعت	UC
+بهالعنوان	UC
+هون	UNK
+.	UNK
+
+روح	UC
+دغري	UC
+لحتى	UC
+تشوف	UC
+صيدلية.	UC
+
+أدي	REPLACE_SW
+حق	UC
+الترويقة؟	UC
+
+كيف	UC
+فيني	UC
+ساعدك؟	UC
+
+روح	UC
+شمال	UC
+عالزاوية	UC
+التالتة.	REPLACE_OR
+
+عبالك	UC
+كريمة	UC
+و	MERGE-B
+سكر	MERGE-I
+بقهوتك؟	UC
+
+فيك	UC
+تصرفلي	SPLIT
+الشيك	UC
+تبعي	UC
+تبع	UC
+المتين	UC
+دولار؟	UC
+
+إذا	REPLACE_OH
+لازم	UC
+يبين،	UC
+عمل	UC
+معروف	UC
+دقلي.	SPLIT
+
+وين	UC
+القهوة؟	UC
+
+بدي	UC
+كنزة	UC
+للولاد.	REPLACE_OH+REPLACE_OM
+
+أوك،	REPLACE_OH
+بيكلف	UC
+خمس	UC
+و	REPLACE_O
+تمانين	REPLACE_O
+سنت	UC
+للإيميل	REPLACE_OH
+العادي	UC
+و	REPLACE_X
+تلاتي	REPLACE_X
+دولار	UC
+بالظبط	UC
+زيادة	UC
+للتوصيل	UC
+الخاص.	UC
+
+كنت	UC
+بشتري	REPLACE_OH+REPLACE_OM
+هيدا	UC
+إذا	REPLACE_OH
+أنا	REPLACE_OH
+كنت	UC
+محلك.	UC
+
+رح	UC
+يكون	UC
+في	REPLACE_MI
+شي	UC
+صعوبات	UC
+مع	UC
+الجمارك؟	UC
+
+عندك	UC
+صبابط	UC
+رسمي	UC
+تبع	UC
+الأصابيع	REPLACE_OH
+العراض؟	UC
+
+لاء	UNK
+.	UNK
+بد	UC
+هيك	UC
+فيي	UC
+إقترح	REPLACE_OH
+أوضة	REPLACE_OH
+بتختين	UC
+لإستخدام	REPLACE_OH
+شخص؟	UC
+عنا	REPLACE_OM
+واحدة.	UC
+
+بدي	UC
+كيرلي	UC
+ضيق،	UC
+إذا	REPLACE_OH
+بتريد.	UC
+
+بدا	UC
+بيرة	UNK
+.	UNK
+
+صباحو	UNK
+.	UNK
+كيفك؟	UC
+
+للأسف	REPLACE_OH
+محتاج	UC
+اشوف	UC
+أي	REPLACE_OH
+اثبات	UC
+شخصية.	UC
+
+أي	REPLACE_OH
+نوع	UC
+صوص؟	UC
+
+هيدا	UC
+شوي	UC
+بارد.	UC
+فيك	UC
+تسخنو؟	REPLACE_OW
+
+بعتذر	REPLACE_OH+REPLACE_OM
+محتاج	UC
+أشوف	REPLACE_OH
+أي	REPLACE_OH
+بطاقة	UC
+اثبات	UC
+هوية.	UC
+
+انا	UC
+منيح.	UC
+بس	UC
+فيك	UC
+تدق	UC
+لرفيقي؟	UC
+
+يسلمو،	REPLACE_OW
+بيكفي.	UC
+
+مين	UC
+صاحبك	UC
+المفضل؟	UC
+
+يوم	UC
+الصحة	UC
+و	MERGE-B
+الرياضة	MERGE-I
+بعشرة	UC
+تشرين	UC
+الأول	REPLACE_OH
+هوي	REPLACE_OD+REPLACE_OG
+نهار	UC
+عطلة	UC
+عالمي	UC
+بيهدف	UC
+لتعزيز	UC
+صحة	UC
+البشر.	UC
+
+بدك	UC
+مني	UC
+نبص	UC
+تحت	UC
+غطا	UC
+السيارة؟	UC
+
+فيك	UC
+تساعدني	UC
+لاقي	UC
+شنطتي؟	UC
+
+فيك	UC
+تعمل	UC
+الترتيبات	UC
+من	UC
+قبل؟	UC
+
+في	REPLACE_MI
+حدا	UC
+بيساعدني.	UC
+يسلمو.	REPLACE_OW
+
+بس	UC
+توصل	UC
+لهونيك،	UC
+سأل	REPLACE_OH+REPLACE_OM
+حدا	UC
+تاني،	REPLACE_OR
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+بدي	UC
+مقسم	UC
+أربعة	REPLACE_OH
+و	MERGE-B
+عشرين،	MERGE-I
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+هودي	UC
+دولارين.	UC
+خلي	UC
+الباقي.	UC
+
+وحدة	REPLACE_OH+REPLACE_OM
+هامبرغر	UC
+و	UNK
+وحدة	UNK
+برغر	UC
+بالجبنة،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+أدي	REPLACE_SW
+بتاخد	REPLACE_OR
+في	UC
+العملية؟	UC
+
+كل	UC
+حدا	UC
+فينا	UC
+بيحب	UC
+يدفع	UC
+عن	UC
+أكلو.	REPLACE_OH
+
+الموقع	UC
+كان	UC
+عالكرسي	UC
+بالردهة.	UC
+
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UC
+صرفلي	REPLACE_X
+هال	UC
+ين	UC
+لجنيهات.	UC
+
+بدي	UC
+قاموس	UC
+جيبة،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+لشخصين	UC
+عالسبعة.	UC
+الإسم	REPLACE_OH
+هوي	REPLACE_OD+REPLACE_OG
+واتنابي.	UC
+
+ساعتي.	UC
+كانت	UC
+سايكو	UC
+رقمية.	UC
+
+من	UC
+دواعي	UC
+سرورنا	UC
+نقدملك	SPLIT
+مشروب	UC
+من	UC
+إختيارك،	REPLACE_OH
+بيتبعو	REPLACE_OW
+عشا.	UC
+كتيب	UC
+كامل	UC
+عن	UC
+المشروبات	UC
+منقدمو	REPLACE_OW
+على	UC
+هالرحلة	UC
+موجود	UC
+بدليل	UC
+المعلومات	UC
+بالمجلة	UC
+تبعنا.	UC
+
+عايش	UC
+قريب	UC
+من	UC
+هون؟	UC
+
+وين	UC
+محل	UC
+الهدايا؟	UC
+
+أنا	REPLACE_OH
+على	UC
+أوتوستراد	REPLACE_OH
+واحد	UC
+حد	UC
+خليج	UC
+مورو.	UC
+
+بدي	UC
+ساعة	UC
+منبه،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+بالمناسبة،	UC
+إسمي	REPLACE_OH
+هيروشي	UC
+ايجيما.	UC
+
+هيدا	UC
+التران	UC
+بيوقف	UC
+بلايك	UC
+فورست،	UC
+ما	UC
+هيك؟	UC
+
+أغلبية	REPLACE_OH
+اليابانية	UC
+بياكلوا	UC
+أخطبوط	REPLACE_OH
+و	MERGE-B
+حبار.	MERGE-I
+
+فيي	UC
+أخد	REPLACE_SW
+بطاقتين	UC
+من	UC
+الدرجة	UC
+التانبة	REPLACE_OR
+عشيكاغو	UNK
+.	UNK
+عمول	REPLACE_OH+REPLACE_OM
+معروف؟	UC
+
+رحت	UC
+عنيويورك.	UC
+
+شو	UC
+هوي	REPLACE_OD+REPLACE_OG
+رقم	UC
+الرحلة؟	UC
+
+واحد	UC
+لنيويورك،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+لبعض	UC
+كم	UC
+يوم.	UC
+
+التاني	REPLACE_OR
+عالشمال.	UC
+
+هالبطاقة،	UC
+تمام؟	UC
+
+هيدا	UC
+مكتب	UC
+الإستقبال؟	REPLACE_OH
+في	REPLACE_MI
+عيادة	UC
+قريبة؟	UC
+
+عشرة	UC
+دولار	UC
+بتكفي	UC
+لتاكسي؟	UC
+
+طعمتو	REPLACE_OR
+غريبة.	UC
+
+إيه.	REPLACE_OH
+نعم،	UC
+رح	UC
+جيب	UC
+واحد	UC
+كرمالك.	UC
+
+نص	UC
+قنيتة،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف.	UC
+
+مش	UC
+صحيح	UNK
+.	UNK
+بس	UC
+شي	UC
+مش	UC
+غالي.	UC
+
+عمتنبش	SPLIT
+عشي؟	UC
+
+أربع	REPLACE_OH
+ليالي.	UC
+
+بدي	UC
+كلسات.	UC
+
+فيك	UC
+تعملو	REPLACE_OR
+أرخص	REPLACE_OH
+لأنو	REPLACE_OH
+في	UC
+شوية؟	UC
+
+زلمي	REPLACE_MI
+شبق	UC
+فيي.	UC
+بعدين	UC
+لاحظت	UC
+إنو	REPLACE_SW
+محفظتي	UC
+راحت.	UC
+
+مني	UC
+مأكد	REPLACE_OM
+إنو	REPLACE_SW
+ضبيت	UC
+كفاية	UC
+تياب	REPLACE_OR
+لرحلة	UC
+مدتها	UC
+تلات	REPLACE_OR
+أسابيع.	REPLACE_OH
+
+طيب،	UC
+حابين	UC
+نجرب	UC
+نبيد	UC
+أبيض.	REPLACE_OH
+
+إذا	REPLACE_OH
+حدا	UC
+سأل	UC
+عني،	UC
+قلن	UC
+إنو	REPLACE_SW
+رح	UC
+كون	UC
+بالقهوة.	UC
+
+أنا	REPLACE_OH
+مأكد	UC
+إنو	REPLACE_SW
+عندي	UC
+ياه	REPLACE_OH+REPLACE_OM
+بالجيبة	UC
+الجوانية	UC
+تبع	UC
+كبوتي.	UC
+
+فيي	UC
+أخد	REPLACE_SW
+إسم	REPLACE_OH
+و	MERGE-B
+رقم	MERGE-I
+الشخص	UC
+يلي	REPLACE_SW
+عمبتدقله؟	SPLIT
+
+شركة	UC
+الطيران	UC
+رح	UC
+يدفعولي	REPLACE_X
+لإشتري	REPLACE_OH
+شوية	UC
+غراض	REPLACE_OH+REPLACE_OM
+شخصية؟	UC
+
+بدي	UC
+أوضة	REPLACE_OH
+مع	UC
+دوش.	UC
+
+ما	REPLACE_X
+في	REPLACE_X
+شي	UC
+طلع	UC
+من	UC
+المكنة؟	UC
+
+كان	UC
+المفروض	UC
+إنك	REPLACE_OH
+تاخد	REPLACE_OR
+الرحلة	UC
+تمانة	REPLACE_OR
+تنين	REPLACE_OH+REPLACE_OM
+صفر،	UC
+يلي	UC
+مشيت	UC
+من	UC
+خمستعشر	REPLACE_OD
+ديقة.	UC
+تمام.	UC
+فيي	UC
+دبرلك	SPLIT
+رحلة	UC
+تانية.	REPLACE_OR
+
+في	REPLACE_MI
+حدا	UC
+فضالي	UC
+الطرد.	UC
+
+اوه،	UC
+و	MERGE-B
+لا	MERGE-I
+شي	UC
+هيدا.	UC
+إنت	REPLACE_OH
+هون،	UC
+عكل	UC
+حال	UNK
+.	UNK
+
+طيران	UC
+اليابان،	UC
+الرحلة	UC
+رقم	UC
+واحد	UC
+تنين	REPLACE_OH+REPLACE_OM
+تلاتة.	REPLACE_OR
+
+لازم	UC
+إشتري	REPLACE_OH
+شامبو.	UC
+
+فيك	UC
+تقلي	UNK
+بس	UC
+نوصل	UC
+على	UC
+سنتر	UC
+السيفيك؟	UC
+
+وين	UC
+أقرب	REPLACE_OH
+لحام؟	UC
+
+حابين	UC
+نبقى	UC
+لأربع	REPLACE_OH
+ليالي	UC
+من	UC
+أول	REPLACE_OH
+آب.	UC
+
+شو	UC
+إسم	REPLACE_OH
+هالزهرة؟	UC
+
+خمستعش	UC
+أيلول	REPLACE_OH
+هوي	REPLACE_OD+REPLACE_OG
+يوم	UC
+لإحترام	REPLACE_OH
+المسنين.	UC
+
+ما	REPLACE_X
+في	REPLACE_X
+صابون	UC
+بأوضتي.	REPLACE_OH
+
+أي	REPLACE_OH
+شي	UC
+فيي	UC
+أخدو	REPLACE_SW
+كرمال	UC
+هالطفح	UC
+الجلدي؟	UC
+
+فيك	UC
+تغير	UC
+الصياغة	UC
+للشي	UC
+يلي	UC
+قلتو؟	REPLACE_OR
+
+أدي	REPLACE_SW
+من	UC
+الوقت	UC
+رح	UC
+ياخد	REPLACE_OR
+ليطلب؟	UC
+
+فيك	UC
+تحكي	UC
+إنت	REPLACE_OH
+و	MERGE-B
+معلي	MERGE-I
+صوتك،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف؟	UC
+
+أدي	REPLACE_SW
+وقت	UC
+رح	UC
+يصير	UC
+قبل	UC
+ما	UC
+يطلع؟	UC
+
+وين	UC
+معلومات	UC
+الرياضة؟	UC
+
+هالحجم	UC
+هون،	UC
+اللي	UC
+بتسمي	UC
+حجم	UC
+عادي،	UC
+بيمشي	UNK
+.	UNK
+
+وين	UC
+الجولة	UC
+بدا	REPLACE_OM
+تنتهي،	UC
+و	REPLACE_X
+أمتين؟	REPLACE_X
+
+وين	UC
+لازم	UC
+غير	UC
+محطة	UC
+التران	UC
+لأوصل	REPLACE_OH
+عادنبرة؟	UC
+
+حابب	UC
+حط	UC
+هيدا	UC
+بصندوق	UC
+الأمانات	REPLACE_OH
+.	REPLACE_OH
+
+وين	UC
+فيي	UC
+أصرف	REPLACE_OH
+مصرياتي؟	UC
+
+فينا	UC
+نترك	UC
+غراضنا،	REPLACE_OH+REPLACE_OM
+ما	UC
+عدا	UC
+الإشيا	REPLACE_OH
+الغالية،	UC
+بالباص؟	UC
+
+عمبتسأل	SPLIT
+سعر	UC
+شو	UC
+هيدا	UC
+على	UC
+فاتورتي	UNK
+.	UNK
+
+رح	UC
+إدفع	REPLACE_OH
+خمسين	UC
+دولار	UNK
+.	UNK
+
+هلأ	REPLACE_OR
+بعرف	REPLACE_OH+REPLACE_OM
+شو	UC
+اللي	UC
+كان	UC
+غلط.	UC
+
+هيدا	UC
+إيكيدا	REPLACE_OH+REPLACE_OM
+عميحكي.	SPLIT
+عندي	UC
+حجز	UC
+لطاولة	UC
+عالستة	UC
+و	MERGE-B
+نص	MERGE-I
+هالليلة.	UC
+بس	UC
+بعتذر	REPLACE_OH+REPLACE_OM
+إنو	REPLACE_SW
+رح	UC
+أوصل	REPLACE_OH
+مأخر	UC
+نص	UC
+ساعة.	UC
+
+كم	UC
+أوقية	REPLACE_OH
+من	UC
+البارفان	UC
+فيي	UC
+أخد	REPLACE_SW
+من	UC
+دون	UC
+جمارك؟	UC
+
+بس	UC
+سياحة.	UC
+
+هيدا	UC
+منيح،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UC
+مضيهن.	UC
+كيف	UC
+بتحبهن؟	REPLACE_OM
+
+بعد	UC
+عندك	UC
+مقاعد	UC
+لأداء	UC
+الليلة؟	UC
+
+بدي	UC
+واحد	UC
+كبير	UNK
+.	UNK
+
+نمت	UC
+خلال	UC
+ألارم	REPLACE_SW
+الستة	UC
+و	MERGE-B
+نص.	MERGE-I
+
+أنا	REPLACE_OH
+مصور	UC
+مستقل	UNK
+.	UNK
+
+الموزعين	UC
+فيهن	UC
+يصرفولك	REPLACE_X
+الدولارات	UC
+لبخشيش	UC
+الكازينو.	UC
+منروح؟	UC
+
+عنا	REPLACE_OM
+حوالي	UC
+التلاتين	REPLACE_OR
+نوع	UC
+من	UC
+زيوت	UC
+الحمام	UNK
+.	UNK
+
+رح	UC
+إخد	REPLACE_SW
+العرض	UC
+لإلك	UNK
+جمعة	REPLACE_XF
+الجايي.	REPLACE_OD+REPLACE_OG
+
+يسلمو.	REPLACE_OW
+أدي	REPLACE_OH
+حق	UC
+الكفوف؟	UC
+
+لازم	UC
+روح	UNK
+.	UNK
+بدقلك	UC
+بعدين	UNK
+.	UNK
+
+بدي	UC
+شوية	UC
+حفاضات	UC
+للكب.	UC
+
+من	UC
+وين	UC
+منشأ	UC
+هالسمكة	UC
+الفراشة؟	UC
+
+فيك	UC
+تصرفهن	UC
+للدولار،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف؟	UC
+
+نحنا	UC
+كتير	REPLACE_OR
+محظوظين.	UC
+عندهن	UC
+واحد	UC
+بقياس	UC
+أربعة	REPLACE_OH
+بمحل	UC
+ألا	REPLACE_OH
+موانا	UNK
+.	UNK
+
+في	REPLACE_MI
+شي	UC
+ليموزين؟	UC
+
+فيي	UC
+أحصل	REPLACE_OH
+على	UC
+تلفون	UC
+الوعية	UC
+عالخمسة	UC
+و	MERGE-B
+نص	MERGE-I
+بكرا	REPLACE_XN
+الصبح؟	UC
+
+بفضل	REPLACE_OH+REPLACE_OM
+أوضة	REPLACE_OH
+هادية.	UC
+
+بدي	UC
+شوية	UC
+مزيل	UC
+بويا	UC
+الضفير	UNK
+.	UNK
+
+بدي	UC
+بطارية	UNK
+.	UNK
+
+في	REPLACE_MI
+فرقة	UC
+موسيقية	UC
+لايف	UC
+أو	REPLACE_OH
+دي	UC
+جي؟	UC
+
+فيني	UC
+إستأجر	REPLACE_OH
+عدة	UC
+غوص؟	UC
+
+بدي	UC
+إحجز	REPLACE_OH
+اوضة	UC
+لأربع	REPLACE_OH
+ليالي	UC
+من	UC
+تنين	REPLACE_OH+REPLACE_OM
+و	MERGE-B
+عشرين	MERGE-I
+كانون	UC
+الأول	REPLACE_OH
+.	REPLACE_OH
+
+هالجزدان	UC
+مناسب	UC
+لكل	UC
+أحوال	REPLACE_OH
+الطقس؟	UC
+
+بدي	UC
+دونات،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UNK
+.	UNK
+
+بدي	UC
+إستأجر	REPLACE_OH
+سيارة	UC
+أوتوماتيك	REPLACE_OH
+ليومين	UNK
+.	UNK
+
+راحت	UC
+عليي	REPLACE_XN
+الرحلة	UC
+عشرين	UC
+لسان	UC
+فرانسيسكو.	UC
+
+أدي	REPLACE_SW
+للمطار؟	UC
+
+هيدا	UC
+منيح.	UC
+امتين	UC
+هوي؟	REPLACE_OD+REPLACE_OG
+
+أدي	REPLACE_SW
+عمرا	REPLACE_OM
+بنتك؟	UC
+
+فيك	UC
+تقلي	REPLACE_X
+عن	UC
+كم	UC
+أوتيل	REPLACE_OH
+نضيف	UC
+و	MERGE-B
+رخيص؟	MERGE-I
+
+فينا	UC
+نحجزلك	SPLIT
+أوضة	REPLACE_OH
+مريحة	UC
+بقصر	UC
+قديم	UC
+حد	UC
+نادي	UC
+غولف	UC
+مشهور	UNK
+.	UNK
+
+بنصح	UC
+بهيدا	UC
+لإنو	REPLACE_OH
+مصنوع	UC
+مية	UC
+بالمية	UC
+من	UC
+مكونات	UC
+طبيعية.	UC
+
+التران	UC
+بيوقف	UC
+ببرايتون؟	UC
+
+فيك	UC
+تقلي	UNK
+وين	UC
+فيني	UC
+إخد	REPLACE_SW
+تاكسي؟	UC
+
+بطاقتين	UC
+بالدرجة	UC
+التاني،	REPLACE_OR
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UNK
+.	UNK
+
+بدي	UC
+إبعت	REPLACE_OH
+فاكس	UNK
+.	UNK
+
+بدي	UC
+مكواية	UC
+للسفر	UNK
+.	UNK
+
+بقدملك	REPLACE_X
+أي	REPLACE_OH
+شي؟	UC
+
+يومي؟	UC
+خايف	UC
+إسأل،	REPLACE_OH
+بس	UC
+شو	UC
+بتقصد؟	UC
+
+بدي	UC
+واحد	UC
+اللي	UC
+بيحمل	UC
+الورقة	UC
+تبع	UC
+الحجم	UC
+العادي	UC
+من	UC
+دون	UC
+ما	UC
+أطويهن.	REPLACE_OH
+
+إيه،	REPLACE_OH
+بس	UC
+مش	UC
+كتير	REPLACE_OR
+قوي	UNK
+.	UNK
+
+أنا	REPLACE_OH
+حساس	UC
+عالبسينات	UNK
+.	UNK
+
+إيه،	REPLACE_OH
+لازم	UC
+يكون	UC
+عندك	UC
+دفتر	UC
+سواقة	UC
+و،	REPLACE_X
+أه،	REPLACE_X
+و	MERGE-B
+لازم	MERGE-I
+يكون	UC
+في	DELETE
+عندك	UC
+رخصة	UC
+من	UC
+لجنة	UC
+التاكسي	UC
+و	MERGE-B
+الليموزين	MERGE-I
+.	MERGE-I
+
+تفضل،	UC
+يا	UC
+إستاذ.	REPLACE_OH
+
+الهيئة	UC
+إنو	REPLACE_SW
+مش	UC
+عم	UC
+فيي	UC
+إخد	REPLACE_SW
+ماي	UC
+سخنة	UNK
+.	UNK
+
+بدي	UC
+إحجز	REPLACE_OH
+أوضة	REPLACE_OH
+لليلة	UNK
+.	UNK
+
+لاء،	UC
+ما	UC
+بيتضمن	UC
+الضريبة	UC
+و	MERGE-B
+سعر	MERGE-I
+الخدمة	UNK
+.	UNK
+
+بتحب	UC
+تروح	UC
+معي	UC
+عالتسوق	UC
+بعد	UC
+الضهر؟	REPLACE_OR
+
+مرحبا،	UC
+هيدا	UC
+عنجد	SPLIT
+فستان	UC
+حلو	UNK
+.	UNK
+
+هلأ،	REPLACE_OR
+إتصالك	REPLACE_OH
+مشي	UC
+حالو	UNK
+.	UNK
+اذا	UC
+بتريد	UC
+تفضل	UNK
+.	UNK
+
+شو	UC
+رقم	UC
+البوابة؟	UC
+
+شو	UC
+هوي	REPLACE_OD+REPLACE_OG
+تذكار	UC
+مثالي	UC
+من	UC
+هاواي؟	UC
+
+فيي	UC
+روح	UC
+لهونيك	UC
+بالمترو؟	UC
+
+بدي	UC
+سيشوار.	UC
+
+رح	UC
+نوصل	UC
+لمطرح	UC
+نحنا	UC
+و	REPLACE_SW
+عمنحكي	REPLACE_OD
+هيك؟	UC
+
+جايي	REPLACE_OD+REPLACE_OG
+من	UC
+النروج	UNK
+.	UNK
+
+من	UC
+عشرة	UC
+لتناعش	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UNK
+.	UNK
+
+أكيد.	REPLACE_OH
+خليني	UC
+شوفو.	UC
+تأذيت	UC
+من	UC
+المرجان،	UC
+بفتكر	REPLACE_OH+REPLACE_OM
+.	REPLACE_OH+REPLACE_OM
+
+احتياط،	UC
+خلي	UC
+يكون	UC
+في	UC
+معي	UC
+رقم	UC
+الشخص	UC
+المسؤول	UNK
+.	UNK
+
+في	REPLACE_MI
+طريق	UC
+سريع؟	UC
+
+لي	REPLACE_XF
+ما	UC
+إجا	REPLACE_OH
+عالحفلة	UC
+مبارح؟	UC
+
+في	REPLACE_MI
+حادث	UC
+سير	UNK
+.	UNK
+
+بعتذر،	REPLACE_OH+REPLACE_OM
+أخدت	REPLACE_OH
+الرقم	UC
+الغلط.	UC
+
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UC
+دخل	UC
+رقمك	UNK
+.	UNK
+
+ما	UC
+فيي	UC
+ظبط	UC
+الصورة	UNK
+.	UNK
+
+وحدة	REPLACE_OH+REPLACE_OM
+برغر	UC
+بالجبنة	UC
+و	MERGE-B
+عصير	MERGE-I
+ليمون،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UNK
+.	UNK
+
+هيدا	UC
+باسبوري	UNK
+.	UNK
+
+ليش،	UC
+يسلمو	REPLACE_OW
+كتير	REPLACE_OR
+.	REPLACE_OR
+أه،	REPLACE_XC
+فيي	UC
+أطلع	REPLACE_OH
+عالقمة؟	UC
+
+فيي	UC
+إخد	REPLACE_SW
+بطاقتين	UC
+للحفلة	UC
+الموسيقية	UC
+لنهار	UC
+جمعة	UC
+الجايي؟	UC
+
+راكب	UC
+تاني	REPLACE_OR
+هونيك	UC
+قال	UC
+إنو	REPLACE_SW
+بيقدر	UC
+يغير	UC
+المقاعد	UC
+معك	UNK
+.	UNK
+
+فيي	UC
+مدد	UC
+إقامتي؟	REPLACE_OH
+
+قول،	UC
+بتعرف	UC
+أي	REPLACE_OH
+شي	UC
+خرج	UC
+ينشاف	UC
+قريب	UC
+من	UC
+هون؟	UC
+
+لأ،	UC
+عايز	UC
+أأجر	REPLACE_OH
+نص	UC
+مجموعة	UC
+من	UC
+المضار	UC
+وصباط	UNK
+.	UNK
+
+فيك	UC
+تعطيني	UC
+خبر	UC
+بس	UC
+يلتقى	UC
+الجزدان	UC
+الضايع؟	UC
+
+شو	UC
+إسم	REPLACE_OH
+هالجنينة	UC
+الوطنية؟	UC
+
+عندي	UC
+خدش	UNK
+.	UNK
+
+وين	UC
+في	REPLACE_MI
+محل	UC
+منيح	UC
+للسياحة؟	UC
+
+فيي	UC
+إخد	REPLACE_SW
+شوية	UC
+فواكي؟	UC
+
+فيي	UC
+إتغدى	REPLACE_OH
+هلأ؟	REPLACE_OR
+
+بحاجة	UC
+لغير	UC
+هالدولار.	UC
+
+عايز	UC
+تاكسي	UNK
+.	UNK
+أنا	REPLACE_OH
+بساوث	UC
+ماين	UC
+و	REPLACE_O
+ليبرتي	REPLACE_O
+.	REPLACE_O
+
+أكيد،	REPLACE_OH
+عايز	UC
+كيرلي؟	UC
+
+منا	UC
+تفاحة	UC
+بس	UC
+دراقة	UNK
+.	UNK
+
+رح	UC
+أعطيك	REPLACE_OH
+وصفة	UNK
+.	UNK
+خدا	REPLACE_OR
+عالصيدلية	UNK
+.	UNK
+
+منطير	UC
+تلات	REPLACE_OR
+مرات	UC
+بالجمعة،	UC
+تلاتة،	REPLACE_OR
+جمعة،	UC
+و	REPLACE_O
+سبت	REPLACE_O
+.	REPLACE_O
+
+هيدا	UC
+غالي،	UC
+ما	UC
+هيك؟	UC
+
+إيه،	REPLACE_OH
+عنا	REPLACE_OM
+هيدا	UNK
+.	UNK
+رح	UC
+نحضرلك	SPLIT
+ياه	REPLACE_OH+REPLACE_OM
+.	REPLACE_OH+REPLACE_OM
+
+فيك	UC
+تحملي	REPLACE_X
+شنطاتي	UC
+للساعة	UC
+تلاتة؟	REPLACE_OR
+
+لاء،	UC
+بس	UC
+بدي	UC
+إنزل.	REPLACE_OH
+
+فيي	UC
+إحجز	REPLACE_OH
+استأجر-سيارة	UC
+هون؟	UC
+
+إنت	REPLACE_OH
+أميركاني؟	REPLACE_OH
+
+لهالمطرح،	UC
+عمول	REPLACE_OH+REPLACE_OM
+معروف	UNK
+.	UNK
+
+سيارتي	UC
+تعطلت	UNK
+.	UNK
+
+وين	UC
+كحلة	UC
+العيون؟	UC
+
+بدنا	UC
+زاوية	UC
+هادية،	UC
+إذا	REPLACE_OH
+في	REPLACE_MI
+مجال	UNK
+.	UNK
+
+سكوتش	UC
+مع	UC
+مي،	UC
+إذا	REPLACE_OH
+بتريد.	UC
+وعندك	UC
+اي	UC
+وجبات	UC
+خفيفة؟	UC
+
+كيف	UC
+بطفي	REPLACE_OH+REPLACE_OM
+هيدا	UC
+الضو؟	UC
+
+هو	UC
+مشغول	UC
+كتير	REPLACE_OR
+اليوم؟	UC
+
+بدي	UC
+خيطان	UNK
+.	UNK
+
+اعطيني	UC
+شهادة	UC
+طبية،	UC
+إذا	REPLACE_OH
+بتريد	UNK
+.	UNK
+
+بدي	UC
+تقصرو	REPLACE_OW
+إينش	REPLACE_OH
+واحدة	UC
+هون	UNK
+.	UNK
+
+ما	UC
+حاسس	UC
+حالي	UC
+منيح.	UC
+عطيني	REPLACE_OH+REPLACE_OM
+دوا	UNK
+.	UNK
+
+فيني	UC
+اخد	REPLACE_SW
+جريدة	UC
+يابانية،	UC
+إذا	REPLACE_OH
+بتريد	UNK
+؟	UNK
+
+اوك	UNK
+.	UNK
+فيني	UC
+اترك	UC
+السيارة	UC
+باي	UC
+مكان؟	UC
+وقديه	UC
+الكلفة؟	UC
+
+اي	UC
+باص	UC
+بروح	REPLACE_OM
+عوسط	UC
+المدينة؟	UC
+
+في	REPLACE_MI
+اكسبريس	UC
+عبوسطن؟	UC
+
+إذا	REPLACE_OH
+بتريد	UC
+كون	UC
+رفيقي	UC
+بالمراسلة.	UC
+
+انا	UC
+كتير	REPLACE_OR
+محمس،	UC
+وما	UC
+قادر	UC
+اهدا	UNK
+.	UNK
+
+فيني	UC
+انزل	UC
+باوتيل	UC
+الهيلتون؟	UC
+
+بدي	UC
+ياك	UC
+تشيلو	REPLACE_OM
+.	REPLACE_OM
+
+امشي	UC
+شمال	UC
+بهالشارع،	UC
+بعدين	UC
+خود	UC
+اول	UC
+مفرق	UC
+عاليمين.	UC
+
+بدي	UC
+أعرف	REPLACE_OH
+اذا	UC
+كان	UC
+ممكن	UC
+انو	REPLACE_OR
+نشحن	UC
+طقم	UC
+الصحون	UC
+عطوكيو.	UC
+
+بدي	UC
+مقو	UC
+للجسم	UNK
+.	UNK
+
+في	REPLACE_MI
+شي	UC
+اكل	UC
+مش	UC
+سخن	UC
+وحر؟	UC
+
+قريب	UC
+فينا	UC
+نروح	UC
+مشي؟	UC
+
+ممكن	UC
+تقربلي	SPLIT
+الملح؟	UC
+
+بدي	UC
+روح	UC
+إلى	REPLACE_OH
+وول	UC
+ستريت.	UC
+كيف	UC
+بوصل	REPLACE_OH+REPLACE_OM
+لهونيك؟	UC
+
+التمرين	UC
+كتير	REPLACE_OR
+بيعملك	UC
+ضرر	UNK
+.	UNK
+
+الترويقة،	UC
+الضريبة،	UC
+و	REPLACE_X
+كلفة	REPLACE_X
+الخدمة،	UC
+بكون	REPLACE_OM
+خمسة	UC
+و	MERGE-B
+اربعين	MERGE-I
+دولار	UC
+عالشخص	UC
+بالليلة	UNK
+.	UNK
+
+فيك	UC
+تصلح	UC
+هيدا؟	UC
+
+مسا	UC
+الخير،	UC
+الو	UNK
+.	UNK
+
+ما	UC
+عملاقي	SPLIT
+شناطك.	UC
+
+روح	UC
+دغري،	UC
+إذا	REPLACE_OH
+بتريد	UNK
+.	UNK
+
+المي	UC
+هون	UC
+للشرب؟	UC
+
+اه،	REPLACE_OH
+يلا،	UC
+بس	UC
+دولارين	UNK
+.	UNK
+
+فيك	UC
+إذا	REPLACE_OH
+بتريد	UC
+تبدل	UC
+هالفستان	UC
+بقياس	UC
+اكبر	UNK
+؟	UNK
+
+ايه	UC
+خلينا	UC
+نروح.	UC
+بساعدك	REPLACE_OH+REPLACE_OM
+بالوظيفة	UC
+بعد	UC
+ما	UC
+ناكل	UC
+بيتزا	UNK
+.	UNK
+
+ايه	UC
+مس	UC
+تاناكا	UNK
+.	UNK
+في	REPLACE_MI
+رسالتين	UC
+الك	UNK
+.	UNK
+
+ما	UC
+بيجي	UC
+عقدي.	UC
+
+بكرا	REPLACE_XN
+نهار	UC
+اخر	REPLACE_OH
+.	REPLACE_OH
+
+يمكن	UC
+فيي	UC
+ساعدك	UNK
+.	UNK
+بدك	UC
+فيتامين	UC
+سي؟	UC
+
+انسرقت	UC
+المحفظة	UC
+من	UC
+جيبتي	UC
+بالترين	UNK
+.	UNK
+
+بعيد	UC
+كتير	REPLACE_OR
+.	REPLACE_OR
+الأحسن	REPLACE_OH
+تاخد	REPLACE_OR
+تاكسي	UNK
+.	UNK
+
+بدي	UC
+مقعد	UC
+بالممر،	UC
+إذا	REPLACE_OH
+بتريد	UNK
+.	UNK
+
+عايش	UC
+بشقة	UC
+اجارا	UC
+تمانين	REPLACE_OR
+الف	UC
+ين	UC
+بالشهر	UNK
+.	UNK
+
+فيي	UC
+قاطع؟	UC
+
+بعد	UC
+إزنك.	REPLACE_OH
+فينا	UC
+نبدل	UC
+مطارح	UC
+إذا	REPLACE_OH
+ما	REPLACE_X
+في	REPLACE_X
+إزعاج؟	REPLACE_OH
+
+إي	REPLACE_OH
+أكيد.	REPLACE_OH
+
+امشي	UC
+للزاوية	UC
+ولف	UC
+عالشمال	UC
+حد	UC
+إشارة	REPLACE_OH
+السير.	UC
+
+بدي	UC
+حط	UC
+غراضي	REPLACE_OH+REPLACE_OM
+التمينة	UC
+بخزنة	UC
+الفندق.	UC
+
+إي،	REPLACE_OH
+بس	UC
+تأكد	UC
+إنو	REPLACE_SW
+البطاءة	REPLACE_OR
+تبعك	UC
+معك.	UC
+
+ما	UC
+رح	UC
+ينضم	UC
+للجولة	UC
+الإختيارية	REPLACE_OH
+إلا	REPLACE_OH
+ناس	UC
+قليلة.	UC
+
+مش	UC
+مهم.	UC
+على	UC
+كل	UC
+حال،	UC
+إزا	REPLACE_SW
+بتريد	UC
+خدني	REPLACE_OR
+على	UC
+وسط	UC
+تشاينا	UC
+تاون.	UC
+رح	UC
+جرب	UC
+إكتشفا	REPLACE_OH
+لحالي.	UC
+
+رح	UC
+يوظفو	REPLACE_OW
+ناس	UC
+جداد	UC
+بنيسان.	UC
+
+إنشاالله.	REPLACE_OH
+
+تنان	REPLACE_SW
+سكوتش	UC
+ومي،	UC
+إزا	REPLACE_SW
+بتريد.	UC
+
+مين	UC
+عم	UC
+يلعب؟	UC
+
+إزا	REPLACE_SW
+بتريد،	UC
+عالشمال.	UC
+
+عم	UC
+يوجعني	UC
+سني	UC
+الإدماني.	REPLACE_OH
+
+شو	UC
+أجدد	REPLACE_OH
+لعبة	UC
+للكومبوتر	UC
+لولد	UC
+عمرو	REPLACE_OR
+خمس	UC
+تعشر	UC
+سنة؟	UC
+
+منشوفك	UC
+بكرا.	REPLACE_XN
+
+لأ،	UC
+كلك	UC
+زوء.	UC
+صرت	UC
+أحسن.	REPLACE_OH
+
+عندك	UC
+خبز؟	UC
+
+بتعزف	UC
+منيح	UC
+عالكمانجة؟	UC
+
+رفيئي	REPLACE_OR
+زحط	UC
+ووأع	REPLACE_OR
+بالحمام.	UC
+
+بقدر	REPLACE_OH+REPLACE_OM
+آخد	REPLACE_OR
+منفضة؟	UC
+
+كانت	UC
+الديانة	UC
+المسيحية	UC
+ممنوعة	UC
+وكان	UC
+البلد	UC
+معزول	UC
+عن	UC
+بائي	REPLACE_OR
+العالم.	UC
+
+أديش	REPLACE_OR
+بدك؟	UC
+
+كوكتيل	UC
+قريدس	UC
+لئلا	UC
+ولئلي	REPLACE_OD
+كمان.	UC
+
+فيك	UC
+تمضي	UC
+هون؟	UC
+وإزا	REPLACE_OH
+بتريد	UC
+كتوب	REPLACE_OH+REPLACE_OM
+أول	REPLACE_OH
+حرف	UC
+من	UC
+إسمك	REPLACE_OH
+هون.	UC
+
+بشرفني	UC
+إني	REPLACE_OH
+زرت	UC
+مكتبك	UC
+وإني	REPLACE_OH
+تحدست	UC
+معك.	UC
+بشكرك	REPLACE_OH+REPLACE_OM
+كتير	REPLACE_OR
+على	UC
+تعاونك.	UC
+
+شخيرك	UC
+مزعج.	UC
+
+عكل	UC
+حال	UC
+ما	UC
+حبيت	UC
+اللون.	UC
+بقدر	REPLACE_OH+REPLACE_OM
+رجعو؟	REPLACE_OR
+
+بقدر	REPLACE_OH+REPLACE_OM
+آخد	REPLACE_OR
+شوية	UC
+بهار؟	UC
+
+أنا	REPLACE_OH
+السيد	UC
+تاكاهاشي	UC
+بالأوضة	REPLACE_OH
+رقم	UC
+خمس	MERGE-B
+مية	MERGE-I
+وتسعة	UC
+وأربعين.	REPLACE_OH
+فيك	UC
+تبعتلي	REPLACE_X
+أربع	REPLACE_OH
+أناني	REPLACE_OH
+بيرة	UC
+بودوايزر،	UC
+إزا	REPLACE_SW
+بتريد؟	UC
+
+هيدا	UC
+بسبعين	UC
+دولار.	UC
+
+إزا	REPLACE_SW
+بتريد	UC
+اتصلي	REPLACE_X
+بالأوتيل	REPLACE_OH
+بس	UC
+تلائيلي	REPLACE_X
+الشنط.	UC
+
+بدي	UC
+إتصال	REPLACE_OH
+يوعيني	UC
+بكرا	REPLACE_XN
+الساعة	UC
+تمانة	REPLACE_OR
+ونص	UC
+الصبح،	UC
+إزا	REPLACE_SW
+بتريد.	UC
+
+إي،	REPLACE_OH
+بس	UC
+هيدول	UC
+كتار	UNK
+وأنا	REPLACE_OH
+شبعت.	UC
+
+بدي	UC
+غسول	UC
+للفم.	UC
+
+ماني	UC
+مرتاح.	UC
+
+بتعمل	UC
+حسومات	UC
+بالجملة؟	UC
+
+طوكيو	DELETE
+صفر	UC
+تلاتة	REPLACE_OR
+أربع	REPLACE_OH
+تسعات	UC
+أبعة	REPLACE_OH
+خمسة	UC
+ستة	UC
+سبعة.	UC
+
+بتساعدني	UC
+تا	UC
+لائي	UC
+الزو؟	UC
+
+فيك	UC
+تئلي	REPLACE_X
+كيف	UC
+بزبطو؟	REPLACE_OW
+
+أي	REPLACE_OH
+ساعة	UC
+تأريب	UC
+ا	DELETE
+بيجي	UC
+الباص؟	UC
+
+بتعرف	UC
+كيف	UC
+بيستعملو	REPLACE_OW
+التليفون؟	REPLACE_XC
+
+أكيد.	REPLACE_OH
+عنا	REPLACE_OM
+علامات	UC
+كتب	UC
+كتير	REPLACE_OR
+حلوين	UC
+اصليين	UC
+من	UC
+امريكا.	UC
+
+عامل	UC
+مكالمات	UC
+بيحكي	UC
+ياباني،	UC
+إزا	REPLACE_SW
+بتريد.	UC
+
+بتهمنا	UC
+الموضة.	UC
+
+فيك	UC
+تئطرني؟	UC
+
+كلينيك	UC
+إف؟	REPLACE_OH
+
+مرحبا،	UC
+الآنسة	UC
+ياماغوشي؟	UC
+الشخص	UC
+اللي	UC
+متصلة	UC
+في	UC
+صار	UC
+عالخط.	UC
+إتصالك	REPLACE_OH
+مأبول.	UC
+تفضلي،	UC
+إزا	REPLACE_SW
+بتريدي.	UC
+
+أي	REPLACE_OH
+ساعة	UC
+منوصل	UC
+علوس	UC
+أنجلس؟	REPLACE_OH
+
+مشي	UC
+أوامي	REPLACE_OH
+شي	UC
+خمس	UC
+دئايئ،	REPLACE_OR
+ولف	UC
+عالشمال.	UC
+
+من	UC
+هون	UC
+صوب	UC
+البحر.	UC
+
+هيدا	UC
+الشاي	UC
+بالأعشاب	REPLACE_OH
+بساعد	UC
+عتجديد	UC
+شباب	UC
+الجسم.	UC
+
+منون	UC
+صناعة	UC
+يابانية،	UC
+ما	UC
+هيك؟	UC
+
+طيب.	UC
+من	UC
+هون	UC
+إزا	REPLACE_SW
+بتريد.	UC
+رح	UC
+دلك	UC
+عأوضتك.	REPLACE_OH
+
+لازم	UC
+إترك	REPLACE_OH
+الأوتيل	REPLACE_OH
+أبل	REPLACE_OH
+الضهر.	REPLACE_OR
+
+إزا	REPLACE_SW
+بتريد،	UC
+تنان	REPLACE_SW
+همبرغر	UC
+وتنان	REPLACE_SW
+أهوة.	REPLACE_OH
+بدي	UC
+آخدون	REPLACE_OR
+معي.	UC
+
+فيك	UC
+تحمل	UC
+هالشنطتين؟	UC
+
+طلبت	UC
+لحمة	UC
+مش	UC
+سمك.	UC
+فيك	UC
+تغيري	UC
+يا؟	UC
+
+إبني	REPLACE_OH
+تعبان	UC
+كتير.	REPLACE_OR
+
+معدتي	UC
+عم	UC
+توجعني.	UC
+
+ده	UC
+قدامك	UC
+هناك،	UC
+يادوبك	UC
+قدام	UC
+مكتب	UC
+استعلامات	UC
+السياحة	UNK
+.	UNK
+
+عمري	UC
+ما	UC
+سمعت	UC
+عن	UC
+العنوان	UC
+ده	UC
+هنا	UNK
+.	UNK
+
+أمشي	REPLACE_OH
+علطول	REPLACE_X
+لحد	UC
+ما	UC
+تلقي	UC
+صيدلية.	UC
+
+بكام	UC
+الفطار؟	UC
+
+ازاي	UC
+أقدر	REPLACE_OH
+اساعدك؟	UC
+
+احود	UC
+شمال	UC
+عند	UC
+الناصية	UC
+التالته.	REPLACE_OR+REPLACE_OT
+
+تحب	UC
+كريمة	UC
+و	MERGE-B
+سكر	MERGE-I
+في	UC
+قهوتك؟	UC
+
+ممكن	UC
+تصرفلي	SPLIT
+شيك	UC
+بميتين	UC
+دولار؟	UC
+
+لو	UC
+لازم	UC
+يظهر،	UC
+لو	UC
+سمحت	UC
+كلمني	UNK
+.	UNK
+
+فين	UC
+القهوة؟	UC
+
+عايز	UC
+بلوفر	UC
+اطفال.	UC
+
+اوكيه	UNK
+.	UNK
+ده	UC
+بيكلف	UC
+خمسه	REPLACE_OT
+و	REPLACE_O
+تمانين	REPLACE_O
+سنت	UC
+للبريد	UC
+العادي	UC
+أو	REPLACE_OH
+زيادة	UC
+تلات	REPLACE_OR
+دولارات	UC
+بالظبط	UC
+للبريد	UC
+المخصوص.	UC
+
+لو	UC
+كنت	UC
+مكانك	UC
+كنت	UC
+صدقت.	UC
+
+حالاقي	UC
+مشاكل	UC
+مع	UC
+الجمارك؟	UC
+
+عندك	UC
+جزم	UC
+رسمي	UC
+واسعه	REPLACE_OT
+من	UC
+قدام؟	UC
+
+لأ	UNK
+.	UNK
+ممكن	UC
+انصح	UC
+اوضة	UC
+بسريرين	UC
+يقعد	UC
+فيها	UC
+واحد	UC
+بس؟	UC
+احنا	UC
+عندنا	UC
+واحده	REPLACE_OT
+.	REPLACE_OT
+
+عاوز	UC
+كيرلي	UC
+جامد،	UC
+لو	UC
+سمحت.	UC
+
+نفسها	UC
+في	UC
+بيرة.	UC
+
+صباح	UC
+الخير	UNK
+.	UNK
+عامل	UC
+ايه؟	UC
+
+متأسف	UC
+بس	UC
+محتاج	UC
+أشوف	REPLACE_OH
+أى	REPLACE_SW
+مستند	UC
+اثبات	UC
+شخصية	UNK
+.	UNK
+
+أى	REPLACE_SW
+نوع	UC
+صوص؟	UC
+
+ده	UC
+ساقع	UC
+شوية	UNK
+.	UNK
+ممكن	UC
+تدفيه؟	UC
+
+اسف،	REPLACE_OH
+المكان	UC
+ده	UC
+متاخد.	REPLACE_OR
+
+انا	UC
+كويس	UC
+جدا.	UC
+.بس	REPLACE_P
+ممكن	UC
+من	UC
+غير	UC
+مؤاخذه	REPLACE_MI
+تكلم	UC
+صاحبي؟	UC
+
+شكرا	UC
+ليك،	UC
+ده	UC
+كفاية	UNK
+.	UNK
+
+مين	UC
+أقرب	REPLACE_OH
+صديق	UC
+ليك؟	UC
+
+يوم	UC
+الصحة	UC
+والرياضة	UC
+في	UC
+عشرة	UC
+اكتوبر	UC
+معمول	UC
+علشان	UC
+يحسن	UC
+صحة	UC
+الناس	UNK
+.	UNK
+
+عايزني	UC
+ابص	UC
+تحت	UC
+الكبوت؟	UC
+
+ممكن	UC
+تساعدني	UC
+الاقي	UC
+شنطتي؟	UC
+
+ممكن	UC
+مقدما	UC
+نجهز	UC
+الترتيبات؟	UC
+
+فيه	UC
+حد	UC
+بيساعدني.	UC
+شكرا	UNK
+.	UNK
+
+لما	UC
+توصل	UC
+هناك،	UC
+اسأل	UC
+واحد	UC
+تاني،	REPLACE_OR
+من	UC
+فضلك	UNK
+.	UNK
+
+من	UC
+فضلك	UC
+عايز	UC
+امد	UC
+حجزي	UC
+للغرفة،	UC
+اربعه	REPLACE_OT
+و	MERGE-B
+عشرين	MERGE-I
+ساعه	REPLACE_OT
+كمان.	UC
+
+ادي	UC
+دولارين.	UC
+خللي	REPLACE_OD
+الباقي	UC
+عشانك.	UC
+
+ممكن	UC
+واحد	UC
+هامبرجر	UC
+وواحد	UC
+شيز	UC
+برجر.	UC
+
+بتاخد	REPLACE_OR
+كام	UC
+في	UC
+العملية؟	UC
+
+نحب	UC
+ندفع	UC
+تمن	REPLACE_OR
+اكلنا	UNK
+.	UNK
+
+المكان	UC
+كان	UC
+على	UC
+كرسي	UC
+في	UC
+الطرقة.	UC
+
+من	UC
+فضلك	UC
+غيرلي	SPLIT
+الين	UC
+اللي	UC
+معايا	REPLACE_OD+REPLACE_OG
+بجنيهات.	UC
+
+عايز	UC
+قاموس	UC
+جيب	UC
+صغير،	UC
+،لو	REPLACE_P
+سمحت	UNK
+.	UNK
+
+لشخصين	REPLACE_XT
+الساعة	UC
+سبعة	UNK
+.	UNK
+الاسم	UC
+واتانابي.	UC
+
+ساعتي	UC
+كانت	UC
+سايكو	UC
+رقميه.	UC
+
+يسعدنا	UC
+نقدم	UC
+ليكم	UC
+المشروب	UC
+اللي	UC
+تختاروة،	REPLACE_OT
+بعد	UC
+الاكل	UNK
+.	UNK
+حتلاقو	REPLACE_OW
+لسته	UNK
+كاملة	UC
+بأنواع	UC
+المشروبات	UC
+اللي	UC
+بنقدمها	UC
+في	UC
+رحلتنا	UC
+موجوده	REPLACE_OT
+في	UC
+دليل	UC
+المعلومات	UC
+في	UC
+مجلتنا.	UC
+
+انت	UC
+عايش	UC
+قريب	UC
+من	UC
+هنا؟	UC
+
+فين	UC
+محل	UC
+الهدايا؟	UC
+
+انا	UC
+عالطريق	UC
+السريع	UC
+جنب	UC
+خليج	UC
+مورو.	UC
+
+من	UC
+فضلك	UC
+عايز	UC
+منبه	UNK
+.	UNK
+
+بالمناسبه،	REPLACE_OT
+اسمي	UC
+هيوشي	UC
+ايجيما	UNK
+.	UNK
+
+القطر	UC
+ده	UC
+بيقف	REPLACE_OH+REPLACE_OM
+في	UC
+محطة	UC
+لاك	UC
+فورست،	UC
+مش	UC
+كده؟	UC
+
+معظم	UC
+اليابانيين	UC
+بياكلوا	UC
+اخطبوط	UC
+و	MERGE-B
+سبيط	MERGE-I
+.	MERGE-I
+
+ممكن	UC
+من	UC
+فضلك	UC
+تذكرتين	UC
+درجة	UC
+تانية	REPLACE_OR
+لشيكاجو؟	UC
+
+انا	UC
+رجت	UC
+نيويورك	UNK
+.	UNK
+
+ايه	UC
+رقم	UC
+الرحلة؟	UC
+
+تذكرة	UC
+لنيويورك	UC
+من	UC
+فضلك	UNK
+.	UNK
+
+حوالي	UC
+ايام	UC
+قليله	REPLACE_OT
+.	REPLACE_OT
+
+التاني	REPLACE_OR
+عالشمال	UNK
+.	UNK
+
+الكارت	UC
+اهوه	REPLACE_OH
+.	REPLACE_OH
+.تمام	REPLACE_P
+كده؟	UC
+
+هو	UC
+ده	UC
+مكتب	UC
+الاستقبال؟	UC
+ما	UC
+فيش	UC
+عيادة	UC
+قريبه؟	REPLACE_OT
+
+حيكفي	UC
+عشر	UC
+دولارات	UC
+للتاكسي؟	UC
+
+طعمة	UC
+غريب	UNK
+.	UNK
+
+ايوه	UNK
+.	UNK
+استنى	UC
+انا	UC
+جبت	UC
+واحد	UC
+ليك	UNK
+.	UNK
+
+نص	UC
+قزازة،	UC
+من	UC
+فضلك	UNK
+.	UNK
+
+مش	UC
+بالظبط	UNK
+.	UNK
+حاجه	REPLACE_OT
+بس	UC
+ماتكونش	SPLIT
+غاليه	REPLACE_OT
+.	REPLACE_OT
+
+بتدور	UC
+على	UC
+حاجه؟	REPLACE_OT
+
+اربع	UC
+ليالي	UNK
+.	UNK
+
+عايز	UC
+شويه	REPLACE_OT
+شرابات	UNK
+.	UNK
+
+ممكن	UC
+تبيعه	UC
+أرخص	REPLACE_OH
+علشان	UC
+هناك	UC
+شويه	REPLACE_OT
+بقع؟	UC
+
+راجل	UC
+خبطني	UNK
+.	UNK
+و	MERGE-B
+يعد	MERGE-I
+كده	UC
+اخدت	REPLACE_OR
+بالي	UC
+ان	UC
+المحفظة	UC
+راحت	UNK
+.	UNK
+
+انا	UC
+مش	UC
+متأكد	UC
+اني	UC
+حطيت	UC
+في	UC
+الشنطة	UC
+لبس	UC
+يكفيني	UC
+تلات	REPLACE_OR
+تيام	REPLACE_OR
+.	REPLACE_OR
+
+تمام،	UC
+نحب	UC
+نجرب	UC
+النبيت	UC
+الابيض	UNK
+.	UNK
+
+لو	UC
+حد	UC
+سال	UC
+عني،	UC
+قله	UC
+اني	UC
+حأكون	REPLACE_OH
+موجود	UC
+عالقهوة	UNK
+.	UNK
+
+انا	UC
+متأكد	UC
+ان	UC
+كان	UC
+معايا	REPLACE_OD+REPLACE_OG
+في	UC
+الجيب	UC
+الجواني	UC
+بتاع	UC
+البالطو	UC
+بتاعي	UNK
+.	UNK
+
+ممكن	UC
+أعرف	REPLACE_OH
+أسم	REPLACE_OH
+و	MERGE-B
+رقم	MERGE-I
+الشخص	UC
+اللي	UC
+هتكلمه؟	UC
+
+هى	REPLACE_OA
+الخطوط	UC
+الجوية	UC
+حتدفعلي	SPLIT
+علشان	UC
+اشتري	UC
+حاجات	UC
+شخصية	UC
+اسايه؟	UC
+
+عايز	UC
+اوضه	REPLACE_OT
+بحمام	UNK
+.	UNK
+
+مافيش	REPLACE_OD
+حاجة	UC
+بتخرج	UC
+من	UC
+المكنه	REPLACE_OT
+؟	REPLACE_OT
+
+انت	UC
+كان	UC
+المفروض	UC
+تاخد	REPLACE_OR
+الرحلة	UC
+تمانية	REPLACE_OR
+اتنين	REPLACE_OR
+صفر،	UC
+اللي	UC
+اقلعت	UC
+من	UC
+خمستاشر	REPLACE_OR
+دقيقة	UNK
+.	UNK
+على	UC
+الى	UNK
+حال	UNK
+انا	UC
+اقدر	UC
+ارتب	UC
+رحلة	UC
+جديدة	UC
+عشانك	UNK
+.	UNK
+
+فيه	UC
+واحد	UC
+فتح	UC
+الطرد	UC
+بتاعي	UNK
+.	UNK
+
+أوة،	REPLACE_SW
+لا	UC
+ولا	UC
+حاجه	REPLACE_OT
+.	REPLACE_OT
+المهم	UC
+انك	UC
+هنا،	UC
+على	UC
+اى	REPLACE_OA
+حال	UNK
+.	UNK
+
+الخطوط	UC
+الجوية	UC
+اليابانيه،	REPLACE_OT
+رحلة	UC
+رقم	UC
+ميه	REPLACE_OT
+تلاته	REPLACE_SW
+و	MERGE-B
+عشرين	MERGE-I
+.	MERGE-I
+
+عايز	UC
+اشتري	UC
+شامبو	UNK
+.	UNK
+
+ممكن	UC
+تقوللي	SPLIT
+لما	UC
+نوصل	UC
+لمركز	UC
+الخدمات	UC
+المدنية؟	UC
+
+فين	UC
+أقرب	REPLACE_OH
+جزار؟	UC
+
+عايزين	UC
+نحجز	UC
+اربع	UC
+ليالي	UC
+من	UC
+اول	UC
+اغسطس	UNK
+.	UNK
+
+ايه	UC
+اسم	UC
+الورده	REPLACE_OT
+ديه؟	REPLACE_OT
+
+يوم	UC
+خمستاشر	REPLACE_OR
+سبتمبر	UC
+بيكون	UC
+يوم	UC
+احترام	UC
+العواجيز	UNK
+.	UNK
+
+مافيش	REPLACE_OD
+شوربه	REPLACE_OT
+في	UC
+أوضتي	REPLACE_OH
+.	REPLACE_OH
+
+فيه	UC
+اى	REPLACE_OA
+حاجه	REPLACE_OT
+ممكن	UC
+اخدها	REPLACE_OH
+علشان	UC
+الطفح	UC
+الجلدي؟	UC
+
+ممكن	UC
+تغير	UC
+الصيقة	UC
+للي	REPLACE_XT
+انتي	UC
+لسه	UC
+قايله	UC
+دلوقتي؟	UC
+
+بياخد	REPLACE_OR
+وقت	UC
+اد	REPLACE_OR
+ايه	UC
+علشان	UC
+اطلب	UC
+حاجه؟	REPLACE_OT
+
+ممكن	UC
+من	UC
+فضلك	UC
+تتكلم	UC
+بصوت	UC
+أعلى؟	REPLACE_OH
+
+حياخد	REPLACE_OR
+وقت	UC
+اد	REPLACE_OR
+ايه	UC
+قبل	UC
+ما	UC
+يخرج؟	UC
+
+فين	UC
+معلومات	UC
+الرياضة؟	UC
+
+الحجم	UC
+ده	UNK
+.	UNK
+اللي	UC
+انتي	UC
+بتقول	UC
+عليها	UC
+الحجم	UC
+العادي	UNK
+.	UNK
+.يؤدي	REPLACE_P
+الغرض	UNK
+.	UNK
+
+امتى	UC
+حتنتهي	UC
+الرحلة،	UC
+و	MERGE-B
+فين؟	MERGE-I
+
+منين	UC
+اقدر	UC
+اغير	UC
+القطر	UC
+علشان	UC
+اوصل	UC
+ادنبرة	UNK
+؟	UNK
+
+عايز	UC
+احطه	UC
+في	UC
+صندوق	UC
+ايداع	UC
+امن	UNK
+.	UNK
+
+فين	UC
+أقدر	REPLACE_OH
+اغير	UC
+فلوسي؟	UC
+
+ينفع	UC
+نسيب	UC
+حاجتنا	UC
+في	UC
+الاتوبيس،	UC
+ماعدا	UC
+الحاجات	UC
+المهمه؟	REPLACE_OT
+
+انا	UC
+بأتسائل	REPLACE_OH
+عن	UC
+التكلفة	UC
+ديه	REPLACE_OT
+اللي	UC
+في	UC
+الفاتورة	UC
+علشان	UC
+ايه.	UC
+
+حأدفع	REPLACE_OH
+خمسين	UC
+دولار	UNK
+.	UNK
+
+دلوقتي	UC
+عارف	UC
+ان	UC
+الموضوع	UC
+كان	UC
+غلط	UNK
+.	UNK
+
+انا	UC
+ايكيدا	UC
+اللي	UC
+بيكلمك.	UC
+انا	UC
+حاجز	UC
+ترابيزة	REPLACE_XC
+الساعة	UC
+سته	REPLACE_OT
+و	MERGE-B
+نص	MERGE-I
+الليله	REPLACE_OT
+ديه	REPLACE_OT
+.	REPLACE_OT
+بس	UC
+اسف	REPLACE_OH
+حاتأخر	UC
+نص	UC
+ساعة.	UC
+
+اقدر	UC
+اشتري	UC
+كام	UC
+أوقية	REPLACE_OH
+بارفان	UC
+ماعليهاش	SPLIT
+جمارك؟	UC
+
+مجرد	UC
+سياحة	UNK
+.	UNK
+
+ده	UC
+كويس،	UC
+من	UC
+فضلك	UC
+أمضيهم	REPLACE_OH
+.	REPLACE_OH
+عاوزه	REPLACE_OT
+ازاي؟	UC
+
+لسه	UC
+فيه	UC
+كراسي	UC
+لمسرحية	UC
+الليله؟	REPLACE_OT
+
+انا	UC
+حابب	UC
+الكبير	UNK
+.	UNK
+
+نمت	UC
+لغاية	UC
+ما	UC
+المنبة	UC
+رن	UC
+الساعة	UC
+سته	REPLACE_OT
+و	MERGE-B
+نص	MERGE-I
+.	MERGE-I
+
+أنا	REPLACE_OH
+مصوراتي	UC
+حر.	UC
+
+اللي	UC
+بيوزعو	REPLACE_OW
+الورق	UC
+يقدرو	REPLACE_OW
+يبدلو	REPLACE_OW
+دولاراتك	UC
+بقواشيط	UC
+الكازينو	UNK
+.	UNK
+نروح؟	UC
+
+عندنا	UC
+حوالي	UC
+تلاتين	REPLACE_OR
+نوع	UC
+من	UC
+زيوت	UC
+الحمام	UNK
+.	UNK
+
+حيكون	UC
+معايا	REPLACE_OD+REPLACE_OG
+العرض	UC
+بتاعك	UC
+الاسبوع	UC
+الجاي	UNK
+.	UNK
+
+أشكرك	REPLACE_OH
+.	REPLACE_OH
+بكام	UC
+الجوانتي	UC
+ده؟	UC
+
+لازم	UC
+أمشي	REPLACE_OH
+.	REPLACE_OH
+حأكلمك	REPLACE_OH+REPLACE_OM
+بعدين	UNK
+.	UNK
+
+عايز	UC
+بمبرز	UC
+استعمال	UC
+مره	REPLACE_OT
+واحدة	UNK
+.	UNK
+
+فين	UC
+بلد	UC
+سمك	UC
+الفراشه	REPLACE_OT
+ده؟	UC
+
+ممكن	UC
+تغيرهم	UC
+لدولارات،	UC
+لو	UC
+سمحت؟	UC
+
+أحنا	REPLACE_OH
+محظوظين	UNK
+.	UNK
+عندهم	UC
+واحد	UC
+مقاس	UC
+أربعة	REPLACE_OH
+في	UC
+محل	UC
+الا	UC
+موانا	UNK
+.	UNK
+
+الاقي	UC
+ليموزين؟	UC
+
+ممكن	UC
+تصحوني	UC
+بالتليفون	REPLACE_XC
+بكرة	UC
+خمسه	REPLACE_OT
+و	MERGE-B
+نص	MERGE-I
+الصبح؟	UC
+
+بأفضل	REPLACE_OH
+أوضه	REPLACE_OH+REPLACE_OT
+هادية	UNK
+.	UNK
+
+عايز	UC
+مزيل	UC
+مونيكير	UNK
+.	UNK
+
+عايز	UC
+بطارية	UNK
+.	UNK
+
+فيه	UC
+فرقة	UC
+موسيقية	UC
+لايف	UC
+أو	REPLACE_OH
+ديجيه؟	UC
+
+ممكن	UC
+أجر	REPLACE_OH
+معدات	UC
+غطس؟	UC
+
+عايز	UC
+أحجز	REPLACE_OH
+أوضة	REPLACE_OH
+أربع	REPLACE_OH
+ليال	UC
+من	UC
+أول	REPLACE_OH
+اتنين	REPLACE_OR
+و	MERGE-B
+عشرين	MERGE-I
+ديسمبر	UNK
+.	UNK
+
+الشنطة	UC
+ديه	REPLACE_OT
+تستحمل	UC
+كل	UC
+أنواع	REPLACE_OH
+الطقس؟	UC
+
+عايز	UC
+كحك	UC
+دونات،	UC
+من	UC
+فضلك	UNK
+.	UNK
+
+عايز	UC
+أأجر	REPLACE_OH
+عربية	UC
+أوتامتيك	REPLACE_OH
+ليومين	UNK
+.	UNK
+
+فاتتني	UC
+الرحلة	UC
+رقم	UC
+عشرين	UC
+لسان	UC
+فرانسيسكو.	UC
+
+بكام	UC
+للمطار؟	UC
+
+ده	UC
+كويس	UNK
+.	UNK
+امتى	UC
+يكون؟	UC
+
+بنتك	UC
+أد	REPLACE_OR
+ايه؟	UC
+
+ممكن	UC
+تقولي	REPLACE_X
+عن	UC
+فندق	UC
+نضيف	UC
+و	MERGE-B
+رخيص؟	MERGE-I
+
+نقدر	UC
+نحجزلك	SPLIT
+أوضه	REPLACE_OH+REPLACE_OT
+مريحة	UC
+في	UC
+القلعة	UC
+القديمة	UC
+جنب	UC
+نادي	UC
+جولف	REPLACE_OR
+مشهور	UNK
+.	UNK
+
+بأنصح	REPLACE_OD+REPLACE_OH
+بده	UC
+لأنه	REPLACE_OH
+مصنوع	UC
+ميه	REPLACE_OT
+بالميه	UC
+من	UC
+المكونات	UC
+الطبيعية	UNK
+.	UNK
+
+القطر	UC
+بيقف	REPLACE_OH+REPLACE_OM
+في	UC
+بريتون؟	UC
+
+ممكن	UC
+تقوللي	SPLIT
+منين	UC
+أخد	REPLACE_SW
+تاكسي؟	UC
+
+تذكرتين	UC
+درجة	UC
+تانيه،	REPLACE_OR+REPLACE_OT
+من	UC
+فضلك	UNK
+.	UNK
+
+عايز	UC
+ابعت	REPLACE_OR
+فاكس	UNK
+.	UNK
+
+محتاج	UC
+مكوة	UC
+سفر	UNK
+.	UNK
+
+ممكن	UC
+أقدملك	REPLACE_X
+اى	REPLACE_OA
+حاجة؟	UC
+
+يومي؟	UC
+انا	UC
+خايف	UC
+اسأل،	UC
+لكن	UC
+انت	UC
+تقصد	UC
+ايه؟	UC
+
+عايزة	UC
+واحده	REPLACE_OT
+تقدر	UC
+تشيل	UC
+ورق	UC
+بحجم	UC
+ورق	UC
+الجوابات	UC
+من	UC
+غير	UC
+ما	UC
+يكونوا	UC
+مطويين	UNK
+.	UNK
+
+أيوة،	REPLACE_OH+REPLACE_OT
+بس	UC
+ما	UC
+يكونش	UC
+جامد	UC
+جدا	UNK
+.	UNK
+
+عندي	UC
+حساسيه	REPLACE_OT
+من	UC
+القطط	UNK
+.	UNK
+
+أيوة،	REPLACE_OH+REPLACE_OT
+لازم	UC
+يكون	UC
+عندك	UC
+رخصة	UC
+سواقة،	UC
+اه،	REPLACE_OH
+يكون	UC
+عندك	UC
+رخصه	REPLACE_OT
+من	UC
+لجنة	UC
+التاكسي	UC
+و	MERGE-B
+الليموزين	MERGE-I
+.	MERGE-I
+
+اتفضل،	UC
+يا	UC
+استاذ	UNK
+.	UNK
+
+شكلي	UC
+مش	UC
+حيوصلي	SPLIT
+ميه	REPLACE_OT
+سخنه	REPLACE_OT
+.	REPLACE_OT
+
+عايز	UC
+أحجر	REPLACE_OH
+أوده	REPLACE_SW
+الليله	REPLACE_OT
+ديه	REPLACE_OT
+.	REPLACE_OT
+
+لأ،	UC
+ده	UC
+مستثنى	UC
+من	UC
+الضرايب	UC
+و	MERGE-B
+مصارف	MERGE-I
+الخدمة	UNK
+.	UNK
+
+تحب	UC
+نروح	UC
+تتسوق	UC
+معايا	REPLACE_OD+REPLACE_OG
+بعد	UC
+الضهر؟	REPLACE_OR
+
+ازيك،	UC
+ده	UC
+حقيقي	UC
+فستان	UC
+جميل.	UC
+
+دلوقتي،	UC
+مكالمتك	UC
+اشتغلت	UNK
+.	UNK
+اتفضل	UC
+لو	UC
+سمحت	UNK
+.	UNK
+
+ايه	UC
+رقم	UC
+البوابه؟	REPLACE_OT
+
+اى	REPLACE_OA
+تذكار	UC
+أقدر	REPLACE_OH
+اخده	REPLACE_OH
+و	MERGE-B
+ينفع	MERGE-I
+هديه	REPLACE_OT
+من	UC
+هاواي؟	UC
+
+ممكن	UC
+أوصلة	REPLACE_OH
+بالمترو؟	UC
+
+عايز	UC
+سيشوار.	UC
+
+الكلام	UC
+ده	UC
+حيخلينا	UC
+ننجح؟	UC
+
+جاي	UC
+من	UC
+النرويج	UNK
+.	UNK
+
+أذا	REPLACE_OH
+سمحت	UC
+من	UC
+عشرة	UC
+لتناشر	UNK
+.	UNK
+
+اكيد	UNK
+.	UNK
+خليني	UC
+أشوف	REPLACE_OH
+.	REPLACE_OH
+الصخور	UC
+المرجانية	UC
+عورتك،	UC
+متهيألي.	SPLIT
+
+أحتياطي،	REPLACE_OH
+خلي	UC
+معايا	REPLACE_OD+REPLACE_OG
+رقم	UC
+الشخص	UC
+المسئول	UNK
+.	UNK
+
+فيه	UC
+أوتوستراد؟	REPLACE_OH
+
+ليه	UC
+ماجاش	SPLIT
+الحفلة	UC
+امبارح؟	UC
+
+فيه	UC
+حادثة	UNK
+.	UNK
+
+أسف،	REPLACE_OH
+طلبت	UC
+الرقم	UC
+غلط	UNK
+.	UNK
+
+لو	UC
+سمحت	UC
+دخل	UC
+رقمك	UC
+السري	UNK
+.	UNK
+
+مش	UC
+قادر	UC
+أظبط	REPLACE_OH
+الصورة	UNK
+.	UNK
+
+واحد	UC
+هامبرج	UC
+بالجنبة	UC
+و	MERGE-B
+عصير	MERGE-I
+برتقان،	UC
+إذا	REPLACE_OH
+سمحت	UNK
+.	UNK
+
+اهوه	REPLACE_SW
+باسبوري	UNK
+.	UNK
+
+ليه؟	UC
+اشكرك	UC
+كتير	REPLACE_OR
+.	REPLACE_OR
+اوه،	UC
+ممكن	UC
+أكلم	REPLACE_OH
+الريس؟	UC
+
+ممكن	UC
+تذكرتين	UC
+للحفلة	UC
+الموسيقيه	REPLACE_OT
+الجمعة	UC
+الجاية؟	UC
+
+فيه	UC
+راكب	UC
+تاني	REPLACE_OR
+هناك	UC
+قال	UC
+انه	UC
+ممكن	UC
+يبدل	UC
+الكرسي	UC
+معاك	UNK
+.	UNK
+
+ممكن	UC
+اطول	UC
+أقامتي؟	REPLACE_OH
+
+مثلا،	UC
+تعرف	UC
+أى	REPLACE_SW
+حاجه	REPLACE_OT
+تستاهل	UC
+تتشاف	UC
+قريبه	REPLACE_OT
+من	UC
+هنا؟	UC
+
+لأ،	UC
+عايز	UC
+أأجر	REPLACE_OH
+نص	UC
+مجموعة	UC
+من	UC
+المضارب	UC
+وجزمة	UNK
+.	UNK
+
+ممكن	UC
+تبلغني	UC
+لما	UC
+تلاقي	UC
+شنطتك	UC
+الضايعة	UNK
+؟	UNK
+
+ايه	UC
+أسم	REPLACE_OH
+الجنينة	UC
+العامة	UC
+ديه؟	REPLACE_OT
+
+أتجرحت	REPLACE_OH
+.	REPLACE_OH
+
+فين	UC
+مكان	UC
+كويس	UC
+للسياحة؟	UC
+
+ممكن	UC
+شوية	UC
+فاكهة؟	UC
+
+ممكن	UC
+اتغدى	UC
+دلوقتي؟	UC
+
+عايز	UC
+اغير	UC
+الدولارات	UC
+ديه	REPLACE_OT
+.	REPLACE_OT
+
+محتاج	UC
+تاكسي	UNK
+.	UNK
+انا	UC
+في	UC
+ساوث	UC
+مين	UC
+وليبرتي	UNK
+.	UNK
+
+مؤكد،	UC
+عايز	UC
+كيرلي؟	UC
+
+ديه	REPLACE_OD
+مش	UC
+تفاحة	UC
+ديه	REPLACE_OT
+خوحة	UNK
+.	UNK
+
+حاديلك	SPLIT
+روشتة	UNK
+.	UNK
+خدها	UC
+للصيدلية	UNK
+.	UNK
+
+بنسافر	UC
+تلات	REPLACE_OR
+مرات	UC
+في	UC
+الاسبوع،	UC
+في	UC
+التلات،	REPLACE_OR
+الجمعه،	REPLACE_OT
+و	MERGE-B
+السبت	MERGE-I
+.	MERGE-I
+
+ده	UC
+غالي،	UC
+مش	UC
+كده؟	UC
+
+ايوه،	UC
+عندنا	UNK
+.	UNK
+حنجهزهالك	REPLACE_OD
+.	REPLACE_XM
+
+ممكن	UC
+تخلي	UC
+عندك	UC
+شنطتي	UC
+لحد	UC
+الساعة	UC
+تلاته؟	REPLACE_SW
+
+لأ،	UC
+انا	UC
+بس	UC
+حأعدي	REPLACE_OH
+مش	UC
+حأطول	REPLACE_OD
+.	REPLACE_OD
+
+ممكن	UC
+احجز	UC
+اجر-عربية	UC
+هنا؟	UC
+
+انت	UC
+اميركي؟	UC
+
+للمكان	REPLACE_XT
+ده،	UC
+إذا	REPLACE_OH
+سمحت	UNK
+.	UNK
+
+عربيتي	UC
+وقفت.	UC
+
+فين	UC
+الاى	REPLACE_OA
+شادو؟	UC
+
+محتاجين	UC
+ركن	UC
+هادي،	UC
+إن	REPLACE_OH
+أمكن	UNK
+.	UNK
+
+سكوتش	UC
+و	DELETE
+ميه،	REPLACE_OT
+من	UC
+فضلك	UNK
+.	UNK
+و	MERGE-B
+عندك	MERGE-I
+أى	REPLACE_SW
+اكلة	UC
+خفيفة؟	UC
+
+ازاي	UC
+اقدر	UC
+أطفي	REPLACE_OH
+النور	UC
+ده؟	UC
+
+هو	UC
+مشغول	UC
+جدا	UC
+النهاردة؟	REPLACE_X
+
+عايز	UC
+خيط	UNK
+.	UNK
+
+اديني	UC
+شهاده	REPLACE_OT
+طبية،	UC
+من	UC
+فضلك	UNK
+.	UNK
+
+عايز	UC
+أخليه	REPLACE_OH
+إينش	REPLACE_OH
+أقصر	REPLACE_OH
+هنا.	UC
+
+مش	UC
+حاسس	UC
+اني	UC
+كويس	UNK
+.	UNK
+من	UC
+فضلك	UC
+اديني	UC
+دوا	UNK
+.	UNK
+
+ممكن	UC
+جرنان	UC
+ياباني،	UC
+من	UC
+فضلك؟	UC
+
+اوكي	UNK
+.	UNK
+ينفع	UC
+أسيب	REPLACE_OH
+العربية	UC
+في	UC
+أى	REPLACE_SW
+مكان؟	UC
+و	UNK
+تكلفه	UNK
+ده	UC
+كام؟	UC
+
+اى	REPLACE_OA
+اوتوبيس	UC
+يوديني	UC
+نص	UC
+البلد؟	UC
+
+فيه	UC
+اكسبريس	UC
+لبوسطون؟	UC
+
+من	UC
+فضلك	UC
+خليط	UC
+صديق	UC
+المراسله	REPLACE_OT
+بتاعي	UNK
+.	UNK
+
+انا	UC
+متحمس	UC
+جدا،	UC
+مش	UC
+قادر	UC
+اقعد	UC
+ساكت	UNK
+.	UNK
+
+ممكن	UC
+أنزل	REPLACE_OH
+عند	UC
+فندق	UC
+هيلتون؟	UC
+
+عايزك	UC
+انت	UC
+تشيله.	UC
+
+احود	UC
+شمال	UC
+الشارع	UC
+ده	UC
+و	REPLACE_O
+خد	REPLACE_O
+اول	UC
+يمين	UNK
+.	UNK
+
+عايز	UC
+أعرف	REPLACE_OH
+لو	UC
+ممكن	UC
+مجموعة	UC
+الاطباق	UC
+ديه	REPLACE_OT
+تتشحن	UC
+لطوكيو.	UC
+
+عايز	UC
+بودرة	UC
+تلك.	UC
+
+فيه	UC
+عندك	UC
+اكل	UC
+مش	UC
+حراق	UC
+او	UC
+مشطشط؟	UC
+
+هو	UC
+قريب	UC
+شويه	REPLACE_OT
+نقدر	UC
+نمشي	UC
+له؟	UC
+
+ممكن	UC
+تناولني	UC
+الملح؟	UC
+
+عايز	UC
+اروح	UC
+لول	UC
+ستريت	UNK
+.	UNK
+أزاي	REPLACE_OH
+أوصل	REPLACE_OH
+هناك؟	UC
+
+تمارين	UC
+كتيره	REPLACE_OR+REPLACE_OT
+جدا	UC
+حتأذيك	UNK
+.	UNK
+
+شامل	UC
+الفطار،	UC
+الضريبة،	UC
+و	MERGE-B
+رسوم	MERGE-I
+الخدمة	UNK
+.	UNK
+حيكون	UC
+خمسه	REPLACE_OT
+و	MERGE-B
+اربعين	MERGE-I
+دولار	UC
+للبني	UC
+ادم	UC
+الواحد	UC
+في	UC
+الليله	REPLACE_OT
+.	REPLACE_OT
+
+تقدر	UC
+تصلح	UC
+ده؟	UC
+
+مساء	UC
+الخير	REPLACE_P
+.	UNK
+أزيك	UNK
+.	UNK
+
+مش	UC
+لاقي	UC
+شنطك	UNK
+.	UNK
+
+أمشي	REPLACE_OH
+علطول،	REPLACE_X
+من	UC
+فضلك	UNK
+.	UNK
+
+الميه	REPLACE_OT
+هنا	UC
+ينفع	UC
+تنشرب؟	UC
+
+اهاه،	REPLACE_OD
+ياللا	UNK
+.	UNK
+دولارين	UC
+بس	UNK
+.	UNK
+
+ممكن	UC
+لو	UC
+تكرمت	UC
+تغيرلي	SPLIT
+الفستان	UC
+ده	UC
+بواحد	UC
+مقاس	UC
+أكبر؟	REPLACE_OH
+
+حاضر،	UC
+يالا	UC
+بينا	UNK
+.	UNK
+انا	UC
+اقدر	UC
+اساعدك	UC
+في	UC
+حل	UC
+الواجب	UC
+بتاعتك	UC
+بعد	UC
+ما	UC
+ناكل	UC
+بيتزا	UNK
+.	UNK
+
+ايوه،	UC
+مستر	UNK
+.	UNK
+تاناكا	UNK
+.	UNK
+فيه	UC
+رسالتين	UC
+ليك	UNK
+.	UNK
+
+مش	UC
+على	UC
+مقاسي	UNK
+.	UNK
+
+بكره	REPLACE_OT
+يوم	UC
+تاني.	REPLACE_OR
+
+يمكن	UC
+اقدر	UC
+اساعدك	UNK
+.	UNK
+عايز	UC
+فيتامين	UC
+سي؟	UC
+
+محفظتي	UC
+اتنشلت	UC
+في	UC
+القطر	UNK
+.	UNK
+
+ده	UC
+بعيد	UC
+قوي	UNK
+.	UNK
+الاحسن	UC
+اخد	REPLACE_SW
+تاكسي	UNK
+.	UNK
+
+عايظ	UC
+كرسي	UC
+جنب	UC
+الممر،	UC
+من	UC
+فضلك	UNK
+.	UNK
+
+انا	UC
+عايش	UC
+في	UC
+شقة	UC
+ايجارها	UC
+الشهري	UC
+تمانين	REPLACE_OR
+الف	UC
+ين	UNK
+.	UNK
+
+ممكن	UC
+اقطع	UC
+كلامكم؟	UC
+
+لو	UC
+سمحت.	UC
+ممكن	UC
+نبدل	UC
+الكراسي؟	UC
+
+آه،	UC
+طبعا.	UC
+
+انزل	UC
+عند	UC
+الناصية	UC
+وادخل	UC
+شمال	UC
+عند	UC
+إشارة	REPLACE_OH
+المرور.	UC
+
+عايز	UC
+أحط	REPLACE_OH
+حاجتي	UC
+القيمة	UC
+في	UC
+خزنة	UC
+الأوتيل.	REPLACE_OH
+
+آه،	UC
+بس	UC
+إتأكد	REPLACE_OH
+إن	REPLACE_OH
+تذكرتك	UC
+معاك.	UC
+
+ناس	UC
+قليلين	UC
+اللي	UC
+هايكونوا	REPLACE_OD
+في	UC
+الجولة	UC
+الاختياري.	UC
+
+ولا	UC
+يهمك.	UC
+عموما،	UC
+وصلني	UC
+جوة	REPLACE_OR
+الحي	UC
+الصيني.	UC
+أنا	REPLACE_OH
+هحاول	UC
+أكتشف	REPLACE_OH
+مع	UC
+نفسي.	UC
+
+الناس	UC
+الجديدة	UC
+بتتعين	UC
+في	UC
+ابريل.	UC
+
+أتمنى.	REPLACE_OH
+
+إتنين	REPLACE_OH
+سكوتش	UC
+ومية،	UC
+من	UC
+فضلك.	UC
+
+مين	UC
+بيلعب؟	UC
+
+شمال،	UC
+لو	UC
+سمحت.	UC
+
+السنة	UC
+اللي	UC
+قدام	UC
+دي	UC
+بتوجعني.	UC
+
+ايه	UC
+أحدث	REPLACE_OH
+لعبة	UC
+كمبيوتر	UC
+تناسب	UC
+عمر	UC
+خمستاشر	REPLACE_OR
+سنة؟	UC
+
+هانشوفك	REPLACE_OD
+بكره.	REPLACE_OT
+
+لأ،	UC
+بس	UC
+شكرا.	UC
+أنا	REPLACE_OH
+أحسن.	REPLACE_OH
+
+عندك	UC
+عيش؟	UC
+
+مستواك	UC
+ايه	UC
+في	UC
+الكمانجة؟	UC
+
+صاحبي	UC
+اتزحلق	UC
+وقع	UC
+في	UC
+الحمام.	UC
+
+ممكن	UC
+طفاية	UC
+سجاير؟	UC
+
+المسيحية	UC
+كانت	UC
+ممنوعة	UC
+والبلد	UC
+كانت	UC
+منغزلة	UC
+عن	UC
+بقيتة	REPLACE_OT
+العالم.	UC
+
+عايز	UC
+اد	REPLACE_OR
+إيه؟	REPLACE_OH
+
+كوكتيل	UC
+الجمبري	UC
+ليها	UC
+وواحد	UC
+ليا.	REPLACE_XC
+
+ممكن	UC
+أخليك	REPLACE_OH
+توقع	UC
+هنا؟	UC
+و	MERGE-B
+لو	MERGE-I
+سمحت	UC
+أول	REPLACE_OH
+حرف	UC
+من	UC
+اسمك	UC
+هنا.	UC
+
+من	UC
+دواعي	UC
+سروري	UC
+اني	UC
+أزور	REPLACE_OH
+مكاتب	UC
+الإدارة	REPLACE_OH
+و	MERGE-B
+اشترك	MERGE-I
+في	UC
+نقاش	UC
+مهم	UC
+معاك.	UC
+اشكرك	UC
+جدا	UC
+لتعاونك.	UC
+
+شخيرك	UC
+مزعج.	UC
+
+انا	UC
+مش	UC
+عاجبني	UC
+اللون	UC
+برده.	UC
+ممكن	UC
+أرجعه؟	REPLACE_OH
+
+ممكن	UC
+آخد	REPLACE_OR
+شوية	UC
+فلفل	UC
+اسود؟	UC
+
+أنا	REPLACE_OH
+أستاذ	REPLACE_OH
+تاكاهاشي	UC
+ف	MERGE-B
+غرفة	MERGE-I
+خمسة	UC
+تسعة	UC
+واربعين.	UC
+ممكن	UC
+تبعتلي	REPLACE_X
+اربع	UC
+ازايز	UC
+بيرة	UC
+بادوايزر،	UC
+لوسمحت؟	UC
+
+دول	UC
+سبعين	UC
+دولار.	UC
+
+من	UC
+فضلك	UC
+كلمني	UC
+في	UC
+الفندق	UC
+لما	UC
+تلاقي	UC
+شنطي.	UC
+
+أنا	REPLACE_OH
+عايز	UC
+مكالمة	UC
+تصحيني	UC
+بكرة	UC
+الصبح	UC
+على	UC
+تمانية	REPLACE_OR
+ونص،	UC
+من	UC
+فضلك.	UC
+
+آه،	UC
+بس	UC
+ده	UC
+كتير	REPLACE_OR
+وانا	UC
+أساسا	REPLACE_OH
+شبعان.	UC
+
+أنا	REPLACE_OH
+عايز	UC
+غسول	UC
+للبؤ.	UC
+
+انا	UC
+مش	UC
+حاسس	UC
+إني	REPLACE_OH
+كويس.	UC
+
+هل	UC
+انت	UC
+بتدي	UC
+خصومات	UC
+كبيرة؟	UC
+
+طوكيو	UC
+زيرو	UC
+تلاتة	REPLACE_OR
+أربع	REPLACE_OH
+تسعات	UC
+أربعة	REPLACE_OH
+خمسة	UC
+ستة	UC
+سبعة.	UC
+
+ممكن	UC
+تساعدني	UC
+ألاقي	REPLACE_OH
+حديقة	UC
+الحيوان؟	UC
+
+هتقولي	UC
+أظبطه	REPLACE_OH
+إزاي؟	REPLACE_OH
+
+لفة	UC
+الباص	UC
+تخلص	UC
+ع	MERGE-B
+الساعة	MERGE-I
+كام؟	UC
+
+هو	UC
+انت	UC
+تعرف	UC
+إزاي	REPLACE_OH
+نستخدم	UC
+التليفون؟	REPLACE_XC
+
+أكيد.	REPLACE_OH
+عندنا	UC
+فواصل	UC
+للكتب	UC
+من	UC
+نوع	UC
+أمريكي	REPLACE_OH
+أصلي	REPLACE_OH
+جميلة	UC
+أوي.	REPLACE_OR
+
+مشغل	UC
+مكالمات	UC
+بيتكلم	UC
+يباني،	UC
+من	UC
+فضلك.	UC
+
+احنا	UC
+بنحب	UC
+مجال	UC
+الفاشون.	UC
+
+ممكن	UC
+تسحب	UC
+معايا؟	REPLACE_OD+REPLACE_OG
+
+دي	UC
+عيادة	UC
+إف؟	REPLACE_OH
+
+أهلا،	REPLACE_OH
+أستاذ	REPLACE_OH
+ياماجوتشي؟	UC
+الطرف	UC
+التاني	REPLACE_OR
+ع	UC
+الخط.	UC
+اتصال	UC
+حضرتك	UC
+اتقبل.	UC
+اتفضلي،	UC
+لو	UC
+سمحتي.	UC
+
+هانوصل	REPLACE_OD
+لوس	UC
+انجلوس	UC
+الساعة	UC
+كام؟	UC
+
+أمشي	REPLACE_OH
+على	UC
+طول	UC
+حوالي	UC
+خمسة	UC
+دقايق،	UC
+وادخل	UC
+شمال.	UC
+
+هو	UC
+ده	UC
+الطريق	UC
+اللي	UC
+بيودي	UC
+للبحر.	UC
+
+شاي	UC
+الأعشاب	REPLACE_OH
+ده	UC
+بيساعد	UC
+الجسم	UC
+يستعيد	UC
+حيويته.	UC
+
+الحاجات	UC
+دي	UC
+مش	UC
+مصنوعة	UC
+في	UC
+اليابان،	UC
+مش	UC
+كدة؟	REPLACE_OT
+
+تمام.	UC
+من	UC
+هنا	UC
+لو	UC
+سمحت.	UC
+هاوريك	UC
+أوضتك	REPLACE_OH
+فين.	UC
+
+لازم	UC
+أسيب	REPLACE_OH
+الأوتيل	REPLACE_OH
+قبل	UC
+الضهر.	REPLACE_OR
+
+اتنين	REPLACE_OR
+هامبورجر	UC
+واتنين	REPLACE_OR
+قهوة،	UC
+لو	UC
+سمحت.	UC
+عايزهم	UC
+تيك	UC
+اواي.	REPLACE_OD
+
+ممكن	UC
+آخد	REPLACE_OR
+الشنتطتين	UC
+دول	UC
+معايا؟	REPLACE_OD+REPLACE_OG
+
+أنا	REPLACE_OH
+طلبت	UC
+لحمة،	UC
+مش	UC
+سمك.	UC
+ممكن	UC
+تغيرلي	SPLIT
+ده؟	UC
+
+ابني	UC
+محطم	UC
+تماما.	UC
+
+عايز	UC
+أرجع.	REPLACE_OH
+
+هو	UC
+ذاك	UC
+الصوب،	UC
+بالضبط	UC
+جدام	REPLACE_OR
+استعلامات	UC
+السياح	UC
+بالضبط.	UC
+
+ما	UC
+قط	UC
+سمعت	UC
+بهالعنوان	UC
+في	UC
+هالمنطقة	UC
+من	UC
+قبل.	UC
+
+امش	UC
+سيده	REPLACE_OR
+لين	UC
+تشوف	UC
+صيدلية.	UC
+
+بكم	UC
+الريوق؟	UC
+
+شلون	UC
+اقدر	UC
+اساعدك؟	UC
+
+خذ	UC
+ثالث	UC
+لفة	UC
+يسار.	UC
+
+بغيت	UC
+سكر	UC
+وكريمة	UC
+في	UC
+القهوة؟	UC
+
+ممكن	UC
+تصرف	UC
+لي	UC
+قيمة	UC
+جيكي	UC
+بو	UC
+ميتين	UC
+دولار	UC
+كاش؟	UC
+
+اذا	UC
+المفروض	UC
+يصير،	UC
+اتصل	UC
+فيني.	UC
+
+وين	UC
+الكوفي	UC
+شوب؟	UC
+
+بغيت	UC
+فانلة	UC
+يهال.	UC
+
+اوكي.	UC
+يكلف	UC
+خمسة	UC
+وثمانين	UC
+سنت	UC
+بالبريد	UC
+العادي	UC
+وثلاث	UC
+دولارات	UC
+بالضبط	UC
+زيادة	UC
+حق	UC
+التسليم	UC
+الخاص.	UC
+
+لو	UC
+كنت	UC
+مكانك	UC
+جان	UC
+بشتري	REPLACE_OH+REPLACE_OM
+هذي.	REPLACE_OH+REPLACE_OM
+
+بتكون	UC
+في	REPLACE_MI
+اي	UC
+صعوبات	UC
+مع	UC
+الجمارك؟	UC
+
+عندك	UC
+جواتي	UC
+رسمية	UC
+حق	UC
+الرجول	UC
+العريضة؟	UC
+
+لا.	UC
+بغيت	UC
+غرفة	UC
+مزدوجة	UC
+بس	UC
+حق	UC
+استخدام	UC
+فردي؟	UC
+عندنا	UC
+وحدة.	REPLACE_OH+REPLACE_OM
+
+ابغي	UC
+كيرلي	UC
+ضيق،	UC
+لو	UC
+سمحت.	UC
+
+هي	UC
+تبغي	UC
+بير.	UC
+
+صباح	UC
+الخير.	UC
+شلونك؟	UC
+
+مسامحة	UC
+بس	UC
+لازم	UC
+اشوف	UC
+شي	UC
+يثبت	UC
+الهوية.	UC
+
+اي	UC
+نوع	UC
+صوص؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+بارد	UC
+شوي،	UC
+ممكن	UC
+تسخنه؟	UC
+
+مسامحة	UC
+هالمكان	UC
+مأخوذ.	UC
+
+انا	UC
+بخير.	UC
+بس	UC
+يصير	UC
+تكلم	UC
+رفيجي؟	REPLACE_OR
+
+شكرا،	UC
+هذي	REPLACE_OH+REPLACE_OM
+يكفي.	UC
+
+من	UC
+احسن	UC
+صديق	UC
+عندك؟	UC
+
+يوم	UC
+الصحة	UC
+والرياضة	UC
+تاريخ	UC
+عشرة	UC
+اكتوبر	UC
+هو	UC
+عطلة	UC
+وطنية	UC
+مسوينها	UC
+عشان	UC
+يشجعون	UC
+صحة	UC
+الناس.	UC
+
+تبغيني	UC
+اجيك	REPLACE_OR
+تحت	UC
+البانيت؟	UC
+
+تقدر	UC
+تساعدني	UC
+ادور	UC
+شنطتي؟	UC
+
+ممكن	UC
+تسوي	UC
+الترتيبات	UC
+من	UC
+قبل؟	UC
+
+قاعد	UC
+احصل	UC
+مساعدة.	UC
+شكرا.	UC
+
+لما	UC
+توصل،	UC
+اسأل	UC
+احد	UC
+ثاني	UC
+لو	UC
+سمحت.	UC
+
+بغيت	UC
+تحويلة	UC
+اربعة	UC
+وعشرين	UC
+لو	UC
+سمحت.	UC
+
+هاك	UC
+دولارين.	UC
+خل	UC
+الباقي.	UC
+
+واحد	UC
+هامبرقر	REPLACE_OR
+وواحد	UC
+تشيز	UC
+برقر	UC
+لو	UC
+سمحت.	UC
+
+كم	UC
+تاخد	REPLACE_OR
+للاجراءات؟	UC
+
+كل	UC
+واحد	UC
+بيدفع	UC
+حق	UC
+وجبته.	UC
+
+الموقع	UC
+كان	UC
+على	UC
+كرسي	UC
+في	UC
+اللوبي.	UC
+
+ممكن	UC
+تحول	UC
+الين	UC
+لي	REPLACE_X
+جنيه.	REPLACE_X
+
+بغيت	UC
+معجم	UC
+بحجم	UC
+الجيب	UC
+لو	UC
+سمحت.	UC
+
+حق	UC
+شخصين	UC
+الساعة	UC
+سبع.	UC
+باسم	UC
+واتانابي.	UC
+
+ساعتي.	UC
+كانت	UC
+ديجيتال	UC
+سيكو.	UC
+
+يسعدنا	UC
+نقدم	UC
+لك	UC
+شراب	UC
+من	UC
+اختيارك،	UC
+وبعده	UC
+العشا.	UC
+في	REPLACE_MI
+دليل	UC
+كامل	UC
+عن	UC
+المشروبات	UC
+اللي	UC
+نوفرها	UC
+في	UC
+هالرحلة	UC
+موجود	UC
+في	UC
+دليل	UC
+المعلومات	UC
+بمجلتنا.	UC
+
+انت	UC
+تسكن	UC
+قريب	UC
+من	UC
+هني؟	UC
+
+وين	UC
+محل	UC
+الهدايا؟	UC
+
+انا	UC
+على	UC
+هايوي	UC
+ون،	UC
+عند	UC
+مورو	UC
+بي.	UC
+
+بغيت	UC
+ساعة	UC
+منبه	UC
+لو	UC
+سمحت.	UC
+
+على	UC
+فكرة،	UC
+اسمي	UC
+هيروشي	UC
+ايجيما.	UC
+
+القطار	UC
+يوقف	UC
+عند	UC
+ليك	UC
+فوريست	UC
+صح؟	UC
+
+اكثر	UC
+اليابانيين	UC
+ياكلون	UC
+الاخطبوط	UC
+والحبار.	UC
+
+بغيت	UC
+تذكرتين	UC
+درجة	UC
+ثانية	UC
+لي	REPLACE_X
+شيكاغو؟	REPLACE_X
+
+رحت	UC
+نيويورك.	UC
+
+شنو	UC
+رقم	UC
+الرحلة؟	UC
+
+واحد	UC
+حق	UC
+نيويورك	UC
+لو	UC
+سمحت.	UC
+
+يعني	UC
+حق	UC
+كم	UC
+يوم.	UC
+
+ثاني	UC
+واحد	UC
+على	UC
+اليسار.	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+البطاقة،	UC
+اوكي؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+مكتب	UC
+الاستقبال؟	UC
+في	UC
+عيادة	UC
+قريبة؟	UC
+
+تكفي	UC
+عشر	UC
+دولارات	UC
+حق	UC
+التكسي؟	UC
+
+طعمه	UC
+غريب.	UC
+
+اي.	UC
+انتظر،	UC
+بجيب	REPLACE_OH+REPLACE_OM
+لك	UC
+واحد.	UC
+
+نص	UC
+غرشة	UC
+لو	UC
+سمحت.	UC
+
+لا.	UC
+بس	UC
+شي	UC
+مو	UC
+غالي.	UC
+
+تدور	UC
+شي؟	UC
+
+اربع	UC
+ليالي.	UC
+
+احتاج	UC
+دلاغات.	UC
+
+ممكن	UC
+تخليها	UC
+ارخص	UC
+لأن	REPLACE_OH
+فيها	UC
+بقع؟	UC
+
+ريال	UC
+صدمني.	UC
+بعدها	UC
+اكتشفت	UC
+ان	UC
+بوكي	UC
+اختفى.	UC
+
+مادري	REPLACE_X
+اذا	UC
+جهزت	UC
+ثياب	UC
+تكفي	UC
+حق	UC
+رحلة	UC
+مدتها	UC
+ثلاث	UC
+اسابيع.	UC
+
+انزين،	UC
+نبي	UC
+نجرب	UC
+واين	UC
+ابيض.	UC
+
+اذا	UC
+احد	UC
+سأل	UC
+عني،	UC
+قول	UC
+لهم	UC
+انا	UC
+في	UC
+الكوفي	UC
+شوب.	UC
+
+انا	UC
+متأكد	UC
+ان	UC
+كان	UC
+موجود	UC
+في	UC
+جيب	UC
+كوتي	UC
+الداخلي.	UC
+
+ممكن	UC
+تعطيني	UC
+اسم	UC
+ورقم	UC
+الشخص	UC
+اللي	UC
+تكلمه؟	UC
+
+الخطوط	UC
+الجوية	UC
+بتدفع	UC
+لي	UC
+عشان	UC
+اشتري	UC
+بعض	UC
+الضروريات؟	UC
+
+بغيت	UC
+غرفة	UC
+فيها	UC
+حمام.	UC
+
+ولا	UC
+شي	UC
+طلع	UC
+من	UC
+المكينة؟	UC
+
+كان	UC
+المفروض	UC
+تروح	UC
+على	UC
+الرحلة	UC
+ثمانمية	UC
+وعشرين	UC
+اللي	UC
+طارت	UC
+من	UC
+خمسطعش	REPLACE_OM+REPLACE_OR
+دقيقة.	UC
+اقدر	UC
+ارتب	UC
+لك	UC
+رحلة	UC
+ثانية.	UC
+
+في	REPLACE_MI
+احد	UC
+فتح	UC
+طردي.	UC
+
+لا	UC
+عادي.	UC
+خلاص،	UC
+انت	UC
+هني.	UC
+
+الخطوط	UC
+الجوية	UC
+اليابانية،	UC
+رحلة	UC
+مية	UC
+وثلاثة	UC
+وعشرين.	UC
+
+احتاج	UC
+اشتري	UC
+شامبو.	UC
+
+ممكن	UC
+تخبرني	UC
+لما	UC
+نوصل	UC
+سيفيك	UC
+سنتر؟	UC
+
+وين	UC
+اقرب	UC
+قصاب؟	UC
+
+بنقعد	UC
+اربع	UC
+ليالي	UC
+من	UC
+واحد	UC
+اغسطس.	UC
+
+شنو	UC
+اسم	UC
+هذيج	REPLACE_SW
+الوردة؟	UC
+
+خمسطعش	REPLACE_OR
+من	UC
+سبتمبر	UC
+هو	UC
+يوم	UC
+احترام	UC
+كبار	UC
+السن.	UC
+
+غرفتي	UC
+مافيها	UC
+صابون.	UC
+
+في	REPLACE_MI
+شي	UC
+ممكن	UC
+استخدمه	UC
+حق	UC
+هالحبوب؟	UC
+
+ممكن	UC
+تغير	UC
+الصياغة	UC
+تخليها	UC
+مثل	UC
+ما	UC
+قلتها؟	UC
+
+شكثر	UC
+ياخذ	UC
+الوقت	UC
+للطلب؟	UC
+
+ممكن	UC
+تتكلم	UC
+بصوت	UC
+اعلى؟	UC
+
+شكثر	UC
+بياخذ	UC
+قبل	UC
+ما	UC
+يطلع؟	UC
+
+وين	UC
+استعلامات	UC
+الرياضة؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+المقاس،	UC
+اللي	UC
+انت	UC
+تسميه	UC
+اعتيادي،	UC
+يصلح.	UC
+
+وين	UC
+بتنتهي	UC
+الجولة؟	UC
+ومتى؟	UC
+
+وين	UC
+اغير	UC
+القطار	UC
+عشان	UC
+اروح	UC
+إدنبره؟	REPLACE_OH+REPLACE_OT
+
+بغيت	UC
+احط	UC
+هذي	REPLACE_OH+REPLACE_OM
+في	UC
+صندوق	UC
+أمانات.	REPLACE_OH
+
+وين	UC
+اقدر	UC
+اصرف	UC
+فلوسي؟	UC
+
+عادي	UC
+نخلي	UC
+اغراضنا،	UC
+بدون	UC
+الأغراض	REPLACE_OH
+الغالية،	UC
+في	UC
+الباص؟	UC
+
+مادري	REPLACE_X
+ليش	UC
+هالمبلغ	UC
+مكتوب	UC
+في	UC
+الفاتورة.	UC
+
+بدفع	REPLACE_OH+REPLACE_OM
+خمسين	UC
+دولار.	UC
+
+الحين	UC
+عرفت	UC
+شنو	UC
+كان	UC
+غلط.	UC
+
+معاك	UC
+ايكيدا.	UC
+عندي	UC
+حجز	UC
+طاولة	UC
+الساعة	UC
+ست	UC
+ونص	UC
+المسا.	UC
+مسامحة	UC
+بس	UC
+بتأخر	UC
+نص	UC
+ساعة.	UC
+
+كم	UC
+اونصه	REPLACE_OT
+من	UC
+العطر	UC
+اقدر	UC
+اخذ	REPLACE_OH
+بدون	UC
+دفع	UC
+الضرايب؟	UC
+
+بس	UC
+سياحة.	UC
+
+عادي،	UC
+وقعهم	UC
+لو	UC
+سمحت.	UC
+شلون	UC
+تبيه؟	UC
+
+للحين	UC
+عندك	UC
+مقاعد	UC
+حق	UC
+عرض	UC
+الليلة؟	UC
+
+بغيت	UC
+واحد	UC
+عود.	UC
+
+انا	UC
+نمت	UC
+عن	UC
+منبه	UC
+الساعة	UC
+ست	UC
+ونص.	UC
+
+انا	UC
+مصور	UC
+مستقل.	UC
+
+عامل	UC
+الكازينو	UC
+يقدر	UC
+يحول	UC
+دولاراتك	UC
+لفيشات	UC
+للكازينو.	UC
+ها	UC
+نروح؟	UC
+
+عندنا	UC
+تقريبا	UC
+ثلاثين	UC
+نوع	UC
+من	UC
+زيوت	UC
+الاستحمام.	UC
+
+بجهز	REPLACE_OH+REPLACE_OM
+الاقتراح	UC
+حقك	UC
+الاسبوع	UC
+الجاي.	UC
+
+مشكور.	UC
+بكم	UC
+القفازات؟	UC
+
+لازم	UC
+امشي.	UC
+بكلمك	UC
+بعدين.	UC
+
+بغيت	UC
+حفاضات.	UC
+
+وين	UC
+نشأ	UC
+سمج	REPLACE_OR
+الزبيدي	UC
+هذي؟	REPLACE_OH+REPLACE_OM
+
+ممكن	UC
+تحولهم	UC
+لي	UC
+دولارات،	UC
+لو	UC
+سمحت؟	UC
+
+حظنا	UC
+زين.	UC
+عندهم	UC
+واحد	UC
+مقاس	UC
+اربعة	UC
+في	UC
+محل	UC
+الا	UC
+موانا.	UC
+
+في	REPLACE_MI
+ليموزين؟	UC
+
+ممكن	UC
+تتصل	UC
+تقعدني	UC
+باجر	UC
+الساعة	UC
+خمس	UC
+ونص	UC
+الصبح؟	UC
+
+افضل	UC
+غرفة	UC
+هادية.	UC
+
+بغيت	UC
+اسيتون.	UC
+
+بغيت	UC
+بطارية.	UC
+
+في	REPLACE_MI
+فرقة	UC
+لايف	UC
+ولا	UC
+دي	UC
+جي؟	UC
+
+ممكن	UC
+أأجر	REPLACE_OH
+أدوات	REPLACE_OH
+غوص؟	UC
+
+بغيت	UC
+احجز	UC
+غرفة	UC
+حق	UC
+اربع	UC
+ليالي	UC
+من	UC
+اثنين	UC
+وعشرين	UC
+ديسمبر.	UC
+
+زينة	UC
+هالشنطة	UC
+حق	UC
+كل	UC
+الاجواء؟	UC
+
+بغيت	UC
+دونت،	UC
+لو	UC
+سمحت.	UC
+
+بغيت	UC
+أأجر	REPLACE_OH
+سيارة	UC
+اوتوماتيك	UC
+حق	UC
+يومين.	UC
+
+فوت	UC
+طيارة	UC
+عشرين	UC
+لسان	UC
+فرانسيسكو.	UC
+
+شكثر	UC
+الوقت	UC
+للمطار؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+زين.	UC
+متى؟	UC
+
+شكبر	UC
+بنتك؟	UC
+
+تعطيني	UC
+فنادق	UC
+رخيصة	UC
+ونظيفة؟	UC
+
+ممكن	UC
+نحجز	UC
+لك	UC
+غرفة	UC
+مريحة	UC
+في	UC
+قلعة	UC
+قديمة	UC
+يم	UC
+نادي	UC
+قولف	REPLACE_OR
+مشهور.	UC
+
+انا	UC
+انصح	UC
+بهذي	REPLACE_X
+لأن	REPLACE_X
+مصنوع	UC
+من	UC
+مكونات	UC
+طبيعية	UC
+مية	UC
+بالمية.	UC
+
+يوقف	UC
+هالقطار	UC
+في	UC
+برايتون؟	UC
+
+ممكن	UC
+تقول	UC
+لي	UC
+وين	UC
+اقدر	UC
+احصل	UC
+تاكسي؟	UC
+
+تذكرتين	UC
+درجة	UC
+ثانية،	UC
+لو	UC
+سمحت.	UC
+
+بغيت	UC
+ارسل	UC
+فاكس.	UC
+
+بغيت	UC
+اوتي	UC
+للسفر.	UC
+
+بغيت	UC
+شي؟	UC
+
+يومي؟	UC
+ما	UC
+ودي	UC
+اسأل،	UC
+بس	UC
+شتقصد؟	UC
+
+بغيت	UC
+واحد	UC
+يكفي	UC
+وثائق	UC
+بحجم	UC
+اوراق	UC
+الرسايل	UC
+بدون	UC
+ما	UC
+اطويهم.	UC
+
+اي،	UC
+بس	UC
+مو	UC
+وايد	REPLACE_OR
+قوي.	UC
+
+فيني	UC
+حساسية	UC
+من	UC
+القطاوة.	UC
+
+اي،	UC
+لازم	UC
+يكون	UC
+عندك	UC
+ليسن	UC
+و،	UC
+اه،	REPLACE_OH
+لازم	UC
+يكون	UC
+عندك	UC
+ليسن	UC
+من	UC
+وكالة	UC
+التكسي	UC
+والليموزين.	UC
+
+تفضل،	UC
+اخوي.	UC
+
+مو	UC
+محصل	UC
+ماي	UC
+حار.	UC
+
+بغيت	UC
+احجز	UC
+غرفة	UC
+حق	UC
+الليلة.	UC
+
+لا،	UC
+بدون	UC
+الضريبة	UC
+ورسوم	UC
+الخدمة.	UC
+
+تبغي	UC
+تروح	UC
+معاي	UC
+نتسوق	UC
+الظهر؟	UC
+
+مرحبا،	UC
+واجد	UC
+حلو	UC
+هالفستان.	UC
+
+الحين،	UC
+مكالمتك	UC
+وصلت.	UC
+تفضل،	UC
+لو	UC
+سمحت.	UC
+
+كم	UC
+رقم	UC
+البوابة؟	UC
+
+شنو	UC
+الهدية	UC
+التقليدية	UC
+من	UC
+هاواي؟	UC
+
+اقدر	UC
+اروح	UC
+هناك	UC
+في	UC
+النفق؟	UC
+
+بغيت	UC
+استشوار.	UC
+
+بنوصل	UC
+لأي	REPLACE_OH
+نتيجة	UC
+واحنا	UC
+نتكلم	UC
+جذي؟	REPLACE_OR
+
+انا	UC
+ياي	UC
+من	UC
+النرويج.	UC
+
+من	UC
+عشر	UC
+لي	REPLACE_XF
+اثنعش	UC
+لو	UC
+سمحت.	UC
+
+اكيد.	UC
+خلني	UC
+اشوف.	UC
+شكلك	UC
+انجرحت	UC
+بالمرجان.	UC
+
+احتياط،	UC
+عطني	UC
+رقم	UC
+الشخص	UC
+المسؤول.	UC
+
+في	REPLACE_MI
+طريق	UC
+سريع؟	UC
+
+ليش	UC
+ما	UC
+جا	UC
+الحفلة	UC
+امس؟	UC
+
+كان	UC
+في	REPLACE_MI
+حادث.	UC
+
+مسامحة،	UC
+غلطت	UC
+في	UC
+الرقم.	UC
+
+لو	UC
+سمحت	UC
+دخل	UC
+الرمز.	UC
+
+ماقدر	REPLACE_X
+اعدل	UC
+الصورة.	UC
+
+واحد	UC
+جيز	REPLACE_SW
+برقر	UC
+وعصير	UC
+برتقال،	UC
+لو	UC
+سمحت.	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+جوازي.	UC
+
+مشكور	UC
+ما	UC
+قصرت.	UC
+امم،	UC
+ممكن	UC
+اروح	UC
+فوق	UC
+للقمة؟	UC
+
+ممكن	UC
+تعطيني	UC
+تذكرتين	UC
+للعرض	UC
+الموسيقي	UC
+يوم	UC
+الجمعة	UC
+الجاي؟	UC
+
+في	REPLACE_MI
+مسافر	UC
+ثاني	UC
+هناك	UC
+قال	UC
+يقدر	UC
+يبدل	UC
+الكرسي	UC
+وياك.	UC
+
+يصير	UC
+امدد	UC
+قعدتي؟	UC
+
+قول	UC
+لي،	UC
+تعرف	UC
+مكان	UC
+يستاهل	UC
+ينشاف	UC
+هني؟	UC
+
+لا.	UC
+بغيت	UC
+نص	UC
+مجموعة	UC
+مضارب	UC
+وجوتي.	UC
+
+ممكن	UC
+تخبروني	UC
+لما	UC
+تحصلون	UC
+الشنطة	UC
+المفقودة؟	UC
+
+شنو	UC
+اسم	UC
+هالحديقة	UC
+الوطنية؟	UC
+
+فيني	UC
+شمخ.	UC
+
+وين	UC
+مكان	UC
+حلو	UC
+للسياحة؟	UC
+
+ممكن	UC
+تعطيني	UC
+شوية	UC
+فاكهة؟	UC
+
+ممكن	UC
+اخذ	REPLACE_OH
+الغدا	UC
+الحين؟	UC
+
+احتاج	UC
+احول	UC
+هالدولارات.	UC
+
+احتاج	UC
+تكسي.	UC
+انا	UC
+في	UC
+ساوث	UC
+مين	UC
+و	MERGE-B
+ليبرتي.	MERGE-I
+
+اكيد،	UC
+تحتاج	UC
+كيرلي؟	UC
+
+مو	UC
+تفاحة	UC
+ترى	UC
+خوخة.	UC
+
+بعطيك	REPLACE_OH+REPLACE_OM
+وصفة.	UC
+خذها	UC
+للصيدلية.	UC
+
+نطير	UC
+ثلاث	UC
+مرات	UC
+في	UC
+الاسبوع،	UC
+الثلاثاء،	UC
+والجمعة	UC
+والسبت.	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+غالي،	UC
+صح؟	UC
+
+اي،	UC
+هذي	REPLACE_OH+REPLACE_OM
+عندنا.	UC
+بنجهزه	UC
+لك.	UC
+
+ممكن	UC
+تخلي	UC
+شناط	UC
+عندك	UC
+لي	REPLACE_X
+ثلاث؟	REPLACE_X
+
+لا،	UC
+بس	UC
+ابغي	UC
+امر.	UC
+
+ممكن	UC
+احجز	UC
+اجر-سيارة	UC
+هني؟	UC
+
+انت	UC
+امريكي؟	UC
+
+لي	UC
+هالمكان،	UC
+لو	UC
+سمحت.	UC
+
+سيارتي	UC
+موقفة.	UC
+
+وين	UC
+الآي	REPLACE_OR
+شادو؟	UC
+
+بغينا	UC
+زاوية	UC
+هادية،	UC
+اذا	UC
+يصير.	UC
+
+سكوج	UC
+وماي،	UC
+لو	UC
+سمحت.	UC
+وعندك	UC
+شي	UC
+خفيف؟	UC
+
+شلون	UC
+اطفي	UC
+هالليت؟	UC
+
+هو	UC
+واجد	UC
+مشغول	UC
+اليوم؟	UC
+
+بغيت	UC
+خيط.	UC
+
+عطني	UC
+شهادة	UC
+طبية،	UC
+لو	UC
+سمحت.	UC
+
+ابغيك	UC
+تقصره	UC
+انج	UC
+واحد	UC
+هني.	UC
+
+ماحس	REPLACE_X
+اني	UC
+اوكي.	UC
+عطني	UC
+دوا	UC
+لو	UC
+سمحت.	UC
+
+ممكن	UC
+تعطيني	UC
+جريدة	UC
+يابانية،	UC
+لو	UC
+سمحت؟	UC
+
+اوكي.	UC
+يصير	UC
+اقط	UC
+السيارة	UC
+في	UC
+أي	REPLACE_OH
+مكان؟	UC
+كم	UC
+بتكون	UC
+الرسوم؟	UC
+
+اي	UC
+باص	UC
+يروح	UC
+مركز	UC
+المدينة؟	UC
+
+في	REPLACE_MI
+اكسبريس	UC
+لبوسطن؟	UC
+
+لو	UC
+سمحت	UC
+صير	UC
+صديقي	UC
+بالمراسلة.	UC
+
+واجد	UC
+متحمس.	UC
+مو	UC
+قادر	UC
+اقعد	UC
+من	UC
+الحماس.	UC
+
+ممكن	UC
+انزل	UC
+في	UC
+فندق	UC
+الهيلتون؟	UC
+
+ابغيك	UC
+تشيله.	UC
+
+لف	UC
+يسار	UC
+على	UC
+هالشارع	UC
+عقب	UC
+خذ	UC
+اول	UC
+لفة	UC
+يمين.	UC
+
+ابغي	UC
+اعرف	UC
+اذا	UC
+ممكن	UC
+تنشحن	REPLACE_OM
+مجموعة	UC
+الصحون	UC
+هذي	REPLACE_OH+REPLACE_OM
+لطوكيو.	UC
+
+بغيت	UC
+فودر	UC
+حق	UC
+الجسم.	UC
+
+في	REPLACE_MI
+اكل	UC
+مو	UC
+واجد	UC
+حار؟	UC
+
+قريب	UC
+يصير	UC
+اروح	UC
+مشي؟	UC
+
+ممكن	UC
+تعطيني	UC
+الملح؟	UC
+
+ابغي	UC
+اروح	UC
+وول	UC
+ستريت.	UC
+شلون؟	UC
+
+التمرين	UC
+واجد	UC
+بيأذيك.	UC
+
+مع	UC
+الريوق،	UC
+والضريبة،	UC
+ورسوم	UC
+الخدمة،	UC
+بيصير	UC
+خمسة	UC
+واربعين	UC
+دولار	UC
+للشخص	UC
+في	UC
+الليلة.	UC
+
+ممكن	UC
+تصلح	UC
+هذي؟	REPLACE_OH+REPLACE_OM
+
+مسا	UC
+الخير.	UC
+مرحبا.	UC
+
+مو	UC
+قادر	UC
+احصل	UC
+شناطك.	UC
+
+امش	UC
+سيده،	REPLACE_OR
+لو	UC
+سمحت.	UC
+
+الماي	UC
+يصلح	UC
+للشرب؟	UC
+
+اااه،	REPLACE_SW
+يالله.	UC
+دولارين	UC
+بس.	UC
+
+ممكن	UC
+تغير	UC
+لي	UC
+هالفستان	UC
+تعطيني	UC
+مقاس	UC
+اكبر؟	UC
+
+انزين،	UC
+خل	UC
+نروح.	UC
+اقدر	UC
+اساعدك	UC
+في	UC
+الواجب	UC
+عقب	UC
+ما	UC
+ناكل	UC
+بيتزا.	UC
+
+اي،	UC
+سيد	UC
+تاناكا.	UC
+في	UC
+لك	UC
+رسالتين.	UC
+
+مو	UC
+قدي.	UC
+
+بكرة	UC
+يوم	UC
+جديد.	UC
+
+يمكن	UC
+اقدر	UC
+اساعدك.	UC
+تحتاج	UC
+فيتامين	UC
+سي؟	UC
+
+انباق	UC
+بوكي	UC
+في	UC
+القطار.	UC
+
+بعيد.	UC
+احسن	UC
+لك	UC
+تاخذ	UC
+تكسي.	REPLACE_OH+REPLACE_OM
+
+بغيت	UC
+كرسي	UC
+على	UC
+الممر،	UC
+لو	UC
+سمحت.	UC
+
+اعيش	UC
+في	UC
+شقة	UC
+بثمانية	UC
+آلاف	UC
+ين	UC
+في	UC
+الشهر.	UC
+
+ممكن	UC
+اتدخل؟	UC
+
+لو	UC
+سمحت.	UC
+عادي	UC
+تبدل	UC
+الكرسي	UC
+وياي؟	UC
+
+اي،	UC
+اكيد.	UC
+
+روح	UC
+الزاوية	UC
+ولف	UC
+يسار	UC
+على	UC
+الإشارة.	REPLACE_OH
+
+ابغي	UC
+اودع	UC
+اشيائي	UC
+الغالية	UC
+في	UC
+امانات	UC
+الفندق.	UC
+
+اي،	UC
+بس	UC
+تأكد	UC
+ان	UC
+تكون	UC
+معاك	UC
+ذكرتك.	UC
+
+اشخاص	UC
+قليلين	UC
+بيروحون	UC
+جولتنا	UC
+الاختيارية.	UC
+
+بس	UC
+خلاص.	UC
+المهم،	UC
+ودني	UC
+مركز	UC
+جايناتاون	REPLACE_X
+لو	UC
+سمحت.	UC
+بحاول	REPLACE_OH+REPLACE_OM
+اعرف	UC
+بروحي.	UC
+
+في	REPLACE_MI
+ناس	UC
+جداد	UC
+بيتوظفون	UC
+في	UC
+ابريل.	UC
+
+ان	UC
+شاء	UC
+الله.	UC
+
+اثنين	UC
+سكوج	UC
+و	MERGE-B
+ماي،	MERGE-I
+لو	UC
+سمحت.	UC
+
+من	UC
+يلعب؟	UC
+
+يسار،	UC
+لو	UC
+سمحت.	UC
+
+هالضرس	UC
+اللي	UC
+قدام	UC
+يعورني.	UC
+
+شنو	UC
+آخر	UC
+لعبة	UC
+كمبيوتر	UC
+حق	UC
+اللي	UC
+عمرهم	UC
+خمسطعش؟	REPLACE_OR
+
+بنشوفك	UC
+بكرة.	UC
+
+لا،	UC
+بس	UC
+شكرا.	UC
+احس	UC
+اني	UC
+احسن.	UC
+
+عندك	UC
+خبز؟	UC
+
+انت	UC
+زين	UC
+في	UC
+الكمان؟	UC
+
+رفيجي	REPLACE_OR
+زلق	UC
+وطاح	UC
+في	UC
+الحمام.	UC
+
+ممكن	UC
+تعطيني	UC
+طفاية؟	UC
+
+منعوا	UC
+المسيحية	UC
+وانعزلت	UC
+الدولة	UC
+عن	UC
+باقي	UC
+العالم.	UC
+
+شكثر	UC
+تبي؟	UC
+
+كوكتيل	UC
+ربيان	UC
+لها	UC
+ولي	UC
+انا	UC
+بعد.	UC
+
+ممكن	UC
+توقع	UC
+هني؟	UC
+وحروف	UC
+اسمك	UC
+الأولى	REPLACE_OH
+هني.	UC
+
+شرفني	UC
+اني	UC
+زرت	UC
+مكاتبكم	UC
+واني	UC
+دخلت	UC
+في	UC
+نقاشات	UC
+مهمة	UC
+معاكم.	UC
+مشكورين	UC
+على	UC
+تعاونكم.	UC
+
+شخيرك	UC
+مزعج.	UC
+
+آخر	UC
+شي	UC
+ما	UC
+عجبني	UC
+اللون.	UC
+يصير	UC
+ارجع	UC
+هذي؟	REPLACE_OH+REPLACE_OM
+
+ممكن	UC
+تعطيني	UC
+فلفل؟	UC
+
+انا	UC
+سيد	UC
+تاكاهاشي	UC
+من	UC
+غرفة	UC
+خمسة	UC
+اربعين	UC
+تسعة.	UC
+ممكن	UC
+تطرش	UC
+لي	UC
+اربع	UC
+غراش	UC
+بير	UC
+بودوايزر،	UC
+لو	UC
+سمحت؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+سبعين	UC
+دولار.	UC
+
+لو	UC
+سمحت	UC
+كلمني	UC
+على	UC
+الفندق	UC
+لما	UC
+تحصل	UC
+شناطي.	UC
+
+ابغي	UC
+احد	UC
+يتصل	UC
+يقعدني	UC
+بكرة	UC
+الساعة	UC
+ثمان	UC
+ونص،	UC
+لو	UC
+سمحت.	UC
+
+اي،	UC
+بس	UC
+هذي	REPLACE_OH+REPLACE_OM
+واجد	UC
+وانا	UC
+اصلا	UC
+شبعان.	UC
+
+ابغي	UC
+غسول	UC
+للفم.	UC
+
+احس	UC
+اني	UC
+تعبان.	UC
+
+تسوون	UC
+تخفيضات	UC
+كبرى؟	UC
+
+طوكيو	DELETE
+صفر	UC
+ثلاثة	UC
+اربع	UC
+تسعات	UC
+اربعة	UC
+خمسة	UC
+ستة	UC
+سبعة.	UC
+
+ممكن	UC
+تساعدني	UC
+احصل	UC
+حديقة	UC
+الحيوانات؟	UC
+
+ممكن	UC
+تعلمني	UC
+شلون	UC
+اعدله؟	SPLIT
+
+متى	UC
+تخلص	UC
+جولة	UC
+الباص؟	UC
+
+تعرف	UC
+شلون	UC
+تستخدم	UC
+التلفون؟	UC
+
+اكيد.	UC
+عندنا	UC
+فواصل	UC
+كتب	UC
+امريكية	UC
+اصلية	UC
+حلوة.	UC
+
+عامل	UC
+مكالمات	UC
+يتكلم	UC
+ياباني،	UC
+لو	UC
+سمحت.	UC
+
+احنا	UC
+مهتمين	UC
+بالأزياء.	REPLACE_OH
+
+ممكن	UC
+تقلصني؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+عيادة	UC
+إف؟	REPLACE_OH
+
+مرحبا،	UC
+آنسة	UC
+ياماغوجي؟	UC
+الطرف	UC
+الثاني	UC
+على	UC
+الخط.	UC
+انقبلت	UC
+المكالمة.	UC
+تفضلي،	UC
+لو	UC
+سمحتي.	UC
+
+الساعة	UC
+كم	UC
+بنوصل	UC
+لوس	UC
+انجيلوس؟	UC
+
+امش	UC
+سيدة	UC
+لمدة	UC
+خمس	UC
+دقايق	UC
+تقريبا،	UC
+عقب	UC
+لف	UC
+يسار.	UC
+
+هو	UC
+من	UC
+هالطريق	UC
+صوب	UC
+الساحل.	UC
+
+شاهي	UC
+الأعشاب	REPLACE_OH
+هذي	REPLACE_OH+REPLACE_OM
+ينعش	UC
+الجسم.	UC
+
+هذيلا	REPLACE_OH+REPLACE_OM
+مو	UC
+مصنوعين	UC
+في	UC
+اليابان،	UC
+صح؟	UC
+
+اوكي.	UC
+من	UC
+هني	UC
+لو	UC
+سمحت.	UC
+بوديك	UC
+غرفتك.	UC
+
+لازم	UC
+اطلع	UC
+من	UC
+الفندق	UC
+قبل	UC
+الظهر.	UC
+
+اثنين	UC
+همبرقر	REPLACE_OR
+واثنين	UC
+قهوة،	UC
+لو	UC
+سمحت.	UC
+باخذهم	REPLACE_OH
+تيك	UC
+اوي.	UC
+
+يصير	UC
+اشيل	UC
+هالشنطتين؟	UC
+
+طلبت	UC
+لحم،	UC
+مو	UC
+سمج.	REPLACE_OR
+ممكن	UC
+تغيره؟	UC
+
+ولدي	UC
+منتهي.	UC
+
+معدتي	UC
+تقلب.	UC
+
+راه	UC
+تما،	REPLACE_OR
+مقابل	UC
+مكتب	UC
+استعلامات	UC
+السياح	UC
+بالضبط.	UC
+
+ما	UC
+عمري	UC
+سمعت	UC
+هاد	UC
+العنوان	UC
+هنايا.	UC
+
+سير	UC
+نيشان	UC
+حتا	REPLACE_OA
+تشوف	UC
+صيدلية.	UC
+
+شحال	UC
+كا	REPLACE_X
+يدير	REPLACE_X
+الفطور؟	UC
+
+كيفاش	UC
+نقدر	UC
+نعاونك؟	UC
+
+مع	UC
+القنت	UC
+التالت	REPLACE_OR
+دور	UC
+على	UC
+ليسر.	REPLACE_OH+REPLACE_OM
+
+واش	UC
+تبغي	UC
+لاكريم	UC
+و	MERGE-B
+السكر	MERGE-I
+في	UC
+القهوة	UC
+ديالك؟	UC
+
+تقدر	UC
+تخلص	UC
+الشيك	UC
+ديالي	UC
+ديال	UC
+ميتين	UC
+دولار؟	UC
+
+إلا	REPLACE_SW
+خصو	UC
+يبان،	UC
+عيط	UC
+ليا	REPLACE_XC
+عفاك.	REPLACE_OH+REPLACE_OM
+
+فين	UC
+القهوة؟	UC
+
+بغيت	UC
+تريكو	UC
+ديال	UC
+الدراري	UC
+الصغار.	UC
+
+واخا.	REPLACE_OD
+كايدير	REPLACE_OD
+خمسة	UC
+و	REPLACE_O
+تمانين	REPLACE_O
+دولار	UC
+للبريد	UC
+العادي	UC
+و	REPLACE_O
+تلاتة	REPLACE_O
+دولار	UC
+بالضبط	UC
+زيادة	UC
+للتوصيل	UC
+الخاص.	UC
+
+كون	UC
+كنت	UC
+فبلاصتك	UC
+كون	UC
+شريتو.	REPLACE_OM
+
+واش	UC
+غادي	UC
+نلقا	REPLACE_OA
+شي	UC
+صعوبة	UC
+مع	UC
+الديوانا؟	UC
+
+واش	UC
+عندك	UC
+صبابط	UC
+رسمية	UC
+واسعة	UC
+عند	UC
+الصبع؟	UC
+
+لا.	UC
+نقدر	UC
+نقتارح	UC
+ثنائية	UC
+لواحد؟	UC
+عندنا	UC
+وحدة.	REPLACE_OH+REPLACE_OM
+
+بيرمانونت	REPLACE_OD
+مجهد،	UC
+عافاك.	UC
+
+بغات	UC
+بيرا.	REPLACE_XC
+
+صباح	UC
+الخير.	UC
+كي	UC
+داير؟	UC
+
+سمح	REPLACE_OH+REPLACE_OM
+ليا	REPLACE_XC
+خصني	UC
+نشوف	UC
+شي	UC
+وثيقة	UC
+ديال	UC
+الهوية.	UC
+
+إينا	REPLACE_OH
+نوع	UC
+ديال	UC
+الصوص؟	UC
+
+هادشي	REPLACE_X
+بارد	UC
+شوية.	UC
+واخا	REPLACE_OD
+تسخنو؟	REPLACE_OW
+
+سمح	REPLACE_OH+REPLACE_OM
+ليا.	REPLACE_XC
+هاد	UC
+البلاصة	UC
+عامرة.	UC
+
+انا	UC
+بخير.	UC
+و	MERGE-B
+لكن	MERGE-I
+واش	UC
+تقدر	UC
+تعيط	UC
+لصاحبي؟	UC
+
+شكرا.	UC
+باراكا.	UC
+
+شكون	UC
+هوا	REPLACE_OD+REPLACE_OG
+اقرب	UC
+صديق	UC
+ديالك؟	UC
+
+يوم	UC
+الصحة	UC
+والرياضة	UC
+عشرة	UC
+اكتوبر	UC
+هو	UC
+عيد	UC
+وطني	UC
+مديور	UC
+على	UC
+قبل	UC
+صحة	UC
+الناس.	UC
+
+واش	UC
+بغيتيني	UC
+نقلب	UC
+تحت	UC
+الكوفر؟	UC
+
+واخا	REPLACE_OD
+تعاوني	UC
+نقلب	UC
+على	UC
+الباليزا	REPLACE_OR
+ديالي؟	UC
+
+واخا	REPLACE_OD
+دير	REPLACE_OM
+الترتيبات	UC
+مسبقا؟	UC
+
+كاين	UC
+لي	REPLACE_XF
+معاوني.	UC
+شكرا.	UC
+
+منين	UC
+توصل	UC
+تما	REPLACE_OR
+سول	UC
+شي	UC
+واحد	UC
+آخر	UC
+عافاك.	UC
+
+بغيت	UC
+تمديد	UC
+ديال	UC
+اربعة	UC
+و	MERGE-B
+عشرين،	MERGE-I
+عافاك.	UC
+
+هاهيا	UC
+جوج	UC
+دولار.	UC
+خلي	UC
+ليك	UC
+الباقي.	UC
+
+واحد	UC
+همبركر	REPLACE_OD
+و	MERGE-B
+واحد	MERGE-I
+تشيز	UC
+بوركر،	REPLACE_OD
+عافاك.	UC
+
+شحال	UC
+كاتطلب	REPLACE_OD
+باش	UC
+تدير	UC
+العملية؟	UC
+
+كل	UC
+واحد	UC
+فينا	UC
+بغا	UC
+يخلص	UC
+على	UC
+راسو.	UC
+
+الموقع	UC
+كان	UC
+فوق	UC
+الكرسي	UC
+في	UC
+المراح.	UC
+
+عافاك	UC
+صرف	REPLACE_OH+REPLACE_OM
+هاد	UC
+الين	UC
+لجنيهات.	UC
+
+بغيت	UC
+معجم	UC
+قد	UC
+الجيب،	UC
+عافاك.	UC
+
+لجوج	UC
+ديال	UC
+الناس	UC
+فرقم	UC
+سبعة	UNK
+.	UNK
+السمية	UC
+هيا	REPLACE_OD+REPLACE_OG
+واتانابي.	UC
+
+الساعة	UC
+ديالي	UNK
+.	UNK
+كانت	UC
+سيكو	UC
+ديجيتال.	UC
+
+كاي	REPLACE_OD+REPLACE_OG
+شرفنا	UC
+نسربيو	REPLACE_OR
+ليك	UC
+المشروب	UC
+لي	REPLACE_XF
+كاتفضل،	REPLACE_OD
+متبوع	UC
+بالعشا.	UC
+دليل	UC
+كامل	UC
+ديال	UC
+المشروبات	UC
+لي	REPLACE_XF
+كان	UC
+قدمو	REPLACE_OW
+فهاد	UC
+الرحلة	UC
+كاين	UC
+في	UC
+دليل	UC
+المعلومات	UC
+ديال	UC
+المجلة	UC
+ديالنا.	UC
+
+واش	UC
+كاتسكن	REPLACE_OD
+غير	UC
+هنا؟	UC
+
+فين	UC
+كاين	UC
+المحل	UC
+ديال	UC
+الهدايا؟	UC
+
+انا	UC
+في	UC
+الطريق	UC
+السيار	UC
+واحد	UC
+حدا	UC
+مورو	UC
+باي.	UC
+
+بغيت	UC
+منبه،	UC
+عافاك.	UC
+
+بالمناسبة،	UC
+سميتي	UC
+هيروشي	UC
+إيجيما	REPLACE_OH
+.	REPLACE_OH
+
+هاد	UC
+الطران	UC
+كاي	REPLACE_X
+وقف	REPLACE_X
+في	UC
+لايك	UC
+فوريست،	UC
+ياك؟	UC
+
+الأغلبية	REPLACE_OH
+ديال	UC
+اليابانيين	UC
+كاياكلو	UNK
+الروطال	UC
+و	MERGE-B
+الكالامار.	MERGE-I
+
+عطيني	REPLACE_OH+REPLACE_OM
+جوج	UC
+تذاكر	UC
+الدرجة	UC
+الثانية	UC
+لشيكاغو،	UC
+عافاك؟	UC
+
+مشيت	UC
+لنيو	UC
+يورك.	UC
+
+شنو	UC
+هو	UC
+رقم	UC
+الرحلة؟	UC
+
+واحد	UC
+ل	MERGE-B
+نيو	MERGE-I
+يورك،	UC
+عافاك.	UC
+
+تقريبا	UC
+لمدة	UC
+شي	UC
+يامات.	UC
+
+الثانية	UC
+على	UC
+ليسر.	REPLACE_OH+REPLACE_OM
+
+هاد	UC
+لاكارط،	UC
+واخا؟	REPLACE_OD
+
+واش	UC
+هادا	UC
+هوا	REPLACE_OD+REPLACE_OG
+مكتب	UC
+الإستقبال؟	REPLACE_OH
+واش	UC
+كاين	UC
+شي	UC
+كلينيك	UC
+قريب؟	UC
+
+واش	UC
+تكفي	UC
+عشرا	REPLACE_XG
+دولار	UC
+في	UC
+الطاكسي؟	UC
+
+هادشي	REPLACE_X
+ماذاقو	REPLACE_OM
+غريب.	UC
+
+اه،	REPLACE_OH
+نعام.	UC
+انا	UC
+غادي	UC
+نجيب	UC
+ليك	UC
+واحد.	UC
+
+نص	UC
+قرعة،	UC
+عافاك.	UC
+
+ماشي	UC
+داكشي.	UC
+غير	UC
+شي	UC
+حاجة	UC
+ماتكونش	SPLIT
+غالية.	UC
+
+واش	UC
+كاتقلب	REPLACE_OD
+على	UC
+شي	UC
+حاجة؟	UC
+
+ربعا	REPLACE_OH+REPLACE_OM
+ديال	UC
+ليلات.	REPLACE_XF
+
+انا	UC
+محتاج	UC
+ل	MERGE-B
+تقاشر.	MERGE-I
+
+تقدر	UC
+ترخص	UC
+الثمن	UC
+حيت	REPLACE_OR
+كاينين	UC
+شي	UC
+طبايع؟	UC
+
+واحد	UC
+الراجل	UC
+دخل	UC
+فيا،	REPLACE_OD+REPLACE_OG
+من	UC
+بعد	UC
+لاحظت	UC
+بلي	REPLACE_SW
+البزطام	UC
+ديالي	UC
+مشا.	UC
+
+ممتأكدش	REPLACE_X
+واش	UC
+جمعت	UC
+حوايج	UC
+كافيين	UC
+لرحلة	UC
+تلاتة	REPLACE_OR
+السيمانات	UNK
+.	UNK
+
+بغينا	UC
+نجربو	REPLACE_OW
+النبيذ	UC
+الأبيض.	REPLACE_OH
+
+إيلا	REPLACE_OH
+سول	UC
+فيا	REPLACE_OD+REPLACE_OG
+شي	UC
+واحد،	UC
+قول	UC
+ليه	UC
+أنا	REPLACE_OH
+في	UC
+القهوة.	UC
+
+أنا	REPLACE_OH
+متأكد	UC
+بلي	REPLACE_SW
+خليتو	REPLACE_OR
+فالجيب	UC
+الدخلاني	UC
+ديال	UC
+كبوطي.	UC
+
+نقدر	UC
+ناخد	REPLACE_OR
+السمية	UC
+و	MERGE-B
+نمرة	MERGE-I
+الشخص	UC
+للي	REPLACE_XT
+تاتعيط	UC
+ليه؟	UC
+
+واش	UC
+الخطوط	UC
+الجوية	UC
+غادي	UC
+تخلص	UC
+ليا	REPLACE_XC
+الحوايج	UC
+الضرورية؟	UC
+
+بغيت	UC
+شي	UC
+بيت	UC
+معاه	UC
+دوش.	UC
+
+حتى	UC
+حاجة	UC
+ما	UC
+خرجات	UC
+من	UC
+الماكينة؟	UC
+
+كان	UC
+خاصك	UC
+تاخد	REPLACE_OR
+الرحلة	UC
+ثمان	MERGE-B
+مية	MERGE-I
+و	MERGE-B
+عشرين،	MERGE-I
+لي	REPLACE_XF
+قلعات	UC
+هادي	UC
+خمسطاش	REPLACE_OR
+دقيقة.	UC
+واخا.	REPLACE_OD
+نقدر	UC
+نصايب	UC
+ليك	UC
+رحلة	UC
+خرا.	REPLACE_SW
+
+شي	UC
+واحد	UC
+حل	UC
+الرزمة	UC
+ديالي.	UC
+
+أوه،	REPLACE_OH
+راه	UC
+والو.	UC
+أنت	REPLACE_OH
+هنا،	UC
+على	UC
+كل	UC
+حال.	UC
+
+جابان	UC
+إير	REPLACE_OH
+لاينز.	UC
+الرحلة	UC
+واحد	UC
+جوج	UC
+تلاثة.	REPLACE_OR
+
+خاصني	UC
+نشري	UC
+شامبوان.	UC
+
+واش	UC
+ممكن	UC
+تقولها	UC
+ليا	REPLACE_XC
+منين	UC
+نوصلو	REPLACE_OW
+للمركز	UC
+المدني؟	UC
+
+فين	UC
+كاين	UC
+أقرب	REPLACE_OH
+كزار؟	UC
+
+بغينا	UC
+نكلسو	REPLACE_SW
+ربعة	REPLACE_OH+REPLACE_OM
+ديال	UC
+الليلات	UC
+من	UC
+اللول	UC
+ديال	UC
+غشت.	UC
+
+شنو	UC
+السمية	UC
+ديال	UC
+هاديك	UC
+الوردة؟	UC
+
+خمسطاش	REPLACE_OR
+سبتمبر	UC
+هو	UC
+يوم	UC
+الاحترام	UC
+للعجزة.	UC
+
+ماكاينش	SPLIT
+الصابون	UC
+فبيتي.	UC
+
+واش	UC
+نقدر	UC
+ندير	UC
+شي	UC
+حاجة	UC
+لهاد	UC
+الطفح	UC
+الجلدي؟	UC
+
+تقدر	UC
+تبدل	UC
+الطريقة	UC
+باش	UC
+قلت	UC
+هادشي؟	REPLACE_X
+
+شحال	UC
+ديال	UC
+الوقت	UC
+غادي	UC
+يخص	UC
+باش	UC
+يتدار	UC
+الط	UC
+ل	REPLACE_X
+ب؟	REPLACE_X
+
+واخا	REPLACE_OD
+تهدر	UC
+شوية	UC
+بالغوات،	UC
+عافاك؟	UC
+
+شحال	UC
+ديال	UC
+الوقت	UC
+غادي	UC
+يكون	UC
+قبل	UC
+ما	UC
+يخرج؟	UC
+
+فين	UC
+هيا	REPLACE_OD+REPLACE_OG
+أخبار	REPLACE_OH
+الرياضة؟	UC
+
+هاد	UC
+القياس	UC
+هادا،	UC
+لي	REPLACE_XF
+كا	UNK
+تقول	UNK
+ليه	UC
+القياس	UC
+العادي،	UC
+غادي	UC
+يدير.	UC
+
+فين	UC
+غادي	UC
+تسالي	UC
+الدورة؟	UC
+و	MERGE-B
+وقتاش؟	MERGE-I
+
+فين	UC
+نقدر	UC
+نبدل	UC
+الترانات	UC
+باش	UC
+نوصل	UC
+ل	REPLACE_X
+إيدينبره؟	REPLACE_X
+
+بغيت	UC
+نحط	UC
+هادشي	REPLACE_X
+في	UC
+صندوق	UC
+ودائع.	UC
+
+فين	UC
+نقدر	UC
+نصرف	UC
+الفلوس	UC
+ديالي؟	UC
+
+ممكن	UC
+نخليو	REPLACE_OW
+الأمتعة	REPLACE_OH
+ديالنا،	UC
+من	UC
+غير	UC
+داكشي	UC
+لي	REPLACE_XF
+غالي،	UC
+في	UC
+الحافلة؟	UC
+
+بغيت	UC
+نعرف	UC
+ديالاش	UC
+هاد	UC
+الخلاص	UC
+لي	REPLACE_XF
+في	UC
+الفاتورة	UC
+ديالي.	UC
+
+غادي	UC
+نخلص	UC
+خمسين	UC
+دولار.	UC
+
+دابا	UC
+عرفت	UC
+شنو	UC
+كان	UC
+المشكل.	UC
+
+انا	UC
+إيكيدا.	REPLACE_OH+REPLACE_OM
+حجزت	UC
+طابلة	UC
+للستة	UC
+و	MERGE-B
+نص	MERGE-I
+هاد	UC
+العشية.	UC
+و	MERGE-B
+لكن	MERGE-I
+كا	REPLACE_X
+نعتاذر	REPLACE_X
+غادي	UC
+نجي	UC
+مأخر	UC
+نص	UC
+ساعة.	UC
+
+شحال	UC
+من	UC
+أوقية	REPLACE_OH
+ديال	UC
+الريحة	UC
+نقدر	UC
+ناخد	REPLACE_OR
+معفية	UC
+من	UC
+الرسوم	UC
+الجمركية؟	UC
+
+غير	UC
+السياحة.	UC
+
+ماشي	UC
+مشكل،	UC
+وقع	UC
+فيهوم	REPLACE_OD
+عافاك	UNK
+.	UNK
+كيفاش	UC
+بغيتيه؟	UC
+
+مازال	SPLIT
+عندكم	UC
+البلايص	UC
+للعرض	UC
+ديال	UC
+اليوم	UC
+بالليل؟	UC
+
+بغيت	UC
+واحد	UC
+كبير.	UC
+
+ما	UC
+فقتش	UC
+منين	UC
+صونا	UC
+المنبه	UC
+ديال	UC
+الستة	UC
+و	MERGE-B
+نص.	MERGE-I
+
+أنا	REPLACE_OH
+مصور	UC
+مستقل.	UC
+
+العمال	UC
+تما	REPLACE_OR
+يقدرو	REPLACE_OW
+يبدلو	REPLACE_OW
+ليك	UC
+الدولار	UC
+بالفيتشات	UC
+ديال	UC
+الكازينو.	UC
+مشينا؟	UC
+
+عندنا	UC
+تقريبا	UC
+تلاتين	REPLACE_OR
+نوع	UC
+ديال	UC
+الزيوت	UC
+ديال	UC
+الحمام.	UC
+
+غادي	UC
+نجيب	UC
+ليك	UC
+العرض	UC
+السيمانة	UC
+الجاية.	UC
+
+شكرا.	UC
+شحال	UC
+هاد	UC
+الصباعيات؟	UC
+
+خاصني	UC
+نمشي.	UC
+غادي	UC
+نعيط	UC
+ليك	UC
+من	UC
+بعد.	UC
+
+بغيت	UC
+ليكوش	UC
+لاستعمال	UC
+واحد.	UC
+
+منين	UC
+الاصل	UC
+ديال	UC
+هاد	UC
+الحوت	UC
+ديال	UC
+الفراشة؟	UC
+
+تقدر	UC
+تصرفهم	UC
+للدولار،	UC
+عافاك؟	UC
+
+"""عندنا	UC
+الزهر	UC
+بزاف.	UC
+عندهم	UC
+واحد	UC
+في	UC
+القياس	UC
+ربعة	REPLACE_OH+REPLACE_OM
+في	UC
+المحل	UC
+ديال	UC
+""""آلا	UC
+موانا""""."""	REPLACE_P
+
+واش	UC
+كاينا	REPLACE_OR
+شي	UC
+ليموزين؟	UC
+
+ممكن	UC
+اتصال	UC
+يفيقني	UC
+غدا	UC
+مع	UC
+الخمسة	UC
+و	MERGE-B
+نص	MERGE-I
+ديال	UC
+الصباح؟	UC
+
+كا	REPLACE_X
+نفضل	REPLACE_X
+غرفة	UC
+هادئة.	UC
+
+بغيت	UC
+باش	UC
+نحيد	UC
+الصباغة	UC
+ديال	UC
+الضفار.	UC
+
+بغيت	UC
+بطارية.	UC
+
+واش	UC
+كاين	UC
+شي	UC
+فرقة	UC
+لايف	UC
+ولا	UC
+دي	UC
+دجي؟	UC
+
+نقدر	UC
+نكري	UC
+العدة	UC
+ديال	UC
+الغطس؟	UC
+
+بغيت	UC
+نحجز	UC
+غرفة	UC
+لربعة	REPLACE_SW
+ديال	UC
+الليلات	UC
+ابتداء	UC
+من	UC
+اتنين	REPLACE_OR
+و	MERGE-B
+عشرين	MERGE-I
+ديسمبر.	UC
+
+واش	UC
+هاد	UC
+الساك	UC
+مزيان	UC
+لجميع	UC
+الأجواء؟	REPLACE_OH
+
+بغيت	UC
+سفنجة،	UC
+عافاك.	UC
+
+بغيت	UC
+نكري	UC
+سيارة	UC
+أوطوماتيك	REPLACE_OH
+لمدة	UC
+يومين.	UC
+
+"""فاتتني	UC
+الرحلة	UC
+عسرين	UC
+ل	MERGE-B
+""""سان	MERGE-I
+فرانسيسكو""""."""	REPLACE_P
+
+شحال	UC
+للمطار؟	UC
+
+مزيان.	UC
+وقتاش؟	UC
+
+شحال	UC
+عند	UC
+بنتك	UC
+من	UC
+عام؟	UC
+
+ممكن	UC
+توريني	UC
+شي	UC
+أوطيلات	REPLACE_OH
+رخاص	UC
+و	MERGE-B
+نقيين؟	MERGE-I
+
+نقدرو	REPLACE_OW
+نحجزو	REPLACE_OW
+ليك	UC
+غرفة	UC
+مريحة	UC
+في	UC
+قصر	UC
+قديم	UC
+حدا	UC
+واحد	UC
+النادي	UC
+ديال	UC
+الكولف	UC
+مشهور.	UC
+
+كا	REPLACE_X
+نوصيك	REPLACE_X
+بهادا	UC
+حيت	REPLACE_OR
+مصايب	UC
+من	UC
+مقادير	UC
+ميا	REPLACE_OR
+في	UC
+الميا	REPLACE_OR
+طبيعية.	UC
+
+"""واش	UC
+هاد	UC
+التران	UC
+كا	REPLACE_X
+يحبس	REPLACE_X
+في	UC
+""""برايطون""""؟"""	UC
+
+تقدر	UC
+تقول	UC
+ليا	REPLACE_XC
+فين	UC
+نقدر	UC
+نشد	UC
+طاكسي؟	REPLACE_OR
+
+جوج	UC
+ورقات	UC
+في	UC
+الدرجة	UC
+الثانية،	UC
+عافاك.	UC
+
+بغيت	UC
+نصيفط	UC
+فاكس.	UC
+
+بغيت	UC
+مصلوح	UC
+ديال	UC
+السفر.	UC
+
+نعطيك	UC
+شي	UC
+حاجة؟	UC
+
+نهاري؟	UC
+خفت	UC
+نسول،	UC
+ولكن	UC
+شنو	UC
+بغيتي	UC
+تقصد؟	UC
+
+بغيت	UC
+شي	UC
+واحد	UC
+لي	REPLACE_XF
+غادي	UC
+يهز	UC
+ليا	REPLACE_XC
+وراق	REPLACE_OD
+عاديين	UC
+بلا	UC
+ما	UC
+نطويهم.	UC
+
+آه	UNK
+.	UNK
+و	MERGE-B
+لكن	MERGE-I
+ما	UC
+صحيحش	UC
+بزاف.	UC
+
+عندي	UC
+حساسية	UC
+ديال	UC
+القطوط.	UC
+
+آه،	UC
+خاص	UC
+تكون	UC
+عندك	UC
+رخصة	UC
+السياقة	UC
+و،	DELETE
+اوه،	UC
+خاص	UC
+تكون	UC
+عندك	UC
+رخصة	UC
+السياقة	UC
+من	UC
+اللجنة	UC
+ديال	UC
+الطاكسي	UC
+و	MERGE-B
+الليموزين.	MERGE-I
+
+تفضل،	UC
+أسيدي.	REPLACE_OH
+
+ما	UC
+خديتش	REPLACE_OR
+الما	UC
+سخون.	UC
+
+بغيت	UC
+نحجز	UC
+غرفة	UC
+لليوم	UC
+بالليل.	UC
+
+لا،	UC
+داخلا	REPLACE_SW
+فيها	UC
+الضريبة	UC
+و	MERGE-B
+التكاليف	MERGE-I
+ديال	UC
+الخدمة.	UC
+
+تبغي	UC
+تمشي	UC
+معايا	REPLACE_OD+REPLACE_OG
+نتقداو	REPLACE_OW
+هاد	UC
+العشية؟	UC
+
+أهلا،	REPLACE_OH
+هاد	UC
+الكسوة	UC
+زوينة	UC
+بزاف.	UC
+
+دابا،	UC
+الاتصال	UC
+ديالك	UC
+بدا،	UC
+تفضل	UC
+عافاك.	UC
+
+شحال	UC
+النمرة	UC
+ديال	UC
+الباب؟	UC
+
+شنو	UC
+هي	UC
+أوعر	REPLACE_OH
+ذكرى	UC
+ديال	UC
+هاواي؟	UC
+
+نقدر	UC
+نمشي	UC
+تما	REPLACE_OR
+بالميترو؟	UC
+
+بغيت	UC
+بروشينك.	UC
+
+فين	UC
+غاديين	UC
+بهاد	UC
+الهضرة؟	UC
+
+انا	UC
+من	UC
+النورويج.	UC
+
+من	UC
+عشرة	UC
+ل	MERGE-B
+طناش	MERGE-I
+عافاك.	UC
+
+بطبيعة	REPLACE_XF
+الحال.	UC
+خليني	UC
+نشوفو.	REPLACE_OR
+ضربك	UC
+المرجان،	UC
+كا	REPLACE_X
+نظن.	REPLACE_X
+
+غير	UC
+احتياط،	UC
+خلي	UC
+ليا	REPLACE_XC
+النمرة	UC
+ديال	UC
+الشخص	UC
+المسئول.	UC
+
+واش	UC
+كاين	UC
+شي	UC
+طريق	UC
+سيار؟	UC
+
+علاش	UC
+ماجاش	SPLIT
+للحفلة	UC
+لبارح؟	REPLACE_OH+REPLACE_OM
+
+كانت	UC
+واحد	UC
+الكسيدة	UC
+ديال	UC
+الزحام.	UC
+
+سمح	REPLACE_OH+REPLACE_OM
+ليا،	REPLACE_XC
+عندي	UC
+النمرة	UC
+غالطة.	UC
+
+دخل	UC
+الكود	UC
+بين	UC
+ديالك	UC
+عافاك.	UC
+
+ما	UC
+قدرتش	UC
+نقاد	UC
+الصورة.	UC
+
+واحد	UC
+تشيز	UC
+بوركر	UC
+و	MERGE-B
+عصير	MERGE-I
+الليمون،	UC
+عافاك.	UC
+
+ها	MERGE-B
+هو	MERGE-I
+جواز	UC
+السفر	UC
+ديالي.	UC
+
+عاش،	UC
+شكرا	UC
+بزاف	UNK
+.	UNK
+أوه،	REPLACE_OH
+واش	UC
+نقدر	UC
+نطلع	UC
+لآخر	UC
+طاج؟	UC
+
+ممكن	UC
+تعطيني	UC
+جوج	UC
+تذاكر	UC
+للعرض	UC
+الكوميدي	UC
+الموسيقي	UC
+ديال	UC
+الجمعة	UC
+الجاية؟	UC
+
+واحد	UC
+المسافر	UC
+آخر	UC
+لهيه	UC
+قال	UC
+بلي	REPLACE_SW
+يمكن	UC
+ليه	UC
+يبدل	UC
+معاك	UC
+البلاصة.	UC
+
+واش	UC
+نقدر	UC
+نزيد	UC
+نبقا	REPLACE_OA
+كالس؟	UC
+
+قول	UC
+ليا،	REPLACE_XC
+كاتعرف	REPLACE_OD
+شي	UC
+حاجة	UC
+كا	REPLACE_X
+تستاحق	REPLACE_X
+المشاهدة	UC
+قريبة	UC
+من	UC
+هنا؟	UC
+
+لا،	UC
+بغيت	UC
+نكري	UC
+نص	UC
+مجموعة	UC
+ديال	UC
+مضارب	UC
+و	MERGE-B
+صباط.	MERGE-I
+
+واش	UC
+تقدر	UC
+تعلمني	UC
+منين	UC
+يتلقا	UC
+داك	UC
+الصاك	UC
+لي	REPLACE_XF
+تالف؟	UC
+
+شنو	UC
+سميت	UC
+هاد	UC
+الحديقة	UC
+الوطنية؟	UC
+
+عندي	UC
+واحد	UC
+الخبشة.	UC
+
+فين	UC
+كاينة	UC
+شي	UC
+بلاصة	UC
+للسياحة؟	UC
+
+ممكن	UC
+ناخد	REPLACE_OR
+شي	UC
+فاكهة؟	UC
+
+ممكن	UC
+ناخد	REPLACE_OR
+الغدا	UC
+دابا؟	UC
+
+خاصني	UC
+نصرف	UC
+هاد	UC
+الدولارات.	UC
+
+خاصني	UC
+طاكسي.	REPLACE_OR
+أنا	REPLACE_OH
+في	UC
+ساوث	UC
+ماين	UC
+و	MERGE-B
+ليبيرتي.	MERGE-I
+
+معلوم.	UC
+واش	UC
+خاصك	UC
+بيرمانونت؟	REPLACE_OD
+
+راها	UC
+ماشي	UC
+تفاحة	UC
+ولكن	UC
+خوخة.	UC
+
+غادي	UC
+نعطيك	UC
+واحد	UC
+الوصفة.	UC
+ديها	UC
+لعند	UC
+الصيدلية.	UC
+
+كا	REPLACE_X
+نسافرو	REPLACE_X
+في	UC
+الجو	UC
+تلاتة	REPLACE_OR
+ديال	UC
+المرات	UC
+في	UC
+السيمانة،	UC
+نهار	UC
+التلات،	REPLACE_OR
+الجمعة،	UC
+و	MERGE-B
+السبت.	MERGE-I
+
+غالي،	UC
+ياك؟	UC
+
+آه،	UC
+عندنا	UC
+هاداك.	UC
+غادي	UC
+نوجدوه	UC
+ليك.	UC
+
+ممكن	UC
+تخلي	UC
+عندك	UC
+الأمتعة	REPLACE_OH
+ديالي	UC
+حتال	REPLACE_OD+REPLACE_OR
+التلاتة	REPLACE_OD+REPLACE_OR
+ديال	UC
+العشية؟	UC
+
+لا،	UC
+أنا	REPLACE_OH
+بغيت	UC
+غير	UC
+ندوز	UC
+و	MERGE-B
+صافي.	MERGE-I
+
+واش	UC
+نقدر	UC
+نحجز	UC
+اكري-طوموبيل	UC
+هنايا؟	UC
+
+واش	UC
+انت	UC
+ميريكاني؟	REPLACE_OD+REPLACE_OM
+
+لهاد	UC
+البلاصة،	UC
+عافاك.	UC
+
+السيارة	UC
+ديالي	UC
+ساكتة.	UC
+
+فيت	UC
+هو	UC
+الريسيل؟	UC
+
+بغينا	UC
+شي	UC
+ركنة	UC
+هادئة،	UC
+إيلا	REPLACE_OH
+كان	UC
+ممكن.	UC
+
+واحد	UC
+سكوتش	UC
+مع	UC
+ماء،	UC
+عافاك.	UC
+واش	UC
+عندك	UC
+شي	UC
+ماكلة	UC
+خفيفة؟	UC
+
+كيفاش	UC
+يمكن	UC
+لي	UC
+نطفي	UC
+هاد	UC
+الضو؟	UC
+
+واش	UC
+هو	UC
+مشغول	UC
+بزاف	UC
+اليوم؟	UC
+
+بغيت	UC
+خيط.	UC
+
+اعطيني	UC
+شهادة	UC
+طبية،	UC
+عافاك.	UC
+
+بغيت	UC
+تعاود	UC
+تقصرو	REPLACE_OM
+بإنش	REPLACE_OH
+هنا.	UC
+
+ماكانحسش	REPLACE_X
+براسي	UC
+هو	UC
+هاداك.	UC
+عافاك	UC
+اعطيني	UC
+الدوا.	UC
+
+واش	UC
+يمكن	UC
+نحصل	UC
+على	UC
+جريدة	UC
+يابانية،	UC
+عافاك؟	UC
+
+واخا.	REPLACE_OD
+واش	UC
+يمكن	UC
+لي	UC
+نهبط	UC
+من	UC
+الكار	UC
+فينما	UC
+كان؟	UC
+اشحال	REPLACE_OD
+كيكلف؟	UC
+
+إنا	REPLACE_OH
+طوبيس	UC
+كايمشي	REPLACE_OD
+لوسط	UC
+المدينة؟	UC
+
+واش	UC
+كاين	UC
+شي	UC
+اكسبريس	UC
+لبوسطن؟	UC
+
+عافاك	UC
+وللي	UC
+المراسل	UC
+ديالي.	UC
+
+أنا	REPLACE_OH
+متحمس	UC
+بزاف،	UC
+ماقادرش	SPLIT
+نرصى	UC
+فبلاصتي.	UC
+
+واش	UC
+يمكن	UC
+لي	UC
+نهبط	UC
+فأوطيل	REPLACE_OH
+هيلتون؟	UC
+
+بغيتك	UC
+تحيدو.	REPLACE_OR
+
+دور	UC
+على	UC
+اليسار	UC
+فهاد	UC
+الشارع	UC
+وسير	UC
+معاه	UC
+نيشان	UC
+حتى	UC
+للشارع	UC
+اللول	REPLACE_OR
+على	UC
+اليمين.	UC
+
+بغيت	UC
+نعرف	UC
+واش	UC
+من	UC
+الممكن	UC
+نصيفط	UC
+هاد	UC
+المجموعة	UC
+د	MERGE-B
+المواعن	MERGE-I
+لطوكيو.	UC
+
+بغيت	UC
+مسحوق	UC
+مرطب	UC
+للجسم.	UC
+
+واش	UC
+كاينة	UC
+شي	UC
+ماكلة	UC
+ماسخوناش	UC
+و	DELETE
+ناقصة	UC
+من	UC
+التوابل؟	UC
+
+واش	UC
+هاد	UC
+الشي	UC
+قريب	UC
+باش	UC
+نمشيو	REPLACE_OW
+ليه	UC
+على	UC
+رجلينا؟	UC
+
+واش	UC
+يمكن	UC
+ليك	UC
+تعطيني	UC
+الملح؟	UC
+
+بغيت	UC
+نمشي	UC
+لوول	UC
+ستريت.	UC
+كيفاش	UC
+يمكن	UC
+لي	UC
+نوصل	UC
+ليه؟	UC
+
+التمارين	UC
+الكثيرة	UC
+ما	UC
+عندها	UC
+حتى	UC
+منفعة.	UC
+
+داخل	UC
+الفطور،	UC
+الرسوم،	UC
+والخدمة	UC
+حتى	UC
+هي،	UC
+كيجي	UC
+المبلغ	UC
+خمسة	UC
+و	REPLACE_X
+ربعين	REPLACE_X
+دولار	UC
+للفرد.	UC
+
+واش	UC
+تقدر	UC
+تصلح	UC
+هاد	UC
+الشي؟	UC
+
+مساء	UC
+الخير.	UC
+أهلا.	REPLACE_OH
+
+مالقيتش	SPLIT
+الامتعة	UC
+ديالك.	UC
+
+سير	UC
+نيشان،	UC
+عافاك.	UC
+
+واش	UC
+الما	UC
+صالح	UC
+للشرب	UC
+هنا؟	UC
+
+أه،	REPLACE_XC
+ياللاه.	UC
+راه	UC
+غير	UC
+جوج	UC
+دولار.	UC
+
+يمكن	UC
+ليك	UC
+عافاك	UC
+تبدل	UC
+هاد	UC
+الكسوة	UC
+بواحدة	UC
+أخرى	REPLACE_OH
+بقياس	UC
+اكبر؟	UC
+
+حسنا،	UC
+ياللاه	REPLACE_OD
+بينا.	UC
+غادي	UC
+نعاونك	UC
+فالفروض	UC
+جيالك	UC
+من	UC
+بعد	UC
+ما	UC
+ناكلو	REPLACE_OW
+شي	UC
+بيتزا.	UC
+
+نعم،	UC
+سيد	UC
+تاناكا.	UC
+كاينين	UC
+جوج	UC
+رسائل	UC
+ليك.	UC
+
+هاد	UC
+الشي	UC
+ماجاش	SPLIT
+معايا.	REPLACE_OD+REPLACE_OG
+
+غدا	UC
+نهار	UC
+آخر.	UC
+
+يمكن	UC
+ليا	REPLACE_XC
+واقيلا	UC
+نعاونك.	UC
+واش	UC
+خاصك	UC
+فيتامين	UC
+سي؟	UC
+
+واحد	UC
+السراق	UC
+شفر	UC
+ليا	REPLACE_XC
+بزطامي	UC
+فالقطار.	UC
+
+راه	UC
+بعيد	UC
+بزاف.	UC
+من	UC
+الأحسن	REPLACE_OH
+تأخذ	REPLACE_OH
+طاكسي.	REPLACE_OR
+
+بغيت	UC
+بلاصة	UC
+جهة	UC
+الممر،	UC
+عافاك.	UC
+
+كنعيش	UC
+فشقة	UC
+كتكلفني	UC
+تمانين	REPLACE_OR
+ألف	REPLACE_OH
+ين	UC
+فالشهر.	UC
+
+يمكن	UC
+لي	UC
+نقاطعك؟	UC
+
+اسمح	UC
+لي.	UC
+واش	UC
+تبغي	UC
+تبدل	UC
+البلاصة	UC
+معايا؟	REPLACE_OD+REPLACE_OG
+
+نعم،	UC
+أكيد.	REPLACE_OH
+
+امشي	UC
+الركن	UC
+و	MERGE-B
+دور	MERGE-I
+على	UC
+اليسار	UC
+حتى	UC
+لإشارة	REPLACE_OH
+المرور.	UC
+
+بغيت	UC
+نحط	UC
+الأغراض	REPLACE_OH
+ديالي	UC
+الغالية	UC
+في	UC
+خزنة	UC
+الفندق.	UC
+
+نعم،	UC
+ولكن	UC
+تأكد	UC
+باللي	UC
+التذكرة	UC
+معاك.	UC
+
+غير	UC
+ناس	UC
+قلال	UC
+غادي	UC
+ينضمو	REPLACE_OW
+لهاد	UC
+الجولة	UC
+الاختيارية.	UC
+
+ماشي	UC
+مهم.	UC
+على	UC
+كل	UC
+حال،	UC
+وصلني	UC
+لوسط	UC
+الحي	UC
+الصيني،	UC
+عافاك.	UC
+غادي	UC
+نحاول	UC
+نلقاه	UC
+بوحدي.	UC
+
+ناس	UC
+جداد	UC
+توظفو	REPLACE_OW
+فأبريل.	REPLACE_OH
+
+كنتمنى.	UC
+
+جوج	UC
+سكوتش	UC
+مع	UC
+ماء،	UC
+عافاك.	UC
+
+اشكون	UC
+كيلعب؟	UC
+
+على	UC
+اليسار،	UC
+إذا	REPLACE_OH
+جات	UC
+على	UC
+خاطرك.	UC
+
+هاد	UC
+السنة	UC
+دلقدام	UC
+كتضرني.	UC
+
+آشنا	REPLACE_OR
+هي	UC
+آخر	UC
+لعبة	UC
+كمبيوتر	UC
+تصلح	UC
+لي	UC
+عندو	REPLACE_OR
+خمسطاشر	REPLACE_OM+REPLACE_OR
+عام؟	UC
+
+إيوا	REPLACE_OH
+نشوفك	UC
+غدا.	UC
+
+لا،	UC
+بلحاق	REPLACE_OH+REPLACE_OM
+شكرا	UC
+ليك.	UC
+كنحس	UC
+براسي	UC
+دابا	UC
+احسن	UC
+شوية.	UC
+
+واش	UC
+عندك	UC
+شي	UC
+خبز؟	UC
+
+كيفاش	UC
+داير	UC
+مستواك	UC
+فالكمنجة؟	UC
+
+صاحبي	UC
+زلق	UC
+وطاح	UC
+فالحمام.	UC
+
+يمكن	UC
+لي	UC
+ناخد	REPLACE_OR
+شي	UC
+طفاية؟	UC
+
+المسيحية	UC
+تمنعات	UNK
+و	MERGE-B
+البلاد	MERGE-I
+تسدات	UC
+على	UC
+باقي	UC
+العالم.	UC
+
+شحال	UC
+بغيتي	UC
+من	UC
+داك	UC
+الشي؟	UC
+
+كوكتيل	UC
+الكروفيت	UC
+ليها	UC
+ونفس	UC
+الشي	UC
+ليا.	REPLACE_XC
+
+تقدر	UC
+توقع	UC
+لي	UC
+هنا؟	UC
+وعافاك	UC
+بالحروف	UC
+الاولى	UC
+دسميتك	UC
+هنا.	UC
+
+كان	UC
+من	UC
+دواعي	UC
+سروري	UC
+نزور	UC
+المقر	UC
+ديالك	UC
+ونتناقش	UC
+معاك.	UC
+شكرا	UC
+بزاف	UC
+على	UC
+حسن	UC
+تعاونك.	UC
+
+كتشخر	UC
+مجهد.	UC
+
+من	UC
+بعد	UC
+كل	UC
+شي	UC
+ما	UC
+عجبنيش	UC
+هاد	UC
+اللون.	UC
+نقدر	UC
+نرجعو؟	REPLACE_OW
+
+يمكن	UC
+ليا	REPLACE_XC
+ناخد	REPLACE_OR
+شوية	UC
+ديال	UC
+لبزار؟	REPLACE_OH+REPLACE_OM
+
+معاك	UC
+السيد	UC
+تاكاهاشي	UC
+فالغرفة	UC
+خمسة	UC
+تسعود	UC
+واربعين.	UC
+واش	UC
+تقدر	UC
+تصيفط	UC
+ليا	REPLACE_XC
+اربع	UC
+زاجات	UC
+ديال	UC
+بيرة	UC
+بودويزر،	UC
+عافاك؟	UC
+
+هاهي	UC
+سبعين	UC
+دولار.	UC
+
+عافاك	UC
+اتصل	UC
+بيا	REPLACE_OD+REPLACE_OG
+فالأوطيل	REPLACE_OH
+منين	UC
+تلقى	UC
+الأمتعة	REPLACE_OH
+ديالي.	UC
+
+بغيت	UC
+نفيق	UC
+غدا	UC
+صباح	UC
+مع	UC
+التمنية	UNK
+ونص،	UC
+عافاك.	UC
+
+واخا،	REPLACE_OD
+بلحاق	REPLACE_OH+REPLACE_OM
+هاد	UC
+الشي	UC
+بزاف	UC
+وأنا	REPLACE_OH
+أصلا	REPLACE_OH
+واكل	UC
+بزاف.	UC
+
+بغيت	UC
+شوية	UC
+من	UC
+معجون	UC
+الأسنان.	REPLACE_OH
+
+كنحس	UC
+براسي	UC
+ماشي	UC
+هو	UC
+هاداك.	UC
+
+واش	UC
+كتعطي	UC
+شي	UC
+تخفيضات؟	UC
+
+طوكيو	UC
+زيرو	UC
+تلاتة	REPLACE_OR
+تسعود	UC
+تسعود	UC
+تسعود	UC
+تسعود	UC
+أربعة	REPLACE_OH
+خمسة	UC
+ستة	UC
+سبعة.	UC
+
+تقدر	UC
+تعاوني	UC
+نلقى	UC
+حديقة	UC
+الحيوان؟	UC
+
+يمكن	UC
+ليك	UC
+تقول	UC
+لي	UC
+كيفاش	UC
+كايتصايب؟	REPLACE_OD
+
+آش	UC
+من	UC
+ساعة	UC
+غادي	UC
+تكمل	UC
+الجولة	UC
+فالطوبيس؟	UC
+
+كاتعرف	REPLACE_OD
+كيفاش	UC
+تستخدم	UC
+التلفون؟	UC
+
+بالتاكيد.	UC
+عندنا	UC
+بعض	UC
+العلامات	UC
+ديال	UC
+الكتوبة	UC
+أمريكية	REPLACE_OH
+أصلية	REPLACE_OH
+زوينة.	UC
+
+عامل	UC
+مكالمات	UC
+كيهضر	UC
+باليابانية،	UC
+عافاك.	UC
+
+احنا	UC
+مهتمين	UC
+بالموضة.	UC
+
+واش	UC
+يمكن	UC
+ليك	UC
+تسحب	UC
+ليا	REPLACE_XC
+السيارة؟	UC
+
+واش	UC
+هادي	UC
+العيادة	UC
+إف؟	REPLACE_OH
+
+أهلا،	REPLACE_OH
+آنسة	UC
+ياماكوشي؟	UC
+مخاطبك	UC
+على	UC
+الخط.	UC
+المكالمة	UC
+ديالك	UC
+تقبلات.	UC
+تفضلي،	UC
+عافاكي.	UC
+
+وقتاش	UC
+غادي	UC
+نوصلو	REPLACE_OW
+نلوس	UC
+أنجلوس؟	REPLACE_OH
+
+سير	UC
+نيشان	UC
+مدة	UC
+خمسة	UC
+الدقايق	UC
+تقريبا،	UC
+ودور	UC
+على	UC
+ليسار.	REPLACE_OH+REPLACE_OM
+
+من	UC
+هنا	UC
+الطريق	UC
+نلبحر.	UC
+
+هاد	UC
+أتاي	REPLACE_OH
+بالعشوب	UC
+كيساعد	UC
+على	UC
+تجديد	UC
+الجسم.	UC
+
+هاد	UC
+الشي	UC
+ما	UC
+كيتصنعشي	UC
+فاليابان؟	UC
+
+واخا.	REPLACE_OD
+من	UC
+هنا	UC
+عافاك.	UC
+غادي	UC
+نوريك	UC
+الغرفة	UC
+ديالك.	UC
+
+خاصني	UC
+نخرج	UC
+من	UC
+الأوطيل	REPLACE_OH
+قبل	UC
+الظهر.	UC
+
+جوج	UC
+هامبورغر	UC
+وجوج	UC
+قهيوات،	UC
+عافاك.	UC
+غادي	UC
+نديهوم	UC
+معايا.	REPLACE_OD+REPLACE_OG
+
+نقدر	UC
+ندي	UC
+معايا	REPLACE_OD+REPLACE_OG
+هاد	UC
+جوج	UC
+حقائب؟	UC
+
+أنا	REPLACE_OH
+طلبت	UC
+اللحم،	UC
+ماشي	UC
+الحوت.	UC
+تقدر	UC
+تبدل	UC
+ليا	REPLACE_XC
+هاد	UC
+الشي؟	UC
+
+ولدي	UC
+عيان	UC
+فمرة.	UC
+
+معدتي	UC
+كتضرني.	UC
+
+اهوكا	REPLACE_OH
+غادي،	UC
+بالضبط	UC
+قدام	UC
+البيرو	UC
+متاع	UC
+الارشادات	UC
+السياحية.	UC
+
+عمري	UC
+ما	UC
+سمعت	UC
+بالادريسة	UC
+هاذي	UC
+هوني.	UC
+
+امشي	UC
+طول	UC
+طول	UC
+حتى	UC
+لين	UC
+تشوف	UC
+صيدلية.	UC
+
+بقداش	UC
+فطور	UC
+الصباح؟	UC
+
+كيفاش	UC
+انجم	REPLACE_OR
+نعاونك؟	UC
+
+دور	UC
+الدورة	UC
+الثالثة	UC
+عاليسار.	UC
+
+تحب	UC
+كريمة	UC
+و	MERGE-B
+سكر	MERGE-I
+في	UC
+قهوتك؟	UC
+
+تنجم	UC
+تصبلي	SPLIT
+ها	MERGE-B
+الشاك	MERGE-I
+بميتين	UC
+دولار	UC
+متاعي؟	UC
+
+لو	UC
+لازم	UC
+يضهر،	UC
+كلمني	UC
+عيشك.	REPLACE_MT
+
+ويني	UC
+القهوة؟	UC
+
+نحب	UC
+مريول	UC
+متاع	UC
+صغار.	UC
+
+باهي.	UC
+مراسلة	UC
+عادية	UC
+بخمسة	UC
+و	REPLACE_S
+ثمانين	REPLACE_S
+سنت	UC
+وزايدة	UC
+تلاثة	REPLACE_OR
+دولارات	UC
+بالضبط	UC
+للمراسلة	UC
+اللي	UC
+من	UC
+النوع	UC
+لبخاص.	UNK
+
+انا	UC
+في	UC
+بلاصتك	UC
+نشريه.	UC
+
+باش	UC
+نلقى	UC
+مشكلة	UC
+مع	UC
+الديوانة؟	UC
+
+تبيعو	REPLACE_OW
+صبابط	UC
+رسمية	UC
+يكونو	REPLACE_OW
+واسعين	UC
+من	UC
+شيرة	UC
+الصوابع؟	UC
+
+لا.	UC
+تحب	UC
+بيت	UC
+فيها	UC
+زوز	UC
+فروشات	UC
+نحسبوها	UC
+لشخص	UC
+برك؟	UC
+عنا	REPLACE_OM
+وحدة.	REPLACE_OH+REPLACE_OM
+
+نحب	UC
+برمانونت	UC
+قوية،	UC
+عيشك.	REPLACE_MT
+
+تحب	UC
+كعبة	UC
+بيرا.	REPLACE_XC
+
+صباح	UC
+الخير.	UC
+لاباس؟	UC
+
+سامحني	UC
+لازمني	UC
+نشوف	UC
+اوراقك.	UC
+
+شنوة	REPLACE_OR
+الصوص؟	UC
+
+هذا	UC
+بارد	UC
+شوية.	UC
+بش	REPLACE_OH+REPLACE_OM
+تسخنو؟	REPLACE_OW
+
+سامحني،	UC
+فما	UC
+شكون	UC
+في	UC
+البلاصة	UC
+هاذي.	UC
+
+انا	UC
+لاباس.	SPLIT
+اما	UC
+ميسالش	UC
+تكلم	UC
+صاحبي؟	UC
+
+شكرا،	UC
+يزي.	UC
+
+شكون	UC
+اعز	UC
+صديق	UC
+عندك؟	UC
+
+يوم	UC
+الصحة	UC
+والرياضة	UC
+عشرة	UC
+أكتوبر	REPLACE_OH
+هو	UC
+يوم	UC
+وطني	UC
+الهدف	UC
+منو	REPLACE_OR
+تدعيم	UC
+صحة	UC
+العباد.	UC
+
+تحبني	UC
+نشوف	UC
+تحت	UC
+الكبوت؟	UC
+
+تعاوني	UC
+بش	REPLACE_OH+REPLACE_OM
+نلقى	UC
+فاليجتي؟	UC
+
+من	UC
+فضلك	UC
+اعمل	UC
+التحضيرات	UC
+اللازمة	UC
+بالمسبق؟	UC
+
+فما	UC
+شكون	UC
+لاهي	UC
+بيا.	REPLACE_OD+REPLACE_OG
+عيشك.	REPLACE_MT
+
+كيف	UC
+توصل	UC
+غادي،	UC
+اسال	REPLACE_OH
+شكون	UC
+اخر،	REPLACE_OH
+يعيشك.	UC
+
+حاشتي	UC
+بالتمديد	UC
+اربعة	UC
+و	MERGE-B
+عشرين،	MERGE-I
+من	UC
+فضلك.	UC
+
+تفضل	UC
+زوز	UC
+دولارات.	UC
+خلي	UC
+الباقي	UC
+عندك.	UC
+
+اعطيني	UC
+واحد	UC
+برغر	UC
+و	MERGE-B
+واحد	MERGE-I
+شيزبرغر،	UC
+عيشك.	REPLACE_MT
+
+بقداش	UC
+تحسب	UC
+الاجراءات؟	UC
+
+كل	UC
+واحد	UC
+يحب	UC
+يخلص	UC
+وحدو.	REPLACE_OH+REPLACE_OM
+
+كان	UC
+موجود	UC
+على	UC
+كرسي	UC
+في	UC
+الاستقبال.	UC
+
+صرفلي	REPLACE_X
+هاليان	UC
+لجنيه	UC
+من	UC
+فضلك.	UC
+
+اعطيني	UC
+قاموس	UC
+الجيب،	UC
+عيشك.	REPLACE_MT
+
+لزوز	UC
+مالناس	UC
+مع	UC
+السبعة.	UC
+الاسم	UC
+واتانابي.	UC
+
+منقالتي.	UC
+كانت	UC
+من	UC
+نوع	UC
+سايكو	UC
+الرقمية.	UC
+
+بش	REPLACE_OH+REPLACE_OM
+يسرنا	UC
+انو	REPLACE_OR
+نسربيوكم	UC
+حاجة	UC
+تشربوها	UC
+من	UC
+اختياركم،	UC
+و	MERGE-B
+بعد	MERGE-I
+نسربيوكم	UC
+العشاء.	UC
+عندكم	UC
+دليل	UC
+مفصل	UC
+عالمشروبات	UC
+الي	REPLACE_OM
+نسربيوها	UC
+في	UC
+الرحلة	UC
+هاذي	UC
+تلقاوه	UC
+في	UC
+جزء	UC
+المعلومات	UC
+في	UC
+مجلتنا.	UC
+
+تسكن	UC
+قريب	UC
+من	UC
+هوني؟	UC
+
+وينو	UC
+حانوت	UC
+الهدايا؟	UC
+
+انا	UC
+موجود	UC
+في	UC
+الطريق	UC
+السيارة	UC
+واحد	UC
+قريب	UC
+لخليج	UC
+مورو	UC
+باي.	UC
+
+اعطيني	UC
+فياقة،	UC
+من	UC
+فضلك.	UC
+
+على	UC
+فكرة،	UC
+اسمي	UC
+هيروشي	UC
+ايجيما.	UC
+
+الترينو	UC
+ياقف	REPLACE_OH+REPLACE_OM
+في	UC
+غابة	UC
+البحيرة،	UC
+موش	UC
+هكا؟	UC
+
+اغلب	UC
+اليابانيين	UC
+ياكلو	REPLACE_OW
+القرنيط	UC
+و	MERGE-B
+السوبية.	MERGE-I
+
+انجم	REPLACE_OR
+نقص	UC
+زوز	UC
+تساكر	UC
+درجة	UC
+ثانية	UC
+لشيكاغو،	UC
+يعيشك؟	UC
+
+مشيت	UC
+لنويورك.	UC
+
+شنوة	REPLACE_OR
+نومرو	UC
+الطيارة؟	UC
+
+بلاصة	UC
+لنويورك،	UC
+عيشك.	REPLACE_MT
+
+ايامات.	UC
+
+الدورة	UC
+الثانية	UC
+عاليسار.	UC
+
+الكارطة	UC
+هاذي،	UC
+باهي؟	UC
+
+معايا	REPLACE_OD+REPLACE_OG
+الاستقبال؟	UC
+فمة	UC
+مصحة	UC
+قريبة؟	UC
+
+عشرة	UC
+دولارات	UC
+يكفيو	REPLACE_OW
+للتاكسي؟	UC
+
+مطعمو	REPLACE_OR
+غريب.	UC
+
+اي.	UC
+ستنا	UC
+تو	UC
+نجيبلك	SPLIT
+وحدة.	REPLACE_OH+REPLACE_OM
+
+شطر	UC
+دبوزة،	UC
+عيشك.	REPLACE_MT
+
+لا.	UC
+حاجة	UC
+ميش	REPLACE_OD
+غالية	UC
+و	MERGE-B
+برا.	MERGE-I
+
+تلوج	UC
+في	UC
+حاجة؟	UC
+
+اربعة	UC
+ليالي.	UC
+
+حاشتي	UC
+بشوية	UC
+كلاسط.	UC
+
+تنجم	UC
+اطيح	UC
+في	UC
+سومو	REPLACE_OR
+خاترو	UC
+مبقع؟	UC
+
+راجل	UC
+طمبج	UC
+فيا.	REPLACE_OD+REPLACE_OG
+بعد	UC
+فقت	UC
+اللي	UC
+صتوشي	UC
+ما	UC
+فماش.	UC
+
+مانيش	UC
+متاكد	REPLACE_OH
+اللي	UC
+الحوايج	UC
+اللي	UC
+لميتهم	UC
+يكفيو	REPLACE_OW
+تلاثة	REPLACE_OR
+جمعات.	UC
+
+باهي،	UC
+نحبو	REPLACE_OW
+نجربو	REPLACE_OW
+شراب	UC
+ابيض.	UC
+
+كان	UC
+سأل	UC
+علي	UC
+اي	UC
+حد،	UC
+قلو	UNK
+راني	UC
+في	UC
+القهوة.	UC
+
+متاكد	REPLACE_OH
+الي	REPLACE_OM
+كنت	UC
+حاطو	REPLACE_OM
+في	UC
+الجيب	UC
+الدخلاني	UC
+متاع	UC
+كبوتي.	UC
+
+تنجم	UC
+تعطيني	UC
+اسم	UC
+و	MERGE-B
+نومرو	MERGE-I
+الشخص	UC
+الي	REPLACE_OM
+بش	REPLACE_OH+REPLACE_OM
+تتصل	UC
+بيه؟	UC
+
+الخطوط	UC
+الجوية	UC
+يخلصو	REPLACE_OW
+عليا	REPLACE_XC
+مستلزمات	UC
+شخصية	UC
+لازم	UC
+نشريهم؟	UC
+
+نحب	UC
+بيت	UC
+فيها	UC
+بانو.	UC
+
+ما	UC
+خرج	UC
+شئ	UC
+مالماكينة؟	UC
+
+كان	UC
+مالمفروض	REPLACE_OD
+تطلع	UC
+في	UC
+رحلة	UC
+ثمنية	REPLACE_OH+REPLACE_OM
+ميا	REPLACE_OR
+و	MERGE-B
+عشرين،	MERGE-I
+الي	REPLACE_OM
+طلعت	UC
+عندها	UC
+خمستاشن	UC
+دقيقة.	UC
+باهي	UC
+انجم	REPLACE_OR
+انحطك	REPLACE_OD
+في	UC
+رحلة	UC
+اخرى.	UC
+
+فما	UC
+شكون	UC
+حلي	UC
+الكولي	UC
+متاعي.	UC
+
+اه،	REPLACE_OH
+مش	UC
+مشكل.	UC
+هاك	UC
+هوني،	UC
+على	UC
+كل.	UC
+
+الخطوط	UC
+الجوية	UC
+اليابانية،	UC
+رحلة	UC
+عدد	UC
+ميا	REPLACE_OR
+و	REPLACE_O
+تلاثة	REPLACE_O
+و	MERGE-B
+عشرين.	MERGE-I
+
+يلزمني	UC
+نشري	UC
+شمبوان.	UC
+
+ميسالش	UC
+تقلي	UNK
+وقتلي	UC
+نوصلو	REPLACE_OW
+للمركز	UC
+المدني؟	UC
+
+وين	UC
+اقرب	UC
+جزار؟	UC
+
+نحبو	REPLACE_OW
+نقعدو	REPLACE_OW
+اربعة	UC
+ليالي	UC
+ابتداءا	REPLACE_XN
+من	UC
+واحد	UC
+اوت.	UC
+
+شنوة	REPLACE_OR
+اسمها	UC
+النوارة	UC
+هاذي؟	UC
+
+خمسطاش	REPLACE_OR
+سبتمبر	UC
+نهار	UC
+احترام	UC
+المسنين.	UC
+
+ما	UC
+فماش	UC
+صابون	UC
+في	UC
+بيتي.	UC
+
+فماش	UC
+دوا	UC
+انجم	REPLACE_OR
+ناخذو	REPLACE_OR
+لها	UC
+الحزاز؟	UC
+
+تنجم	UC
+تبدل	UC
+الصيغة	UC
+تردها	UC
+الي	REPLACE_OM
+قلتو	REPLACE_OW
+توا؟	UC
+
+قداش	UC
+يلزم	UC
+وقت	UC
+بش	REPLACE_OH+REPLACE_OM
+نعدي	UC
+كماندة؟	UC
+
+ميشالش	UC
+تعلي	UC
+صوتك	UC
+شوية،	UC
+عيشك؟	REPLACE_MT
+
+قداش	UC
+مزاللو	REPLACE_X
+و	MERGE-B
+يخرج؟	MERGE-I
+
+وين	UC
+اخبار	UC
+الرياضة؟	UC
+
+القياس	UC
+هذا،	UC
+الي	REPLACE_OM
+تسميوه	REPLACE_OD
+قياس	UC
+عادي،	UC
+يساعدني.	UC
+
+وين	UC
+توفى	UC
+الدورة،	UC
+و	MERGE-B
+وقتاش؟	MERGE-I
+
+وين	UC
+لازمني	UC
+نبدل	UC
+الترينو	UC
+بش	REPLACE_OH+REPLACE_OM
+نمشي	UC
+لادينبرا؟	REPLACE_OR
+
+نحب	UC
+نحطو	REPLACE_OW
+في	UC
+صندوق	UC
+امانات.	UC
+
+وين	UC
+انجم	REPLACE_OR
+نصرف	UC
+فلوسي؟	UC
+
+انجمو	UNK
+نخليو	REPLACE_OW
+دبشنا،	UC
+بخلاف	UC
+الحجات	UC
+الثمينة،	UC
+في	UC
+الكار؟	UC
+
+ياخي	UC
+شنية	REPLACE_OR
+هاذي	UC
+اللي	UC
+عالفاتورة.	UC
+
+نخلص	UC
+خمسين	UC
+دولار.	UC
+
+توا	UC
+نعرف	UC
+شنية	REPLACE_OR
+كانت	UC
+المشكلة.	UC
+
+معاك	UC
+اكيدا.	UC
+حجزت	UC
+طاولة	UC
+لليوم	UC
+الستة	UC
+و	MERGE-B
+نص.	MERGE-I
+اما	UC
+سامحوني	UC
+بش	REPLACE_OH+REPLACE_OM
+نوصل	UC
+امخر	UC
+بنص	UC
+ساعة.	UC
+
+عندي	UC
+الحق	UC
+من	UC
+كم	UC
+وقية	UC
+بارفان	UC
+مالسوق	UC
+الحرة؟	UC
+
+سياحة	UC
+اكاهو.	UC
+
+موش	UC
+مشكل،	UC
+صحح	UC
+فيهم	UC
+عيشك.	REPLACE_MT
+كيفاش	UC
+تحبو؟	REPLACE_XM
+
+مازال	SPLIT
+فمة	UC
+بلايص	UC
+للعرض	UC
+متاع	UC
+الليلة؟	UC
+
+نحب	UC
+واحد	UC
+كبير.	UC
+
+رقدت	UC
+و	MERGE-B
+ما	MERGE-I
+فقتش	UC
+بفياقتي	UC
+الستة	UC
+و	MERGE-B
+نص.	MERGE-I
+
+انا	UC
+مصور	UC
+لحسابي	UC
+الخاص.	UC
+
+الموزع	UC
+ينجم	UC
+يبدلك	REPLACE_X
+دلاراتك	UC
+ببياسات	UC
+متاع	UC
+كازينو.	UC
+هيا	REPLACE_OD+REPLACE_OG
+مشينا؟	UC
+
+عنا	REPLACE_OM
+حسب	UC
+التقريب	UC
+تلاثين	REPLACE_OR
+نوع	UC
+متاع	UC
+زيت	UC
+متاع	UC
+دوش.	UC
+
+نحضرلك	SPLIT
+المقترح	UC
+الجمعة	UC
+الجاية.	UC
+
+يعيشك.	UC
+بقداش	UC
+القواندوات	UC
+هاذوما؟	UC
+
+لازمني	UC
+نمشي.	UC
+تو	UC
+نكلمك	UC
+مبعد.	UC
+
+اعطيني	UC
+كوش	UC
+جوتابل.	UC
+
+منين	UC
+اصلهم	UC
+هالحوت	UC
+الفراشة؟	UC
+
+تصرفهملي	SPLIT
+بالدولار،	UC
+يعيشك؟	UC
+
+عنا	REPLACE_OM
+الزهر	UC
+عالاخر.	UC
+عندهم	UC
+واحد	UC
+قياس	UC
+اربعة	UC
+في	UC
+الحانوت	UC
+متاع	UC
+الالا	REPLACE_OD
+موانا.	UC
+
+فما	UC
+ليموزين؟	UC
+
+عيشك	REPLACE_MT
+تعملولي	REPLACE_X
+تاليفون	UC
+بش	REPLACE_OH+REPLACE_OM
+تقيموني	UC
+غدوة	UC
+الصباح	UC
+الخمسة	UC
+و	MERGE-B
+نص؟	MERGE-I
+
+نخير	UC
+بيت	UC
+رايضة.	UC
+
+نحب	UC
+شوية	UC
+اسيتون.	UC
+
+اعطيني	UC
+بيلة.	UC
+
+فما	UC
+فرقة	UC
+لايف	UC
+ولا	UC
+ديدجاي؟	UC
+
+انجم	REPLACE_OR
+نكري	UC
+معدات	UC
+الغطس؟	UC
+
+نحب	UC
+نحجز	UC
+بيت	UC
+لاربعة	UC
+ايام	UC
+من	UC
+ثنين	REPLACE_OH+REPLACE_OM
+و	MERGE-B
+عشرين	MERGE-I
+ديسمبر.	UC
+
+الساك	UC
+هذا	UC
+مناسب	UC
+مهما	UC
+كانت	UC
+حالة	UC
+الطقس؟	UC
+
+اعطيني	UC
+كعكة،	UC
+يعيشك.	UC
+
+نحب	UC
+نكري	UC
+كرهبة	UC
+اوتوماتيك	UC
+على	UC
+نهارين.	UC
+
+راتيت	UC
+الرحلة	UC
+عشرين	UC
+لسان	UC
+فرانسيسكو.	UC
+
+بقداش	UC
+للمطار؟	UC
+
+هايل.	UC
+وقتاش؟	UC
+
+قداش	UC
+عمرها	UC
+بنتك؟	UC
+
+تنجمش	UC
+تقلي	UNK
+على	UC
+وتيل	UC
+نضيف	UC
+و	MERGE-B
+رخيص؟	MERGE-I
+
+انجمو	UNK
+نحجزولك	REPLACE_X
+بيت	UC
+مرتاحة	UC
+في	UC
+قصر	UC
+قديم	UC
+قريب	UC
+من	UC
+نادي	UC
+الغولف	UC
+المعروف.	UC
+
+ننصحك	UC
+بهاذا	UC
+خاترو	UC
+معمول	UC
+بمكونات	UC
+ميا	REPLACE_OR
+بالميا	REPLACE_OR
+طبيعية.	UC
+
+الترينو	UC
+ياقف	UC
+في	UC
+برايتن؟	UC
+
+تنجم	UC
+تقلي	UNK
+منين	UC
+ناخذ	UC
+تاكسي؟	UC
+
+زوز	UC
+تساكر	UC
+درجة	UC
+ثانية،	UC
+عيشك.	REPLACE_MT
+
+نحب	UC
+نبعث	UC
+فاكس.	UC
+
+نحب	UC
+حديد	UC
+متاع	UC
+سفر.	UC
+
+نقدملك	SPLIT
+اي	UC
+حاجة؟	UC
+
+نهاري؟	UC
+سامحني،	UC
+اما	UC
+شنوة	REPLACE_OR
+تقصد؟	UC
+
+نحب	UC
+واحد	UC
+انجم	REPLACE_OR
+نحط	UC
+فيه	UC
+ورق	UC
+عادي	UC
+متع	REPLACE_OH+REPLACE_OM
+جوابات	UC
+مانغير	SPLIT
+ما	UC
+نطويهم.	UC
+
+اي،	UC
+اما	UC
+موش	UC
+قوي	UC
+برشة.	REPLACE_OR
+
+عندي	UC
+حساسية	UC
+عالقطاطس.	UC
+
+اي،	UC
+يلزم	UC
+تكون	UC
+عندك	UC
+رخصة	UC
+سياقة،	UC
+و	REPLACE_S
+اه،	REPLACE_S
+يلزم	UC
+زادة	UC
+عندك	UC
+رخصة	UC
+من	UC
+هيئة	UC
+التاكسيات	UC
+و	MERGE-B
+اليموزين.	MERGE-I
+
+تفضل،	UC
+سيدي.	UC
+
+الماء	UC
+ما	UC
+حبش	UC
+يسخنلي.	SPLIT
+
+نحب	UC
+نحجز	UC
+بيت	UC
+لليلة.	UC
+
+لا	UC
+ما	UC
+فيهش	UC
+الادائ	REPLACE_OH
+و	MERGE-B
+حق	MERGE-I
+الخدمة.	UC
+
+تحب	UC
+تخرج	UC
+معايا	REPLACE_OD+REPLACE_OG
+نتسوقو	REPLACE_OW
+ليوم	REPLACE_OH+REPLACE_OM
+في	UC
+القايلة؟	UC
+
+اهلا،	UC
+روبتك	UC
+بالحق	UC
+مزيانة.	UC
+
+توا،	UC
+المكالمة	UC
+متاعك	UC
+بدات.	UC
+تفضل.	UC
+
+شنوة	REPLACE_OR
+نومرو	UC
+البوابة؟	UC
+
+شنوة	REPLACE_OR
+اكثر	UC
+تذكار	UC
+يمثل	UC
+هاواي؟	UC
+
+انجم	REPLACE_OR
+نمشي	UC
+غادي	UC
+بالمترو؟	UC
+
+نحب	UC
+نجبد	UC
+شعري.	UC
+
+بش	REPLACE_OH+REPLACE_OM
+نوصلو	REPLACE_OW
+لحاجة	REPLACE_MI
+بحديثنا	UC
+هذا؟	UC
+
+انا	UC
+مالنورويج.	UC
+
+مالعشرة	REPLACE_OH+REPLACE_OM
+للاثناش	REPLACE_OR
+عيشك.	REPLACE_MT
+
+بالطبيعة.	UC
+خليني	UC
+نشوفو.	REPLACE_OR
+جرحك	UC
+المرجان،	UC
+ضاهرلي.	SPLIT
+
+على	UC
+ماياتي،	UC
+اعطيني	UC
+نومرو	UC
+الشخص	UC
+المسؤول.	UC
+
+فما	UC
+اوتوروت؟	UC
+
+شبيه	UC
+ما	UC
+جاش	UC
+للحفلة	UC
+لبارح؟	REPLACE_OH+REPLACE_OM
+
+صار	UC
+حادث	UC
+مرور.	UC
+
+سامحني،	UC
+غالط	UC
+في	UC
+النومرو.	UC
+
+بربي	UC
+دخل	UC
+الرمز	UC
+متاعك.	UC
+
+ما	UC
+انجمش	REPLACE_OR
+نستوي	UC
+التصويرة.	UC
+
+واحد	UC
+شيزبرغر	UC
+و	MERGE-B
+واحد	MERGE-I
+عصير،	UC
+يعيشك.	UC
+
+هاو	UC
+باسبوري.	UC
+
+او،	UC
+يعتك	UC
+الصحة.	UC
+ام،	UC
+انجم	REPLACE_OR
+نطلع	UC
+الفوق	UC
+بالكل؟	UC
+
+تعطيني	UC
+زوز	UC
+تساكر	UC
+للمسرحية	UC
+الموسيقية	UC
+الجمعة	UC
+الجاية؟	UC
+
+فما	UC
+راكب	UC
+من	UC
+غادي	UC
+قال	UC
+ينجم	UC
+يبدل	UC
+معاك	UC
+بالبلاصة.	UC
+
+انجم	REPLACE_OR
+نزيد	UC
+نقعد؟	UC
+
+قلي،	REPLACE_X
+تعرفش	UC
+بلاصة	UC
+تستحق	UC
+وتحد	UC
+يمشيلها	SPLIT
+هوني؟	UC
+
+لا،	UC
+نحب	UC
+نكري	UC
+شطر	UC
+مجموعة	UC
+متاع	UC
+مضارب	UC
+وصباط.	UC
+
+بربي	UC
+تنجم	UC
+تعلمني	UC
+وقتلي	UC
+تلقاو	REPLACE_OW
+الساك	UC
+الضايع؟	UC
+
+شسمو	UC
+المنتزه	UC
+الوطني	UC
+هذا؟	UC
+
+عندي	UC
+سلخة.	UC
+
+وين	UC
+بلاصة	UC
+باهية	UC
+للسياحة؟	UC
+
+تعطيني	UC
+شوية	UC
+غلة؟	UC
+
+انجم	REPLACE_OR
+نفطر	UC
+توا؟	UC
+
+نحب	UC
+نصرف	UC
+الدولارات	UC
+هاذوما.	UC
+
+حاجتي	UC
+بتكسي.	UC
+انا	UC
+في	UC
+المقص	UC
+بين	UC
+ساوث	UC
+ماين	UC
+و	UNK
+ليبرتي.	UNK
+
+بالطبيعة.	UC
+و	MERGE-B
+تحب	MERGE-I
+بارمانونت؟	REPLACE_OD
+
+ميش	REPLACE_OR
+تفاحة	UC
+اما	UC
+خوخة.	UC
+
+تو	UC
+نعطيك	UC
+ورقة	UC
+دواء.	UC
+هزها	UC
+للسبيسارية.	UC
+
+نسافرو	REPLACE_OW
+تلاثة	REPLACE_OD+REPLACE_OR
+مرات	UC
+في	UC
+الجمعة،	UC
+نهار	UC
+التلاثة،	REPLACE_OR
+الجمعة،	UC
+و	MERGE-B
+السبت.	MERGE-I
+
+غالي،	UC
+موش	UC
+هكا؟	UC
+
+اي،	UC
+عنا.	UC
+تو	UC
+نحضروهولك.	REPLACE_X
+
+ميسالش	UC
+تخلي	UC
+دبشي	UC
+عندك	UC
+حتى	UC
+لماضي	REPLACE_OH+REPLACE_OM
+تلاثة؟	REPLACE_OR
+
+لا،	UC
+نحب	UC
+نتعدالك	REPLACE_X
+و	MERGE-B
+برا.	MERGE-I
+
+انجم	REPLACE_OR
+نحجز	UC
+اكري-كرهبة	UNK
+هوني؟	UC
+
+انت	UC
+امريكاني؟	UC
+
+غادي،	UC
+عيشك.	REPLACE_MT
+
+كرهبتي	UC
+تشنقلت.	UC
+
+وينو	UC
+الفارابوبيار؟	UC
+
+نحبو	REPLACE_OW
+تركينة	UC
+هادية،	UC
+كان	UC
+ممكن.	UC
+
+سكوتش	UC
+مع	UC
+ماء،	UC
+يعيشك.	UC
+ياخي	UC
+عندك	UC
+أي	REPLACE_OH
+حاجة	UC
+خفيفة	UC
+تتاكل؟	UC
+
+كيفاش	UC
+نجم	REPLACE_OM
+نطفي	UC
+الضوء	UC
+هذا؟	UC
+
+ياخي	UC
+هو	UC
+مشغول	UC
+برشا	UC
+اليوم؟	UC
+
+نحب	UC
+خيط.	UC
+
+أعطيني	REPLACE_OH
+شهادة	UC
+طبية،	UC
+يعيشك.	UC
+
+نحب	UC
+إنو	REPLACE_SW
+تزيد	UC
+تنقصلي	SPLIT
+فيه	UC
+إينش	REPLACE_OH
+من	UC
+هوني.	UC
+
+مانيش	UC
+حاسس	UC
+روحي	UC
+لاباس،	SPLIT
+أعطيني	REPLACE_OH
+دواء.	UC
+
+ياخي	UC
+نجم	REPLACE_OM
+ناخو	UC
+جريدة	UC
+يابانية؟	UC
+
+باهي.	UC
+ياخي	UC
+نجم	REPLACE_OM
+نخلي	UC
+الكرهبة	UC
+في	UC
+أي	REPLACE_OH
+بلاصة؟	UC
+وقداش	UC
+يكلف؟	UC
+
+أناهي	REPLACE_OH
+الكار	UC
+إلى	REPLACE_SW
+تمشي	UC
+لوسط	UC
+المدينة؟	UC
+
+ياخي	UC
+فما	UC
+اكسبريس	UC
+لبوسطن؟	UC
+
+يعيشك،	UC
+نحب	UC
+تولي	UC
+مرسالي.	UC
+
+أنا	REPLACE_OH
+منرفز	UC
+برشا.	UC
+ما	UC
+نجمتش	UC
+نبقى	UC
+في	UC
+بلاصة.	UC
+
+ياخي	UC
+نجم	REPLACE_OM
+نهبط	UC
+في	UC
+هيلتون؟	UC
+
+نحبك	UC
+تبعدو.	REPLACE_OW
+
+دور	UC
+عل	REPLACE_OM
+ليسار	REPLACE_OH+REPLACE_OM
+في	UC
+الطريق	UC
+هذا،	UC
+ودور	UC
+مع	UC
+الدورة	UC
+لولا	REPLACE_SW
+عل	REPLACE_OM
+ليمين.	REPLACE_OH+REPLACE_OM
+
+نحب	UC
+نعرف	UC
+إذا	REPLACE_OH
+ممكن	UC
+نبعث	UC
+كردونة	UC
+الماعون	UC
+هاذي	UC
+لطوكيو.	UC
+
+نحب	UC
+تالك	UC
+للبدن.	UC
+
+ياخي	UC
+فما	UC
+ماكلة	UC
+موش	UC
+حارة	UC
+برشا	UC
+وموش	UC
+مفوحة	UC
+برشا؟	UC
+
+ياخي	UC
+هو	UC
+قريب	UC
+برشا	UC
+باش	UC
+نمشيه	UC
+على	UC
+الساقين؟	UC
+
+ياخي	UC
+تنجم	UC
+تعديلي	SPLIT
+الملح،	UC
+يعيشك؟	UC
+
+نحب	UC
+نمشي	UC
+لوول	UC
+ستريت.	UC
+كيفاش	UC
+ياخي	UC
+نجم	REPLACE_OM
+نمشيلو؟	REPLACE_OD+REPLACE_OR
+
+برشا	UC
+تمارين	UC
+ما	UC
+يفيدوكش.	UC
+
+مع	UC
+فطور	UC
+الصباح،	UC
+التاكس	UC
+والسرفيس،	UC
+هذا	UC
+يكلف	UC
+خمسا	REPLACE_OR
+وأربعين	REPLACE_OH
+دولار	UC
+الليلة	UC
+للعبد.	UC
+
+تنجم	UC
+تصلح	UC
+هذا؟	UC
+
+صباح	UC
+الخير.	UC
+السلام.	UC
+
+ما	UC
+لقيتش	UC
+دبشك.	UC
+
+في	UC
+الطويل،	UC
+يعيشك.	UC
+
+ياخي	UC
+الماء	UC
+صالح	UC
+للشرب؟	UC
+
+اه،	REPLACE_OH
+هيا.	REPLACE_OD+REPLACE_OG
+بزوز	UC
+دولارات	UC
+أكاهو.	REPLACE_OH
+
+تنجم	UC
+تبدل	UC
+الروبا	REPLACE_OR
+هاذي	UC
+بواحدة	UC
+أكبر	REPLACE_OH
+قياس؟	UC
+
+إي	REPLACE_OH
+باهي،	UC
+هيا	REPLACE_OD+REPLACE_OG
+نمشيو.	REPLACE_OW
+نعاونك	UC
+في	UC
+دروسك	UC
+ومن	UC
+بعد	UC
+تو	UC
+ناكلو	REPLACE_OW
+بيتزا.	UC
+
+إي،	REPLACE_OH
+سي.	UC
+تاناكا.	UC
+فما	UC
+زوز	UC
+ميساجات	UC
+ليك.	UC
+
+هذا	UC
+ما	UC
+وتانيش.	UC
+
+غدوة	UC
+هو	UC
+نهار	UC
+آخر.	UC
+
+يمكن	UC
+نجم	REPLACE_OM
+نعاونك.	UC
+ياخي	UC
+يلزمك	UC
+فيتامين	UC
+سي؟	UC
+
+نشال	UC
+سرق	UC
+صطوش	UC
+أوراقي	REPLACE_OH
+في	UC
+التران.	UC
+
+هو	UC
+بعيد	UC
+برشا.	UC
+يكون	UC
+أحسن	REPLACE_OH
+كان	UC
+ناخو	UC
+تاكسي.	UC
+
+نحب	UC
+بلاصة	UC
+بجنب	UC
+الكلوار،	UC
+يعيشك.	UC
+
+نعيش	UC
+في	UC
+برتمان	UC
+يكلفني	UC
+ثمانين	UC
+ألف	REPLACE_OH
+يان	UC
+في	UC
+الشهر.	UC
+
+نجم	REPLACE_OM
+نقص	UC
+عليك؟	UC
+
+سامحني	UC
+تنجم	UC
+تبدل	UC
+معايا	REPLACE_OD+REPLACE_OG
+لبلايص؟	REPLACE_OH+REPLACE_OM
+
+إي،	REPLACE_OH
+بطبيعة.	UC
+
+امشي	UC
+للتركينة	UC
+ودور	UC
+عل	REPLACE_OM
+يسار	UC
+عند	UC
+الاشارة.	UC
+
+مذبية	REPLACE_OR
+نحط	UC
+الحاجاة	UC
+لغالية	REPLACE_OH+REPLACE_OM
+في	UC
+صندوق	UC
+امانات	UC
+بالاوتيل.	UC
+
+إي،	REPLACE_OH
+إما	REPLACE_OH
+كون	UC
+متأكد	UC
+إلي	REPLACE_SW
+تيكي	UC
+معك.	UC
+
+كن	UC
+شوية	UC
+عباد	UC
+بش	REPLACE_OH+REPLACE_OM
+يلتحقوا	UC
+بالجولة	UC
+الاختيارية.	UC
+
+أنسى	REPLACE_OH
+.	REPLACE_OH
+المهم،	UC
+يعيشك	UC
+هزني	UC
+لسنتر	REPLACE_OM
+متع	REPLACE_OH+REPLACE_OM
+صين.	UC
+توا	UC
+نحاول	UC
+نفركس	UC
+عليه	UC
+وحدي.	UC
+
+عباد	UC
+جدد	UC
+بش	REPLACE_OH+REPLACE_OM
+ينتدبوا	UC
+في	UC
+آفريل.	REPLACE_OR
+
+نتمنى	UC
+والله.	UC
+
+زوز	UC
+سكوتش	UC
+وماء،	UC
+يعيشك.	UC
+
+شكون	UC
+يلعب؟	UC
+
+عل	REPLACE_OM
+يسار،	UC
+يعيشك.	UC
+
+سنة	UC
+قدامية	UC
+تعبتني.	UC
+
+شنية	REPLACE_OR
+اخر	REPLACE_OH
+فيديو	UC
+لعب	UC
+ال	REPLACE_O
+طفلة	REPLACE_O
+مراهقة	UC
+عمرها	UC
+خمسطاش	REPLACE_OR
+سنة؟	UC
+
+نشوفوك	UC
+غدوة.	UC
+
+لا،	UC
+إما	REPLACE_OH
+يعيشك.	UC
+نحس	UC
+في	UC
+روحي	UC
+خير.	UC
+
+عندك	UC
+شوية	UC
+خبز؟	UC
+
+كيفاش	UC
+تحس	UC
+روحك	UC
+فالكمنجة	UC
+باهي؟	UC
+
+صاحبي	UC
+زلق	UC
+وطاح	UC
+في	UC
+دوش.	UC
+
+نجم	REPLACE_OM
+ناخو	UC
+سندرية؟	UC
+
+الكريستينيا	UC
+منعوها	UC
+والبلاد	UC
+تسكرت	UC
+للعالم	UC
+لخر.	REPLACE_SW
+
+قداش	UC
+تحب؟	UC
+
+كوكتيل	UC
+كروفات	UC
+لها	UC
+هي	UC
+وانا	UC
+زادة	UC
+كيفكيف.	UC
+
+نجم	REPLACE_OM
+نطلب	UC
+منك	UC
+بش	REPLACE_OH+REPLACE_OM
+تصحح	UC
+هوني،	UC
+إما	REPLACE_OH
+يعيشك	UC
+ابدى	UC
+من	UC
+هوني.	UC
+
+يحسنلي	SPLIT
+شرف	UC
+بش	REPLACE_OH+REPLACE_OM
+نزور	UC
+شركاتك	UC
+وناخذو	REPLACE_OW
+ونعطيو	REPLACE_OW
+مع	UC
+بعضنا.	UC
+يعيشك	UC
+نشكرك	UC
+على	UC
+معاونتك.	UC
+
+شخيرك	UC
+يقلق.	UC
+
+على	UC
+كل	UC
+لونمعجبنش.	REPLACE_X
+نجم	REPLACE_OM
+نرجع؟	UC
+
+نجم	REPLACE_OM
+نخو	REPLACE_OH+REPLACE_OM
+شوية	UC
+فلفل؟	UC
+
+معاك	UC
+سي	UC
+تكاهاشي	UC
+فيل	UC
+بيت	UC
+نومرو	UC
+خمسة	UC
+تسعة	UC
+وأربعين.	REPLACE_OH
+تنجم	UC
+تهزل	UC
+أربعة	REPLACE_OH
+دبابز	UC
+بيرة	UC
+بودوايزو،	UC
+يعيشك؟	UC
+
+هذم	UC
+سبعين	UC
+دولار.	UC
+
+أمان	REPLACE_OH
+كلملي	SPLIT
+لوتيل	UC
+متاعي	UC
+وقت	UC
+تلقالي	REPLACE_X
+فليجاتي.	UC
+
+نحب	UC
+فياقة	UC
+غدوة	UC
+في	UC
+صباح	UC
+مع	UC
+ثمانية	UC
+ونص،	UC
+يعيشك.	UC
+
+إي،	REPLACE_OH
+إما	REPLACE_OH
+هذا	UC
+برشة	REPLACE_OR
+وانا	UC
+مزلت	REPLACE_X
+كي	UC
+غير	UC
+كليت.	UC
+
+نحب	UC
+على	UC
+شوية	UC
+غسول	UC
+فم.	UC
+
+مانيش	UC
+قد	UC
+بعضي.	UC
+
+تبيع	UC
+بالجملة؟	UC
+
+طوكيو	DELETE
+صفر	UC
+ثلاثة	UC
+رباع	REPLACE_SW
+تسعة	UC
+أربعة	REPLACE_OH
+خمسة	UC
+ستة	UC
+سبعة.	UC
+
+تنجم	UC
+تعاوني	UC
+بش	REPLACE_OH+REPLACE_OM
+نلقى	UC
+حديقة	UC
+الحيوانات؟	UC
+
+تنجم	UC
+تقلي	UNK
+كيفاش	UC
+نريقلوه؟	UC
+
+وقتاش	UC
+جولة	UC
+متاع	UC
+كار	UC
+مرة	UC
+أخرى؟	REPLACE_OH
+
+تعرف	UC
+كيفاش	UC
+تستعمل	UC
+تلفون؟	UC
+
+بالطبيعة.	UC
+عنا	REPLACE_OM
+شوية	UC
+علامات	UC
+متاع	UC
+كتب	UC
+امريكية	UC
+اصلية	UC
+محلاهم	UNK
+.	UNK
+
+بربي	UC
+مشغل	UC
+مكالمات	UC
+يحكي	UC
+ياباني،	UC
+يعيشك.	UC
+
+احنا	UC
+مهتمين	UC
+بالموضة.	UC
+
+تنجم	UC
+دز	UC
+بية؟	UC
+
+هذي	REPLACE_OH+REPLACE_OM
+مصحة	UC
+اف؟	UC
+
+عسلامة	UC
+للا،	UC
+ياماغوشي.	UC
+الطرف	UC
+الآخر	UC
+عل	REPLACE_OM
+خط.	UC
+مكالمتك	UC
+تقبلت.	UC
+تفضل،	UC
+يعيشك.	UC
+
+وقتاش	UC
+نوصلوا	UC
+اللوس	UC
+أنجلوس؟	REPLACE_OH
+
+كمل	UC
+طول	UC
+في	UC
+خمسة	UC
+دقايق	UC
+وبعد	UC
+دور	UC
+عل	REPLACE_OM
+يسر.	UC
+
+هذا	UC
+طريق	UC
+لشط.	UC
+
+تاي	UC
+هذا	UC
+يخليك	UC
+تبان	UC
+صغير	UNK
+.	UNK
+
+هاذم	UC
+مهمش	UC
+مصنوعين	UC
+فاليابان،	UC
+مش	UC
+هكا؟	UC
+
+باهي.	UC
+من	UC
+هوني،	UC
+يعيشك.	UC
+بش	REPLACE_OH+REPLACE_OM
+نهزك	UC
+البيتك.	UC
+
+لزمني	UC
+نخرج	UC
+مل	UC
+هوتيل	UC
+قبل	UC
+ضهر.	REPLACE_SW
+
+زوز	UC
+همبرغر	UC
+وزوز	UC
+قهاوي،	UC
+يعيشك.	UC
+نحب	UC
+نهزهم	UC
+معايا.	REPLACE_OD+REPLACE_OG
+
+نجم	REPLACE_OM
+نوصل	UC
+لفاليجات	REPLACE_OH+REPLACE_OM
+هذم	UC
+زوز؟	UC
+
+طلبت	UC
+لحم،	UC
+مش	UC
+حوت.	UC
+تنجم	UC
+تبدل؟	UC
+
+ولدي	UC
+برسمي	UC
+تعب.	UC
+
+مريض	UC
+بمعدتي.	UC
+
