@@ -18,7 +18,7 @@ outputs_dir=predictions/ensembles/zaebuc
 python ensemble.py \
     --input_file ../data/msa-gec/raw/ZAEBUC-v1.0/data/ar/dev/dev.sent.raw.pnx.tok.dediac \
     --models_outputs \
-        predictions/seq2seq/zaebuc/dev.arabart+morph+ged13.txt \
+        predictions/seq2seq/zaebuc/dev.arabart+morph+ged-13.txt \
         predictions/taggers/arabertv02/zaebuc/qalb14+zaebuc_x10-prune-30/compressed/subword-level/dev.txt.2 \
         predictions/taggers/arabertv02/zaebuc/pnx_seg/qalb14+zaebuc_x10-nopnx-prune-30+pnx-prune-10/compressed/subword-level/dev.txt.2.pnx_edit \
     --voting_threshold 2 \
@@ -29,7 +29,7 @@ python ensemble.py \
 python ensemble.py \
     --input_file  ../data/msa-gec/raw/ZAEBUC-v1.0/data/ar/dev/dev.sent.raw.pnx.tok.dediac  \
     --models_outputs \
-        predictions/seq2seq/zaebuc/dev.arabart+morph+ged13.txt \
+        predictions/seq2seq/zaebuc/dev.arabart+morph+ged-13.txt \
         predictions/taggers/arabertv02/zaebuc/qalb14+zaebuc_x10-prune-30/compressed/subword-level/dev.txt.2 \
         predictions/taggers/arabertv02/zaebuc/pnx_seg/qalb14+zaebuc_x10-nopnx-prune-30+pnx-prune-10/compressed/subword-level/dev.txt.2.pnx_edit \
         predictions/llms/gpt-4o/5-shot-en/zaebuc/dev.preds.txt \
@@ -95,7 +95,7 @@ outputs_dir=predictions/ensembles/zaebuc
 python ensemble.py \
     --input_file  ../data/msa-gec/raw/ZAEBUC-v1.0/data/ar/test/test.sent.raw.pnx.tok.dediac \
     --models_outputs  \
-        predictions/seq2seq/zaebuc/test.arabart+ged13.txt \
+        predictions/seq2seq/zaebuc/test.arabart+ged-13.txt \
         predictions/taggers/arabertv02/zaebuc/qalb14+zaebuc_x10-prune-30/compressed/subword-level/test.txt.2 \
         predictions/taggers/arabertv02/zaebuc/pnx_seg/qalb14+zaebuc_x10-nopnx-prune-30+pnx-prune-10/compressed/subword-level/test.txt.2.pnx_edit \
     --voting_threshold 2 \
@@ -106,7 +106,7 @@ python ensemble.py \
 python ensemble.py \
     --input_file  /home/ba63/gec-release/data/gec/ZAEBUC-v1.0/data/ar/test/test.sent.raw.pnx.tok.dediac \
     --models_outputs  \
-        predictions/seq2seq/zaebuc/test.arabart+ged13.txt \
+        predictions/seq2seq/zaebuc/test.arabart+ged-13.txt \
         predictions/taggers/arabertv02/zaebuc/qalb14+zaebuc_x10-prune-30/compressed/subword-level/test.txt.2 \
         predictions/taggers/arabertv02/zaebuc/pnx_seg/qalb14+zaebuc_x10-nopnx-prune-30+pnx-prune-10/compressed/subword-level/test.txt.2.pnx_edit \
         predictions/llms/gpt-4o/5-shot-en/zaebuc/test.preds.txt \
@@ -145,7 +145,7 @@ outputs_dir=predictions/ensembles/qalb15
 python ensemble.py \
     --input_file  ../data/msa-gec/raw/QALB-0.9.1-Dec03-2021-SharedTasks/data/2015/test/QALB-2015-L1-Test.sent.no_ids.dediac \
     --models_outputs \
-        predictions/seq2seq/qalb15/test.arabart+morph+ged-32.txt \
+        predictions/seq2seq/qalb15/test.arabart+morph+ged-43.txt \
         predictions/taggers/arabertv02/qalb15/qalb14-prune-10/compressed/subword-level/test_qalb15_L1.txt.2 \
         predictions/taggers/arabertv02/qalb15/qalb14-nopnx-prune-30+pnx-prune-20/compressed/subword-level/test_qalb15_L1.txt.2.pnx_edit \
     --voting_threshold 2 \
@@ -155,7 +155,7 @@ python ensemble.py \
 python ensemble.py \
     --input_file  ../data/msa-gec/raw/QALB-0.9.1-Dec03-2021-SharedTasks/data/2015/test/QALB-2015-L1-Test.sent.no_ids.dediac \
     --models_outputs \
-        predictions/seq2seq/qalb15/test.arabart+morph+ged-32.txt \
+        predictions/seq2seq/qalb15/test.arabart+morph+ged-43.txt \
         predictions/taggers/arabertv02/qalb15/qalb14-prune-10/compressed/subword-level/test_qalb15_L1.txt.2 \
         predictions/taggers/arabertv02/qalb15/qalb14-nopnx-prune-30+pnx-prune-20/compressed/subword-level/test_qalb15_L1.txt.2.pnx_edit \
         predictions/llms/gpt-4o/5-shot-en/qalb15/test.preds.txt \
