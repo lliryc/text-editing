@@ -49,7 +49,6 @@ def predict(model, tokenizer, text, decode_iter=1):
             preds = F.softmax(logits.squeeze(), dim=-1)
             preds = torch.argmax(preds, dim=-1).cpu().numpy()
             edits = [model.config.id2label[p] for p in preds[1:-1]]
-            
             assert len(edits) == len(tokenized_text['input_ids'][0][1:-1])
         subwords = tokenizer.convert_ids_to_tokens(tokenized_text['input_ids'][0][1:-1])
         text = rewrite(subwords=[subwords], edits=[edits])[0][0]
