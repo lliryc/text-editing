@@ -4,7 +4,7 @@ We used the [QALB-2014](https://camel.abudhabi.nyu.edu/qalb-shared-task-2015/), 
 For the QALB-2014, we use the publicly available train, dev, and test splits. For QALB-2015, we only use the L1 test data.
 For ZAEBUC and Madar Coda, we use the splits made available by [Alhafni et al. 2023](https://github.com/CAMeL-Lab/arabic-gec/tree/master/data) and [Alhafni et al. 2024](https://github.com/CAMeL-Lab/codafication/tree/master/data), respectively.
 
-**Note**: We provide all the datasets used for creating the edits at this [link](). Additionally, we share the extracted edits along with their various representations from our best setup (using AraBERTv02). To make sure that everything runs smoothly, download the data and place it at the root directory of this repo.
+**Note**: We provide all the datasets used for creating the edits at this [link](https://drive.google.com/file/d/12I0gI5F9os8jlgoYlvBla9RtBiiTpehq/view?usp=sharing). Additionally, we share the extracted edits along with their various representations from our best setup (using AraBERTv02). To make sure that everything runs smoothly, download the data and place it at the root directory of this repo.
 
 We describe below how to extract the edits from parallel GEC datasets along with creating their different representations.
 
@@ -88,7 +88,7 @@ The edit coverage analysis we present in the paper (Table 1 and Table 9 in Appen
 ## Data:
 Once the edits have been extracted, we create data files that we use to fine-tune and test BERT. Running `bash scripts/create_modeling_data.sh` would create all of the files necessary for fine-tuning and inference.
 
-As mentioned earlier, we provide the extracted edits and the data files we use to train and test our models in this [link](). The `data` directory has the following structure:
+As mentioned earlier, we provide the extracted edits and the data files we use to train and test our models in this [link](https://drive.google.com/file/d/12I0gI5F9os8jlgoYlvBla9RtBiiTpehq/view?usp=sharing). The `data` directory has the following structure:
 ```
 data
 ├── msa-gec
