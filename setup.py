@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-install_requires = [
+INSTALL_REQUIRES = [
     "absl-py==2.1.0",
     "accelerate==0.26.1",
     "aiohttp==3.8.5",
