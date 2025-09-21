@@ -88,7 +88,7 @@ class ModelArguments:
     )
     
     task: str = field(
-        default='msa-gec', metadata={"help": "The task type: msa-gec or da-gec"}
+        default='msa-ged', metadata={"help": "The task type: msa-ged or da-ged"}
     )
 
     continue_train: bool = field(
@@ -104,14 +104,15 @@ class DataTrainingArguments:
     """
 
     tokenized_data_path: str = field(
-        default='/data/msa-gec/modeling/qalb14/pnx_sep/qalb14-nopnx/compressed/subword-level/train.txt',
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-ged/modeling-13/pnx_sep/nopnx/train/qalb14-train-subword-level-areta-13.txt',
         metadata={"help": "The input file path."}
     )
     tokenized_raw_data_path: str = field(
-        default=None, metadata={"help": "The input file path."}
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-ged/modeling-13/pnx_sep/nopnx/dev/qalb14-dev-subword-level-areta-13.raw.txt', 
+        metadata={"help": "The input file path."}
     )
     labels: Optional[str] = field(
-        default='/data/msa-gec/modeling/qalb14/pnx_sep/qalb14-nopnx/compressed/subword-level/labels.txt',
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-ged/modeling-13/pnx_sep/nopnx/train/qalb14-train-subword-level-areta-13-labels.txt',
         metadata={"help": "Path to a file containing all labels."},
     )
     label_pred_output_file: Optional[str] = field(
@@ -323,7 +324,7 @@ def main():
                                                                         edits=pred_edits)
 
             # Clean generated output by separating pnx and extra white space
-            if model_args.task == 'msa-gec':
+            if model_args.task == 'msa-ged':
                 detok_pred_rewrites = pnx_tokenize(detok_pred_rewrites)
             else:
                 detok_pred_rewrites = space_clean(detok_pred_rewrites)
