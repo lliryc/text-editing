@@ -162,7 +162,8 @@ cython_debug/
 #.idea/
 
 data
-ouput_data
+ouput_data*
 .DS_Store
+trained_*
 
 .vscode/

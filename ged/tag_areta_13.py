@@ -7,8 +7,11 @@ from typing import Dict, Optional
 import numpy as np
 
 import torch
+
 from torch import nn
+
 from torch.utils.data import DataLoader
+
 from transformers import (
     AutoConfig,
     AutoTokenizer,
@@ -18,6 +21,7 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
+
 from gec.utils.data_utils import get_labels, process, read_examples_from_file
 from gec.utils.data_utils_word import process_words, read_examples_from_file_words
 

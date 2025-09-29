@@ -28,7 +28,6 @@ class BertForTokenClassification(BertPreTrainedModel):
         # Initialize weights and apply final processing
         self.post_init()
 
-
     def forward(
         self,
         input_ids: Optional[torch.Tensor] = None,
@@ -86,4 +85,3 @@ class BertForTokenClassification(BertPreTrainedModel):
             hidden_states=outputs.hidden_states,
             attentions=outputs.attentions,
         )
-

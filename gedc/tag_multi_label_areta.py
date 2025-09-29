@@ -21,7 +21,7 @@ from transformers import (
 from gec.utils.data_utils import get_labels, process, read_examples_from_file
 from gec.utils.data_utils_word import process_words, read_examples_from_file_words
 
-from gec.model import BertForTokenClassification
+from gedc.model import BertForTokenMultiLabelClassification
 import os
 import sys
 import json
@@ -30,6 +30,7 @@ from gec.utils.postprocess import remove_pnx, pnx_tokenize, space_clean
 from edits.edit import SubwordEdit
 
 logger = logging.getLogger(__name__)
+
 
 @dataclass
 class ModelArguments:
@@ -43,10 +44,12 @@ class ModelArguments:
         metadata={"help": "Path to pretrained model or model identifier from "
                           "huggingface.co/models"}
     )
+    
     config_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained config name or path if "
                                         "not the same as model_name"}
     )
+    
     tokenizer_name: Optional[str] = field(
         default=None, metadata={"help": "Pretrained tokenizer name or path if "
                                         "not the same as model_name"}
@@ -87,12 +90,13 @@ class ModelArguments:
     )
     
     task: str = field(
-        default='msa-gec', metadata={"help": "The task type: msa-gec or da-gec"}
+        default='msa-ged', metadata={"help": "The task type: msa-ged or da-ged"}
     )
 
     continue_train: bool = field(
         default=False, metadata={"help": "Whether to continue training or not."}
     )
+
 
 @dataclass
 class DataTrainingArguments:
@@ -102,23 +106,33 @@ class DataTrainingArguments:
     """
 
     tokenized_data_path: str = field(
-        default='/data/msa-gec/modeling/qalb14/pnx_sep/qalb14-nopnx/compressed/subword-level/train.txt',
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-gedc/modeling-mh/pnx_sep/nopnx/train/qalb14-train-subword-level-multi-heads.txt',
         metadata={"help": "The input file path."}
     )
     tokenized_raw_data_path: str = field(
-        default=None, metadata={"help": "The input file path."}
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-gedc/modeling-mh/pnx_sep/nopnx/dev/qalb14-dev-subword-level-multi-heads.raw.txt', 
+        metadata={"help": "The input file path."}
     )
-    labels: Optional[str] = field(
-        default='/data/msa-gec/modeling/qalb14/pnx_sep/qalb14-nopnx/compressed/subword-level/labels.txt',
-        metadata={"help": "Path to a file containing all labels."},
+    edit_labels: Optional[str] = field(
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-gedc/modeling-mh/pnx_sep/nopnx/train/edit-labels.txt',
+        metadata={"help": "Path to a file containing all edit labels."},
+    )
+    areta13_labels: Optional[str] = field(
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-gedc/modeling-mh/pnx_sep/nopnx/train/areta13-labels.txt',
+        metadata={"help": "Path to a file containing all areta13 labels."},
+    )
+    areta43_labels: Optional[str] = field(
+        default='/Users/kirill.chirkunov/CursorProjects/text-editing/data/msa-gedc/modeling-mh/pnx_sep/nopnx/train/areta43-labels.txt',
+        metadata={"help": "Path to a file containing all areta43 labels."},
     )
     label_pred_output_file: Optional[str] = field(
-        default='ouput_data', 
+        default='ouput_data_dir', 
         metadata={"help": "Label predictions output file."}
     )
     rewrite_pred_output_file: Optional[str] = field(
         default=None, metadata={"help": "Rewrite predictions output file."}
     )
+
 
 def main():
     # See all possible arguments in src/transformers/training_args.py
@@ -168,22 +182,40 @@ def main():
     )
     logger.info("Training/evaluation parameters %s", training_args)
 
-
     set_seed(training_args.seed)
 
-    labels = get_labels(data_args.labels)
-    label_map: Dict[int, str] = {i: label for i, label in enumerate(labels)}
-    num_labels = len(labels)
-
+    edit_labels = get_labels(data_args.edit_labels)
+    areta13_labels = get_labels(data_args.areta13_labels)
+    areta43_labels = get_labels(data_args.areta43_labels)
+    edits_label_map: Dict[int, str] = {i: label for i, label in enumerate(edit_labels)}
+    areta13_label_map: Dict[int, str] = {i: label for i, label in enumerate(areta13_labels)}
+    areta43_label_map: Dict[int, str] = {i: label for i, label in enumerate(areta43_labels)}
+    edits_num_labels = len(edit_labels)
+    areta13_num_labels = len(areta13_labels)
+    areta43_num_labels = len(areta43_labels)
 
     config = AutoConfig.from_pretrained(
         (model_args.config_name if model_args.config_name
             else model_args.model_name_or_path),
-        num_labels=num_labels,
-        id2label=label_map,
-        label2id={label: i for i, label in enumerate(labels)},
+        edits_num_labels=edits_num_labels,
+        areta13_num_labels=areta13_num_labels,
+        areta43_num_labels=areta43_num_labels,
+        id2edits_label=edits_label_map,
+        id2areta13_label=areta13_label_map,
+        id2areta43_label=areta43_label_map,
         cache_dir=model_args.cache_dir,
     )
+    
+    config.edits_num_labels = 4800
+    config.areta13_num_labels = 13
+    config.areta43_num_labels = 43
+    
+    config.loss_weight_edits = 1.0
+    config.loss_weight_areta13 = 1.0
+    config.loss_weight_areta43 = 1.0
+    
+    config.label_smoothing = 0.0
+    
     tokenizer = AutoTokenizer.from_pretrained(
         (model_args.tokenizer_name if model_args.tokenizer_name
             else model_args.model_name_or_path),
@@ -201,8 +233,12 @@ def main():
             train_dataset = read_examples_from_file_words(file_path=data_args.tokenized_data_path)
 
         if model_args.add_class_weights:
-            class_weights = compute_class_weights(training_data=train_dataset, weight_threshold=500,
-                                                  labels_map={label: i for i, label in enumerate(labels)})
+            edits_class_weights = compute_class_weights(training_data=train_dataset, weight_threshold=500,
+                                                  labels_map={label: i for i, label in enumerate(edit_labels)})
+            areta13_class_weights = compute_class_weights(training_data=train_dataset, weight_threshold=500,
+                                                  labels_map={label: i for i, label in enumerate(areta13_labels)})
+            areta43_class_weights = compute_class_weights(training_data=train_dataset, weight_threshold=500,
+                                                  labels_map={label: i for i, label in enumerate(areta43_labels)})
 
         if model_args.input_unit == 'subword-level':
             train_dataset = train_dataset.map(process,
@@ -217,12 +253,14 @@ def main():
                         desc="Running tokenizer on train dataset"
                         )
 
-    model = BertForTokenClassification.from_pretrained(
+    model = BertForTokenMultiLabelClassification.from_pretrained(
         model_args.model_name_or_path,
         from_tf=bool(".ckpt" in model_args.model_name_or_path),
         config=config,
         cache_dir=model_args.cache_dir,
-        class_weights=class_weights
+        edits_class_weights=edits_class_weights,
+        areta13_class_weights=areta13_class_weights,
+        areta43_class_weights=areta43_class_weights
     )
 
 
@@ -320,7 +358,7 @@ def main():
                                                                         edits=pred_edits)
 
             # Clean generated output by separating pnx and extra white space
-            if model_args.task == 'msa-gec':
+            if model_args.task == 'msa-gedc':
                 detok_pred_rewrites = pnx_tokenize(detok_pred_rewrites)
             else:
                 detok_pred_rewrites = space_clean(detok_pred_rewrites)
@@ -350,6 +388,8 @@ def main():
             with open(rewrite_pred_output_file+'.nopnx', "w", encoding="utf-8") as writer:
                 writer.write("\n".join(detok_pred_rewrites_nopnx))
                 writer.write("\n")
+
+
 
 def predict(model, test_dataset, collate_fn, label_map, topk_pred=True,
             batch_size=32, pred_threshold=None):
@@ -402,6 +442,7 @@ def predict(model, test_dataset, collate_fn, label_map, topk_pred=True,
     assert len(preds) == len(preds_probs)
     return preds, preds_probs
 
+
 def _align_predictions(predictions, label_ids, label_map, pred_threshold=None):
     """Aligns the predictions of the model with the inputs and it takes
     care of getting rid of the padding token.
@@ -443,6 +484,7 @@ def _align_predictions(predictions, label_ids, label_map, pred_threshold=None):
 
     return preds_list, probs
 
+
 def _align_predictions_topk(predictions, label_ids, label_map, k=10):
     """Aligns the predictions of the model with the inputs and it takes
     care of getting rid of the padding token.
@@ -471,6 +513,7 @@ def _align_predictions_topk(predictions, label_ids, label_map, k=10):
 
     return preds_list, probs_list
 
+
 def applicable_preds(sentences, preds):
     applicable_preds = []
 
@@ -497,6 +540,7 @@ def applicable_preds(sentences, preds):
 
     assert len(applicable_preds) == len(sentences)
     return applicable_preds
+
 
 def rewrite(subwords, edits):
     assert len(subwords) == len(edits)
@@ -532,6 +576,8 @@ def rewrite(subwords, edits):
     detok_rewritten_sents = [detokenize_sent(sent) for sent in rewritten_sents_merge]
     return detok_rewritten_sents, rewritten_sents, non_app_edits
 
+
+
 def rewrite_topk(subwords, edits):
     assert len(subwords) == len(edits)
     rewritten_sents = []
@@ -560,6 +606,7 @@ def rewrite_topk(subwords, edits):
 
     return rewritten_sents
 
+
 def detokenize_sent(sent):
     detokenize_sent = []
     for subword in sent:
@@ -569,6 +616,7 @@ def detokenize_sent(sent):
             detokenize_sent.append(subword)
 
     return ' '.join(detokenize_sent)
+
 
 def resolve_merges(sent, edits):
     _sent = []
@@ -582,6 +630,7 @@ def resolve_merges(sent, edits):
         else:
             _sent.append(subword)
     return _sent
+
 
 def compute_class_weights(training_data, weight_threshold, labels_map):
     from collections import Counter
@@ -609,6 +658,8 @@ def compute_class_weights(training_data, weight_threshold, labels_map):
         log_weights_tensor[labels_map[cls]] = weight
 
     return log_weights_tensor
+
+
 
 if __name__ == "__main__":
     main()
