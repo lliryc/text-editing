@@ -11,32 +11,31 @@ logger = logging.getLogger(__name__)
 
 def read_examples_from_file(file_path):
     guid_index = 1
-    examples = {'subwords': [], 'edits': []}
+    examples = {'subwords': [], 'edits': [], 'areta43': [], 'areta13': []}
 
     with open(file_path, encoding="utf-8") as f:
         words = []
-        labels = []
+        edits_labels = []
+        areta13_labels = []
+        areta43_labels = []
         for line in f:
-            if line.startswith("-DOCSTART-") or line == "" or line == "\n":
-                if words:
-                    examples['subwords'].append(words)
-                    examples['edits'].append(labels)
-                    guid_index += 1
-                    words = []
-                    labels = []
-            else:
-                splits = line.split("\t")
-                words.append(splits[0].strip())
-                if len(splits) > 1:
-                    labels.append(splits[-1].replace("\n", ""))
-                else:
-                    # Examples could have no label for mode = "test"
-                    # This is needed to get around the Trainer evaluation
-                    # labels.append("K") # No Compress Experiment 
-                    labels.append("K*") # place holder
+          line = line.strip()
+          splits = line.split("\t")
+          words.append(splits[0].strip())
+          if len(splits) > 3:
+              edits_labels.append(splits[1].strip())
+              areta43_labels.append(splits[2].strip())
+              areta13_labels.append(splits[3].strip())
+          else:
+
+              edits_labels.append("K*") # place holder
+              areta43_labels.append("UC") # place holder
+              areta13_labels.append("UC") # place holder
         if words:
             examples['subwords'].append(words)
-            examples['edits'].append(labels)
+            examples['edits'].append(edits_labels)
+            examples['areta43'].append(areta43_labels)
+            examples['areta13'].append(areta13_labels)
 
     dataset = Dataset.from_dict(examples)
     return dataset
@@ -125,8 +124,8 @@ def process(examples, edits_label_list: List[str], areta13_label_list: List[str]
 
     # Add all label types to the output
     tokenized_inputs['edits_labels'] = edits_labels
-    tokenized_inputs['areta13_labels'] = areta13_labels
     tokenized_inputs['areta43_labels'] = areta43_labels
+    tokenized_inputs['areta13_labels'] = areta13_labels
 
     return tokenized_inputs
 

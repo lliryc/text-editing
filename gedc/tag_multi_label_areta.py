@@ -26,7 +26,7 @@ import os
 import sys
 import json
 
-from gec.utils.postprocess import remove_pnx, pnx_tokenize, space_clean
+from gedc.utils.postprocess import remove_pnx, pnx_tokenize, space_clean
 from edits.edit import SubwordEdit
 
 logger = logging.getLogger(__name__)
@@ -224,7 +224,9 @@ def main():
         model_max_length=512
     )
 
-    class_weights = None
+    edits_class_weights = None
+    areta13_class_weights = None
+    areta43_class_weights = None
 
     if training_args.do_train:
         if model_args.input_unit == 'subword-level':
@@ -242,13 +244,13 @@ def main():
 
         if model_args.input_unit == 'subword-level':
             train_dataset = train_dataset.map(process,
-                        fn_kwargs={"label_list": labels, "tokenizer": tokenizer},
+                        fn_kwargs={"edits_label_list": edit_labels, "areta13_label_list": areta13_labels, "areta43_label_list": areta43_labels, "tokenizer": tokenizer},
                         batched=True,
                         desc="Running tokenizer on train dataset"
                         )
         else:
             train_dataset = train_dataset.map(process_words,
-                        fn_kwargs={"label_list": labels, "tokenizer": tokenizer},
+                        fn_kwargs={"edits_label_list": edit_labels, "areta13_label_list": areta13_labels, "areta43_label_list": areta43_labels, "tokenizer": tokenizer},
                         batched=True,
                         desc="Running tokenizer on train dataset"
                         )
@@ -294,14 +296,14 @@ def main():
             test_dataset =  read_examples_from_file(file_path=data_args.tokenized_data_path)
             raw_test_dataset =  read_examples_from_file(file_path=data_args.tokenized_raw_data_path)
             test_dataset = test_dataset.map(process,
-                                            fn_kwargs={"label_list": labels, "tokenizer": tokenizer},
+                                            fn_kwargs={"edits_label_list": edit_labels, "areta13_label_list": areta13_labels, "areta43_label_list": areta43_labels, "tokenizer": tokenizer},
                                             batched=True,
                                             desc=f"Running tokenizer on {data_args.tokenized_data_path}")
         else:
             test_dataset =  read_examples_from_file_words(file_path=data_args.tokenized_data_path)
             raw_test_dataset =  read_examples_from_file_words(file_path=data_args.tokenized_raw_data_path)
             test_dataset = test_dataset.map(process_words,
-                                            fn_kwargs={"label_list": labels, "tokenizer": tokenizer},
+                                            fn_kwargs={"edits_label_list": edit_labels, "areta13_label_list": areta13_labels, "areta43_label_list": areta43_labels, "tokenizer": tokenizer},
                                             batched=True,
                                             desc=f"Running tokenizer on {data_args.tokenized_data_path}")
 
@@ -310,7 +312,7 @@ def main():
                                           collate_fn=data_collator,
                                           topk_pred=model_args.topk_pred,
                                           pred_threshold=model_args.pred_threshold,
-                                          label_map=label_map,
+                                          label_map=edits_label_map,
                                           batch_size=training_args.per_device_eval_batch_size)
 
         if data_args.label_pred_output_file:
