@@ -18,8 +18,8 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
-from gec.utils.data_utils import get_labels, process, read_examples_from_file
-from gec.utils.data_utils_word import process_words, read_examples_from_file_words
+from gedc.utils.data_utils import get_labels, process, read_examples_from_file
+from gedc.utils.data_utils_word import process_words, read_examples_from_file_words
 
 from gedc.model import BertForTokenMultiLabelClassification
 import os
