@@ -43,41 +43,34 @@ def read_examples_from_file(file_path):
 
 
 
-def process(examples, edits_label_list: List[str], areta13_label_list: List[str], areta43_label_list: List[str], tokenizer: PreTrainedTokenizer):
+def process(examples, label_list: List[str], tokenizer: PreTrainedTokenizer):
 
-    edits_label_map = {label: i for i, label in enumerate(edits_label_list)}
-    areta13_label_map = {label: i for i, label in enumerate(areta13_label_list)}
-    areta43_label_map = {label: i for i, label in enumerate(areta43_label_list)}
+    label_map = {label: i for i, label in enumerate(label_list)}
 
     examples_tokens = [words for words in examples['subwords']]
 
-    examples_edits_labels = [labels for labels in examples['edits']]
-    examples_areta13_labels = [labels for labels in examples['areta13']]
-    examples_areta43_labels = [labels for labels in examples['areta43']]
+    examples_labels = [labels for labels in examples['edits']]
 
     tokenized_inputs = [tokenizer.encode_plus(tokens, max_length=512, truncation=True) for tokens in examples_tokens]
 
     tokenized_inputs = {'subwords': [ex_tokens for ex_tokens in examples_tokens],
-                        'edits': [ex_labels for ex_labels in examples_edits_labels],
-                        'areta13': [ex_labels for ex_labels in examples_areta13_labels],
-                        'areta43': [ex_labels for ex_labels in examples_areta43_labels],
+                        'edits': [ex_labels for ex_labels in examples_labels],
                         'input_ids': [ex['input_ids'] for ex in tokenized_inputs],
                         'token_type_ids': [ex['token_type_ids'] for ex in tokenized_inputs],
                         'attention_mask': [ex['attention_mask'] for ex in tokenized_inputs]
                         }
 
-
     labels = []
 
-    for i, ex_labels in enumerate(examples_edits_labels):
+    for i, ex_labels in enumerate(examples_labels):
         label_ids = []
         for word_idx in range(len(ex_labels)):
             label = ex_labels[word_idx]
-            if label not in edits_label_map:
+            if label not in label_map:
                 # label_ids.append(label_map['K']) # No Compress Exp
-                label_ids.append(edits_label_map['K*'])
+                label_ids.append(label_map['K*'])
             else:
-                label_ids.append(edits_label_map[label])
+                label_ids.append(label_map[label])
         
         if len(label_ids) != len(tokenized_inputs['input_ids'][i]) - 2:
             assert len(label_ids) > len(tokenized_inputs['input_ids'][i]) - 2
