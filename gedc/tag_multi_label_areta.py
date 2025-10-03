@@ -18,6 +18,8 @@ from transformers import (
     TrainingArguments,
     set_seed,
 )
+from transformers.data.data_collator import DataCollatorMixin
+from typing import Any, Dict, List, Optional, Union
 from gedc.utils.data_utils import get_labels, process, read_examples_from_file
 from gedc.utils.data_utils_word import process_words, read_examples_from_file_words
 
@@ -29,7 +31,76 @@ import json
 from gedc.utils.postprocess import remove_pnx, pnx_tokenize, space_clean
 from edits.edit import SubwordEdit
 
+
+from typing import Dict, List, Any, Optional
+import torch
+from torch.nn.utils.rnn import pad_sequence
+from transformers import Trainer, PreTrainedTokenizerBase, DataCollatorWithPadding
+
 logger = logging.getLogger(__name__)
+
+IGNORE_INDEX = -100
+
+class MultiHeadTokenCollator(DataCollatorWithPadding):
+    """
+    Pads input_ids/attention_mask/etc using parent logic, and also pads
+    labels_* to IGNORE_INDEX.
+    """
+    def __init__(self, tokenizer: PreTrainedTokenizerBase, **kwargs):
+        super().__init__(tokenizer, **kwargs)
+
+    def __call__(self, features: List[Dict[str, Any]]) -> Dict[str, Any]:
+        # Split regular fields vs labels_*
+        label_keys = ["edits_labels", "areta13_labels", "areta43_labels"]
+        labels = {k: [] for k in label_keys}
+        non_label_feats = []
+
+        for feat in features:
+            non_label = {k: v for k, v in feat.items() if k not in label_keys}
+            non_label_feats.append(non_label)
+            for lk in label_keys:
+                if lk in feat and feat[lk] is not None:
+                    labels[lk].append(torch.tensor(feat[lk], dtype=torch.long))
+                else:
+                    labels[lk].append(None)
+
+        # Pad non-labels with parent
+        batch = super().__call__(non_label_feats)
+
+        # Pad each label list if present
+        for lk, seqs in labels.items():
+            if all(x is None for x in seqs):
+                continue
+            # replace None with empty tensor so pad_sequence works
+            seqs = [s if s is not None else torch.tensor([], dtype=torch.long) for s in seqs]
+            padded = pad_sequence(seqs, batch_first=True, padding_value=IGNORE_INDEX)
+            # Also truncate/pad to match input_ids length (safety)
+            max_len = batch["input_ids"].size(1)
+            if padded.size(1) < max_len:
+                pad_len = max_len - padded.size(1)
+                padded = torch.nn.functional.pad(padded, (0, pad_len), value=IGNORE_INDEX)
+            elif padded.size(1) > max_len:
+                padded = padded[:, :max_len]
+            batch[lk] = padded
+
+        return batch
+      
+class MultiHeadTrainer(Trainer):
+    """
+    Uses the three label fields if present, so the model will compute and return a scalar loss.
+    """
+    def compute_loss(self, model, inputs, return_outputs=False):
+        # Pass everything to the model; the model computes its own weighted loss
+        outputs = model(**inputs)
+        loss = outputs.loss if hasattr(outputs, "loss") else None
+        if loss is None:
+            # Helpful message if labels weren’t actually in the batch
+            missing = [k for k in ["edits_labels","areta13_labels","areta43_labels"] if k not in inputs]
+            raise ValueError(
+                f"No loss returned. Are you supplying labels? Missing label keys: {missing}. "
+                f"Got keys: {list(inputs.keys())}"
+            )
+        return (loss, outputs) if return_outputs else loss
 
 
 @dataclass
@@ -266,10 +337,10 @@ def main():
     )
 
 
-    data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer, padding=True)
+    data_collator = MultiHeadTokenCollator(tokenizer=tokenizer, padding=True)
 
     # Initialize our Trainer
-    trainer = Trainer(
+    trainer = MultiHeadTrainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset if training_args.do_train else None,

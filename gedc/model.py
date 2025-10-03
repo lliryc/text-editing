@@ -103,9 +103,9 @@ class BertForTokenMultiLabelClassification(BertPreTrainedModel):
         position_ids: Optional[torch.Tensor] = None,
         head_mask: Optional[torch.Tensor] = None,
         inputs_embeds: Optional[torch.Tensor] = None,
-        labels_edits: Optional[torch.Tensor] = None,
-        labels_areta13: Optional[torch.Tensor] = None,
-        labels_areta43: Optional[torch.Tensor] = None,
+        edits_labels: Optional[torch.Tensor] = None,
+        areta13_labels: Optional[torch.Tensor] = None,
+        areta43_labels: Optional[torch.Tensor] = None,
         output_attentions: Optional[bool] = None,
         output_hidden_states: Optional[bool] = None,
         return_dict: Optional[bool] = True,
@@ -131,9 +131,9 @@ class BertForTokenMultiLabelClassification(BertPreTrainedModel):
         logits_areta43 = self._head_forward(sequence_output, self.areta43_classifier)
 
         # Per-head losses (computed only if labels are provided)
-        loss_edits = self._loss(logits_edits, labels_edits, self.edits_class_weights)
-        loss_areta13 = self._loss(logits_areta13, labels_areta13, self.areta13_class_weights)
-        loss_areta43 = self._loss(logits_areta43, labels_areta43, self.areta43_class_weights)
+        loss_edits = self._loss(logits_edits, edits_labels, self.edits_class_weights)
+        loss_areta13 = self._loss(logits_areta13, areta13_labels, self.areta13_class_weights)
+        loss_areta43 = self._loss(logits_areta43, areta43_labels, self.areta43_class_weights)
 
         # Weighted sum (only for heads that had labels)
         losses = []

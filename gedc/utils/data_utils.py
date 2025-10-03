@@ -33,9 +33,9 @@ def read_examples_from_file(file_path):
               areta13_labels.append("UC") # place holder
         if words:
             examples['subwords'].append(words)
-            examples['edits'].append(edits_labels)
-            examples['areta43'].append(areta43_labels)
-            examples['areta13'].append(areta13_labels)
+            examples['edits_labels'].append(edits_labels)
+            examples['areta43_labels'].append(areta43_labels)
+            examples['areta13_labels'].append(areta13_labels)
 
     dataset = Dataset.from_dict(examples)
     return dataset
@@ -50,16 +50,16 @@ def process(examples, edits_label_list: List[str], areta13_label_list: List[str]
 
     examples_tokens = [words for words in examples['subwords']]
 
-    examples_edits_labels = [labels for labels in examples['edits']]
-    examples_areta13_labels = [labels for labels in examples['areta13']]
-    examples_areta43_labels = [labels for labels in examples['areta43']]
+    examples_edits_labels = [labels for labels in examples['edits_labels']]
+    examples_areta13_labels = [labels for labels in examples['areta13_labels']]
+    examples_areta43_labels = [labels for labels in examples['areta43_labels']]
 
     tokenized_inputs = [tokenizer.encode_plus(tokens, max_length=512, truncation=True) for tokens in examples_tokens]
 
     tokenized_inputs = {'subwords': [ex_tokens for ex_tokens in examples_tokens],
-                        'edits': [ex_labels for ex_labels in examples_edits_labels],
-                        'areta13': [ex_labels for ex_labels in examples_areta13_labels],
-                        'areta43': [ex_labels for ex_labels in examples_areta43_labels],
+                        'edits_labels': [ex_labels for ex_labels in examples_edits_labels],
+                        'areta13_labels': [ex_labels for ex_labels in examples_areta13_labels],
+                        'areta43_labels': [ex_labels for ex_labels in examples_areta43_labels],
                         'input_ids': [ex['input_ids'] for ex in tokenized_inputs],
                         'token_type_ids': [ex['token_type_ids'] for ex in tokenized_inputs],
                         'attention_mask': [ex['attention_mask'] for ex in tokenized_inputs]
